@@ -1,9 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed');
+
 html, body {
     height: 100%;
 }
 /* Barra de navegação */
 header {
     border-bottom: 1px solid black;
+}
+header nav a {
+    border: 1px solid black;
+}
+header nav li  {
+    margin-right: 1rem;
+}
+header nav .nav-link:link,
+header nav .nav-link:visited {
+    color: black;
+    font-weight: 600;
+}
+header nav a.navbar-brand:link,
+header nav a.navbar-brand:visited {
+    color: crimson;
+}
+header nav .navbar-brand {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+header nav .nav-link {
+    font-family: 'Roboto-Condensed', sans-serif;
 }
 div.barra-redes-sociais {
     display: none;
