@@ -1,8 +1,0 @@
-# ignore all directories and file under libs
-libs/
-
-# ignore all files under the design folder
-design/
-
-# ignore all files under img folder
-img/
