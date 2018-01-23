@@ -3,17 +3,18 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Principal (sem-título)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Titulo na aba da página -->
+    <title>Principal (sem-título)</title>
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="libs/bootstrap/4.0.0/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
 </head>
 <body>
-    <header>
+    <header class="barraNavTopo">
         <div class="container">
-            <nav class="navbar navbar-expand-lg">
+            <nav class="navbar navbar-expand-md">
                 <a class="navbar-brand" href="#">BLOG DO PAPILOSCOPISTA</a>
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="#">SOBRE</a></li>
@@ -21,11 +22,11 @@
                 </ul>
             </nav>
         </div>
-        <div class="container-fluid barra-redes-sociais">
+        <div class="container-fluid barraNavSocial">
             <ul class="container">
-                <li><a class="link-rede-social" href="#">Facebook</a></li>
-                <li><a class="link-rede-social" href="#">Instagram</a></li>
-                <li><a class="link-rede-social" href="#">Twitter</a></li>
+                <li><a class="linkRedeSocial" href="#">Facebook</a></li>
+                <li><a class="linkRedeSocial" href="#">Instagram</a></li>
+                <li><a class="linkRedeSocial" href="#">Twitter</a></li>
             </ul>
         </div>
     </header>
@@ -37,12 +38,5 @@
     <script type="text/javascript" src="libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script type="text/javascript" src="libs/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <!-- Scripts -->
-    <script type="text/javascript">
-    $(document).ready(function() {
-        $('#link-redes-sociais').on('click', function() {
-            $('.barra-redes-sociais').toggleClass('mostrar-barra');
-        })
-    });
-    </script>
 </body>
 </html>

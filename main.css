@@ -1,6 +1,26 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed');
+/* Importação de Fontes */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
 
 html, body {
     height: 100%;
 }
-/* Barra de navegação */
+/* LAYOUT DA PÁGINA */
+/* - Header */
+.barraNavTopo div:nth-child(1){
+    background-color: rgba(204, 72, 72, 0.986);
+}
+.barraNavTopo a:link, .barraNavTopo a:visited {
+    color: #fff;
+}
+.barraNavSocial {
+    display: none;
+}
+/* - Bootstrap */
+.navbar-brand {
+    font-size: 1.8rem;
+    font-family: 'Playfair Display', serif;
+}
+.barraNavTopo .nav-link {
+    font-family: Roboto, sans-serif;
+}
