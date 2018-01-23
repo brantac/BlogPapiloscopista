@@ -1,4 +1,4 @@
-/* Importação de Fontes */
+/* Importação de fontes */
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display');
 
@@ -14,13 +14,33 @@ html, body {
     color: #fff;
 }
 .barraNavSocial {
-    display: none;
+    /* Fica escondido. Aparece ao
+    clicar no link Redes Sociais. */
+    /*display: none;*/
+    background-color: #3e4444;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
-/* - Bootstrap */
+.barraNavSocial li {
+    display: inline;
+    padding-right: .5rem;
+}
+.barraNavSocial ul {
+    list-style: none;
+    margin-bottom: 0rem;
+}
+.barraNavSocial a {
+    text-decoration-line: none;
+}
+.barraNavTopo .linkRedeSocial:link,
+.barraNavTopo .linkRedeSocial:visited {
+    color: #fff;
+}
+/* - Bootstrap (separar em novo arquivo) */
 .navbar-brand {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-family: 'Playfair Display', serif;
 }
 .barraNavTopo .nav-link {
-    font-family: Roboto, sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
