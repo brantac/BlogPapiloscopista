@@ -16,25 +16,36 @@ html, body {
 .barraNavSocial {
     /* Fica escondido. Aparece ao
     clicar no link Redes Sociais. */
-    /*display: none;*/
+    display: none;
     background-color: #3e4444;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
 }
 .barraNavSocial li {
-    display: inline;
+    display: inline-block;
     padding-right: .5rem;
 }
 .barraNavSocial ul {
     list-style: none;
     margin-bottom: 0rem;
 }
-.barraNavSocial a {
-    text-decoration-line: none;
-}
 .barraNavTopo .linkRedeSocial:link,
 .barraNavTopo .linkRedeSocial:visited {
     color: #fff;
+}
+.barraNavTopo .nav-item {
+    position: relative;
+}
+.active::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    top: 2.6rem;
+    left: 50%;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 10px solid #3e4444;
 }
 /* - Bootstrap (separar em novo arquivo) */
 .navbar-brand {
@@ -43,4 +54,13 @@ html, body {
 }
 .barraNavTopo .nav-link {
     font-family: 'Roboto', sans-serif;
+}
+
+/* Media queries */
+@media (max-width:767px) {
+    /* Regula a margem do triangulo
+    abaixo dos links da barra de navegacao */
+    .active::after {
+        top: 2.35rem;
+    }
 }

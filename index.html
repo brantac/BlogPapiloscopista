@@ -18,17 +18,17 @@
                 <a class="navbar-brand" href="#">BLOG DO PAPILOSCOPISTA</a>
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="#">SOBRE</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">REDES SOCIAIS</a></li>
+                    <li class="nav-item triangulo-pracima"><a class="nav-link" href="#">REDES SOCIAIS</a></li>
                 </ul>
             </nav>
-        </div>
+        </div><!-- /container -->
         <div class="container barraNavSocial">
             <ul class="container-fluid">
                 <li><a class="linkRedeSocial" href="#"><img src="img/icones/icone-facebook-32px.png" alt="Icone facebook"></a></li>
                 <li><a class="linkRedeSocial" href="#"><img src="img/icones/icone-instagram-32px.png" alt="Icone instagram"></a></li>
                 <li><a class="linkRedeSocial" href="#"><img src="img/icones/icone-twitter-32px.png" alt="Icone twitter"></a></li>
             </ul>
-        </div>
+        </div><!-- /container -->
     </header>
 
     <!-- Principal -->    
@@ -38,5 +38,13 @@
     <script type="text/javascript" src="libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script type="text/javascript" src="libs/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <!-- Scripts -->
+    <script>
+    $(document).ready(function() {
+        $('.triangulo-pracima').on('click', function() {
+            $(this).toggleClass('active');
+            $('.barraNavSocial').toggleClass('d-block');
+        })
+    });
+    </script>
 </body>
 </html>
