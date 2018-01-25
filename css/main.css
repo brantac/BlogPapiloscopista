@@ -7,7 +7,7 @@ html, body {
 }
 /* LAYOUT DA PÁGINA */
 /* - Header */
-.barraNavTopo div:nth-child(1){
+.barraNavTopo nav{
     background-color: rgba(204, 72, 72, 0.986);
 }
 .barraNavTopo a:link, .barraNavTopo a:visited {
