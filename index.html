@@ -20,7 +20,7 @@
                 <li class="nav-item triangulo-pracima"><a class="nav-link" href="#">REDES SOCIAIS</a></li>
             </ul>
         </nav><!-- /nav -->
-        <div class=" barraNavSocial">
+        <div class="barraNavSocial">
             <ul class="container-fluid">
                 <li><a class="linkRedeSocial" href="#"><img src="img/icones/icone-facebook-32px.png" alt="Icone facebook"></a></li>
                 <li><a class="linkRedeSocial" href="#"><img src="img/icones/icone-instagram-32px.png" alt="Icone instagram"></a></li>
@@ -30,13 +30,24 @@
     </header>
 
     <!-- Principal -->
-    <main class="container posts">
-        <article>
-            <header>
-                <h1>Primeiro post</h1>
-            </header>
-            <section class="componenteCompartilhamentoRedesSociais"></section>
-        </article>
+    <main class="container">
+        <div class="row">
+            <section class="postsDoBlog col-md-9">
+                <article class="post">
+                    <header class="cabecalhoDoPost">
+                        <h1>Primeiro post</h1>
+                    </header><!-- /cabecalhoDoPost -->
+                    <hr>    
+                    <section class="textoDoPost">
+                        <p>Texto para testar o blog, ajudar no design enquanto está
+                            em desenvolvimento.
+                        </p>
+                    </section><!-- /textoDoPost -->
+                    <section class="componenteCompartilhamentoRedesSociais"></section><!-- /componenteCompartilhamentoRedesSociais -->
+                </article>
+            </section><!-- /postsDoBlog -->
+            <aside class="col-md-3 barralateralDoBlog"></aside><!-- /barralateralDoBlog -->
+        </div>
     </main>
     <!-- Rodapé -->
     <!-- jQuery, Popper.js, JavaScript -->
