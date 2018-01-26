@@ -49,7 +49,7 @@ html, body {
 }
 /* - Bootstrap (separar em novo arquivo) */
 .navbar-brand {
-    font-size: 1.6rem;
+    font-size: 2.0rem;
     font-family: 'Playfair Display', serif;
 }
 .barraNavTopo .nav-link {
