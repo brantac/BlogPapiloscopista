@@ -6,7 +6,7 @@ html, body {
     height: 100%;
 }
 /* LAYOUT DA PÁGINA */
-/* - Header */
+/* -Header */
 .barraNavTopo nav{
     background-color: rgba(204, 72, 72, 0.986);
 }
@@ -15,9 +15,6 @@ html, body {
 }
 .barraNavTopo .nav-link {
     font-family: 'Roboto', sans-serif;
-}
-h1 {
-    font-family: 'Playfair Display', serif;
 }
 .barraNavSocial {
     display: none;
@@ -50,6 +47,15 @@ h1 {
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     border-bottom: 10px solid #3e4444;
+}
+/* -Principal */
+h1 {
+    font-family: 'Playfair Display', serif;
+}
+.MetaDadosPost {
+    font-family: 'Roboto', serif;
+    font-size: 0.8rem;
+    color: #bcbcbc;
 }
 /* - Bootstrap (separar em novo arquivo) */
 .navbar-brand {
