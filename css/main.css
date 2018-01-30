@@ -57,6 +57,10 @@ h1 {
     font-size: 0.8rem;
     color: #bcbcbc;
 }
+/* -Barra lateral */
+.sobre p {
+    font-size: 0.8rem;
+}
 /* - Bootstrap (separar em novo arquivo) */
 .navbar-brand {
     font-size: 2.0rem;
