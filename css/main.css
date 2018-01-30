@@ -13,9 +13,13 @@ html, body {
 .barraNavTopo a:link, .barraNavTopo a:visited {
     color: #fff;
 }
+.barraNavTopo .nav-link {
+    font-family: 'Roboto', sans-serif;
+}
+h1 {
+    font-family: 'Playfair Display', serif;
+}
 .barraNavSocial {
-    /* Fica escondido. Aparece ao
-    clicar no link Redes Sociais. */
     display: none;
     background-color: #3e4444;
     padding-top: 0.5rem;
@@ -51,9 +55,6 @@ html, body {
 .navbar-brand {
     font-size: 2.0rem;
     font-family: 'Playfair Display', serif;
-}
-.barraNavTopo .nav-link {
-    font-family: 'Roboto', sans-serif;
 }
 
 /* Media queries */
