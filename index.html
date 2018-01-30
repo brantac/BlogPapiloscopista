@@ -16,7 +16,7 @@
         <nav class="navbar navbar-expand-md">
             <a class="navbar-brand" href="#">NOME DO BLOG</a>
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="#">SOBRE</a></li>
+                <li class="nav-item itemSobre"><a class="nav-link" href="#">SOBRE</a></li>
                 <li class="nav-item triangulo-pracima"><a class="nav-link" href="#">REDES SOCIAIS</a></li>
             </ul>
         </nav><!-- /nav -->
@@ -32,7 +32,7 @@
     <!-- Principal -->
     <main class="container">
         <div class="row">
-            <aside class="col-md-4 barralateralDoBlog">
+            <aside class="col-md-4 barraLateralDoBlog order-2">
                 <section class="sobre">
                     <h4>Sobre</h4>
                     <p>
@@ -137,10 +137,18 @@
     <script type="text/javascript" src="libs/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <!-- Scripts -->
     <script>
+    /* Redes Sociais */
     $(document).ready(function() {
         $('.triangulo-pracima').on('click', function() {
             $(this).toggleClass('active');
             $('.barraNavSocial').slideToggle(200);
+        })
+    });
+    </script>
+    <script>
+    $(document).ready(function() {
+        $('.itemSobre').on('click', function() {
+            $('.barraLateralDoBlog').slideToggle(200);
         })
     });
     </script>
