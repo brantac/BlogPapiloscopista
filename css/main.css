@@ -48,8 +48,9 @@ html, body {
     border-right: 5px solid transparent;
     border-bottom: 10px solid #3e4444;
 }
+
 /* -Principal */
-h1 {
+h1, h4 {
     font-family: 'Playfair Display', serif;
 }
 .MetaDadosPost {
@@ -58,6 +59,9 @@ h1 {
     color: #bcbcbc;
 }
 /* -Barra lateral */
+h4 {
+    font-style: italic;
+}
 .sobre p {
     font-size: 0.8rem;
 }
