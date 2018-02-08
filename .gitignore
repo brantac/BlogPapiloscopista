@@ -6,3 +6,12 @@ design/
 
 # ignore all files under img folder
 img/
+
+#ignore all scss folders and auto-generated scss files
+css/componentes/
+css/helpers/
+css/layout/
+css/paginas/
+css/output.css.map
+css/.sass-cache
+css/output.css
