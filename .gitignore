@@ -18,3 +18,6 @@ css/output.css
 
 # ignore all log files
 *.log
+
+# ignore test html pages
+*teste.html
