@@ -15,3 +15,6 @@ css/paginas/
 css/output.css.map
 css/.sass-cache
 css/output.css
+
+# ignore all log files
+*.log
