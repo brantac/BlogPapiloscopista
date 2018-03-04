@@ -21,3 +21,6 @@ css/output.css
 
 # ignore test html pages
 *teste.html
+
+# ignore js files
+*.js
