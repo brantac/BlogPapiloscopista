@@ -1,20 +1,6 @@
-# ignore all directories and file under libs
-libs/
-
-# ignore all files under the design folder
-design/
-
-# ignore all files under img folder
-img/
-
-#ignore all scss folders and auto-generated scss files
-css/componentes/
-css/helpers/
-css/layout/
-css/paginas/
-css/output.css.map
-css/.sass-cache
-css/output.css
+# ignore static files such as css, my own .js's, sass, images
+public/
+*.png
 
 # ignore all log files
 *.log
