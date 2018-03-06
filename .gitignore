@@ -1,3 +1,6 @@
+# ignore the old server, used with pure node, not the expressjs
+app_just_node.js
+
 # ignore static files such as css, my own .js's, sass, images
 public/
 *.png
