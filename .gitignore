@@ -1,16 +1,8 @@
-# ignore the old server, used with pure node, not the expressjs
 app_just_node.js
-
-# ignore static files such as css, my own .js's, sass, images
 public/
 *.png
 *.json
-
-# ignore all log files
 *.log
-
-# ignore test html pages
 routes/*teste.html
-
-# ignore express module and its dependecies
 node_modules/
+views/
