@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const path = require('path');
 
 /* Evitar um pouco usar a view engine
 app.set('view engine', 'ejs');
@@ -8,6 +9,7 @@ app.get('/profile/:name', function (req, res) {
     res.render('profile', {person: req.params.name, data: data});
 });
 */
+app.use(express.static('public'));
 
 app.get('/', (req, res) => res.sendFile(__dirname + '/routes/index.html'));
 
