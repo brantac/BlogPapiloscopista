@@ -17,5 +17,7 @@ app.get('/contact', (req, res) => res.send('Contact Page'));
 
 app.get('/about', (req, res) => res.send('About Page'));
 
+app.get('/post3_teste.html', (req, res) => res.sendFile(__dirname + '/routes/post3_teste.html'));
+
 
 app.listen(3000, () => console.log('App.js running at http://localhost:3000'));

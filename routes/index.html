@@ -190,18 +190,14 @@
     /* proximoPost*/
     $(document).ready(function () {
         $('.proximoPost').on('click', function () {
-            $.ajax({
-                url: './post3_teste.html',
-                async: true,
-                cache: false,
-                dataType: 'html',
-                isLocal: true,
-                method: 'GET',
-                crossDomain: false,
-                success: function(data) {
-                    $('.postsDoBlog').append(data);
-                }
-            });
+            jQuery.get(
+                './post3_teste.html',
+                function (data) {
+                    $('.postsDoBlog').html(data);
+                    console.log(data);
+                },
+                'html'
+            );
         });
     });
     </script>
