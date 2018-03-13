@@ -9,12 +9,12 @@ app.get('/profile/:name', function (req, res) {
     res.render('profile', {person: req.params.name, data: data});
 });
 */
+
+// Aqui eu sirvo os arquivos estáticos, como imagens, css, bibliotecas
 app.use(express.static('public'));
 
 app.get('/', (req, res) => res.sendFile(__dirname + '/routes/index.html'));
-
 app.get('/contact', (req, res) => res.send('Contact Page'));
-
 app.get('/about', (req, res) => res.send('About Page'));
 
 app.get('/post3_teste.html', (req, res) => res.sendFile(__dirname + '/routes/post3_teste.html'));
