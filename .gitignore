@@ -1,5 +1,8 @@
 app_just_node.js
-public/
+public/css/*
+public/img
+public/libs
+!public/css/output.css
 *.png
 *.json
 *.log
