@@ -3,6 +3,7 @@ public/
 *.png
 *.json
 *.log
-routes/*teste.html
+routes/*
+!routes/index.html
 node_modules/
 views/
