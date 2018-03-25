@@ -1,8 +1,9 @@
 app_just_node.js
-public/css/*
 public/img
 public/libs
-!public/css/output.css
+public/css/output.css
+public/css/output.css.map
+public/css/.sass-cache
 *.png
 *.json
 *.log
