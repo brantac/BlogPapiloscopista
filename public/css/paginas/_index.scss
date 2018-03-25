@@ -1,0 +1,18 @@
+/* página principal */
+main {
+    position: relative;
+}
+aside {
+    h4, p {
+        font: {
+            family: $playfair;
+        }
+    }
+    .sobre {
+        p {
+            font: {
+                weight: 800;
+            }
+        }
+    }
+}

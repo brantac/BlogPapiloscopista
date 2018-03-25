@@ -1,0 +1,32 @@
+/* area dos posts */
+.post {
+    position: relative;
+    section.texto {
+        img {
+            margin: {
+                top: 2rem;
+                bottom: 2rem;
+            }
+        }
+    }
+    p {
+        font: {
+            size: 1.2rem;
+            family: $roboto;
+        }
+        color: $cinzaEscuro;
+    }
+    header {
+        h1, p {
+            font: {
+                family: $playfair;
+            }
+        }
+        p {
+            color: $cinzaClaro;
+            font: {
+                size: .9rem;
+            }
+        }
+    }
+}
