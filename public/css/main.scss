@@ -1,0 +1,17 @@
+@import 'componentes/componenteCompartilhamento';
+@import 'helpers/variaveis';
+@import 'helpers/mixins';
+@import 'layout/navegacaoTopo';
+@import 'layout/posts';
+@import 'componentes/botao';
+@import 'paginas/index';
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+
+/* bootstrap */
+.navbar-brand {
+    font: {
+        size: 2.0rem;
+        family: $playfair;
+    }
+}

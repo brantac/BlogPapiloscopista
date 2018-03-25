@@ -1,0 +1,36 @@
+.componenteCompartilhamento {
+    display: block;
+    width: 330px;
+    border: 1px solid rgba(0,0,0,0.1);
+    margin: {
+        left: auto;
+        right: auto;
+        top: 2rem;
+        bottom: 2rem;
+    }
+    padding: {
+        top: 1rem;
+        bottom: 1rem;
+    }
+    ul {
+        margin: {
+            top: 1rem;
+        }
+        padding: {
+            left: 0;
+        }
+        text-align: center;
+        list-style: none;
+    }
+    li {
+        display: inline-block;
+        padding: {
+            right: 1rem;
+        }
+
+        a {
+            text-decoration: unset;
+            font-weight: 500;
+        }
+    }
+}

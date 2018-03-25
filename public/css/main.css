@@ -1,0 +1,81 @@
+/* Importação de fontes */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+
+html, body {
+    height: 100%;
+}
+/* LAYOUT DA PÁGINA */
+/* -Header */
+.barraNavTopo nav{
+    background-color: rgba(204, 72, 72, 0.986);
+}
+.barraNavTopo a:link, .barraNavTopo a:visited {
+    color: #fff;
+}
+.barraNavTopo .nav-link {
+    font-family: 'Roboto', sans-serif;
+}
+.barraNavSocial {
+    display: none;
+    background-color: #3e4444;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+.barraNavSocial li {
+    display: inline-block;
+    padding-right: .5rem;
+}
+.barraNavSocial ul {
+    list-style: none;
+    margin-bottom: 0rem;
+}
+.barraNavTopo .linkRedeSocial:link,
+.barraNavTopo .linkRedeSocial:visited {
+    color: #fff;
+}
+.barraNavTopo .nav-item {
+    position: relative;
+}
+.active::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    top: 2.95rem;
+    left: 50%;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 10px solid #3e4444;
+}
+
+/* -Principal */
+h1, h4 {
+    font-family: 'Playfair Display', serif;
+}
+.MetaDadosPost {
+    font-family: 'Roboto', serif;
+    font-size: 0.8rem;
+    color: #bcbcbc;
+}
+/* -Barra lateral */
+h4 {
+    font-style: italic;
+}
+.sobre p {
+    font-size: 0.9rem;
+}
+/* - Bootstrap (separar em novo arquivo) */
+.navbar-brand {
+    font-size: 2.0rem;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Media queries */
+@media (max-width:767px) {
+    /* Regula a margem do triangulo
+    abaixo dos links da barra de navegacao */
+    .active::after {
+        top: 2.35rem;
+    }
+}
