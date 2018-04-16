@@ -1,4 +1,51 @@
 .barraNavTopo {
+    .grupoNavegacao {
+        .toggleNavegacao {
+            position: relative;
+            z-index: 2;
+            width: 40px;
+            height: 40px;
+            &:hover {
+                cursor: pointer;
+            }
+            .traco1, .traco2, .traco3 {
+                position: absolute;
+                width: 40px;
+                height: 4px;
+                background: $cinzaEscuro;
+                border-radius: 4px;
+                transition-duration: 0.5s;
+            }
+            .traco1 {
+                top: 0;
+            }
+            .traco2 {
+                top: 50%;
+            }
+            .traco3 {
+                bottom: 0;
+            }
+            &.abreFechaMenu .traco1 {
+                @include transform(45deg);
+            }
+            &.abreFechaMenu .traco2 {
+             background: rgba(0,0,0,0.0);
+            }
+            &.abreFechaMenu .traco3 {
+                @include transform(315deg);
+            }
+            &.abreFechaMenu .traco1,
+            &.abreFechaMenu .traco3 {
+                top: 50%;
+            }
+            @media screen and (max-width: 1560px) {
+                &.abreFechaMenu .traco1,
+                &.abreFechaMenu .traco3 {
+                    background: $cinzaClaro;
+                }
+            }
+        }
+    }
     img {
         height: 3.5rem;
     }
@@ -23,19 +70,39 @@
     }
 }
 
-.barraNavSocial {
-    display: none;
-    background-color: $cinzaEscuro;
-    padding: {
-        top: .5rem;
-        bottom: .5rem;
-    }
-    li {
-        display: inline-block;
-        padding-right: .5rem;
-    }
+.navbarLateral {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: $cinzaEscuro;
+    overflow-x: hidden;
+    padding-top: 10rem;
+    transition: 0.5s;
+
     ul {
-        list-style: none;
-        margin-bottom: 0rem;
+        padding-left: 0;
+        li {
+            padding: {
+                top: 1rem;
+                bottom: 1rem;
+            }
+            list-style: none;
+            transition: 0.3s;
+            cursor: pointer;
+            &:hover {
+                a {
+                    color: #d83e3e;
+                }
+            }
+            a {
+                margin-left: 1rem;
+                font-size: 1.2rem;
+                color: #fff;
+                text-decoration: unset;
+            }
+        }
     }
 }

@@ -14,10 +14,26 @@
 </head>
 <body>
     <header class="container barraNavTopo text-center mb-5 mt-5">
+        <div class="grupoNavegacao mb-5">
+            <div class="toggleNavegacao">
+                <div class="traco1"></div>
+                <div class="traco2"></div>
+                <div class="traco3"></div>
+            </div>
+        </div>
+        
         <img class="img-fluid d-inline" src="img/icones/digital_640px.png" alt="Logo: digital do dedo">
         <a class="navbar-brand d-inline" href="#"><span class="transform90">NOME</span> DO BLOG</a>
         <hr class="mt-5">
     </header>
+
+
+    <nav class="navbarLateral">
+        <ul>
+            <li><a href="#">Sobre o site</a></li>
+            <li><a href="#">Autor</a></li>
+        </ul>
+    </nav>
 
 
     <main class="container">
@@ -186,6 +202,22 @@
                 },
                 'html'
             );
+        });
+    });
+    </script>
+    <script>
+    /* animacao do toggler que abre e fecha a area de navegação */
+    $(document).ready(function () {
+        var toggleNavegacao = $('.toggleNavegacao');
+        var navbarLateral = $('.navbarLateral');
+        $('.toggleNavegacao').on('click', function () {
+            $(this).toggleClass('abreFechaMenu');
+
+            if ( -1 !== $(toggleNavegacao).prop('class').search('abreFechaMenu') ) {
+                $(navbarLateral).css('width', 250);
+            } else {
+                $(navbarLateral).css('width', 0);
+            }
         });
     });
     </script>
