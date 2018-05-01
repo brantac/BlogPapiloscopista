@@ -11,6 +11,7 @@
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="libs/bootstrap/4.0.0/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="css/output.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <header class="container barraNavTopo text-center mb-5 mt-5">
@@ -28,50 +29,55 @@
     </header>
 
 
+    <!-- Menu de navegação esquerdo -->
     <nav class="navbarLateral">
         <ul>
             <li><a href="#">Sobre o site</a></li>
             <li><a href="#">Autor</a></li>
         </ul>
     </nav>
-
-
+    
+    
     <main class="container">
-        <div class="row justify-content-between">
+        <div class="row justify-content-between no-gutters">
+            
+            <aside class="order-md-2">
+                <div class="toggleLadoDireito">
+                    <span>Navegação rápida</span>
+                </div>
 
 
-            <aside class="col-md-3 order-md-2">
-                <section class="sobre">
-                    <h5>Sobre</h5>
-                    <p>
-                        Meu nome é João, sou do serviço público há 30 anos, atualmente
-                        dou aula de pós-graduação, tenho uma página no facebook
-                        sobre uma coruja que não mede palavras, e amo compartilhar
-                        conhecimento.
-                    </p>
-                </section>
-
-                <section class="ranking">
-                    <h5>Os mais lidos</h5>
-                    <ol>
-                        <li><a href="">Post</a></li>
-                        <li><a href="">Post</a></li>
-                        <li><a href="">Post</a></li>
-                    </ol>
-                </section>
-
-                <section class="recentes">
-                    <h5>Posts recentes</h5>
-                    <ol>
-                        <li><a href="">Post</a></li>
-                        <li><a href="">Post</a></li>
-                        <li><a href="">Post</a></li>
-                    </ol>
-                </section>
+                <div class="navegacaoRapida">
+                    <section class="ranking">
+                        <h6>Mais lidos</h6>
+                        <ol>
+                            <li><a href="">Post</a></li>
+                            <li><a href="">Post</a></li>
+                            <li><a href="">Post</a></li>
+                        </ol>
+                    </section>
+                    <hr>
+    
+                    <section class="recentes">
+                        <h6>Mais recentes</h6>
+                        <ol>
+                            <li><a href="">Post</a></li>
+                            <li><a href="">Post</a></li>
+                            <li><a href="">Post</a></li>
+                        </ol>
+                    </section>
+                    <hr>
+                    
+                    <section class="sigame">
+                        <h6>Siga-me</h6>
+                        <a href="#"><img src="img/icones/facebook-box.png" alt="Icone do facebook"></a>
+                        <a href="#"></a>
+                    </section>
+                </div>
             </aside>
 
 
-            <section class="postsDoBlog col-md-9">
+            <section class="postsDoBlog col-md-9 order-md-1">
 
 
                 <article class="post" data-postNome="">
@@ -220,6 +226,15 @@
             }
         });
     });
+    </script>
+    <script>
+        /* animação de abertura do menu lateral direito */
+        var aside = $('aside');
+        $(document).ready( function() {
+            $('.toggleLadoDireito').on('click', function() {
+                $(aside).toggleClass('navegacaoRapidaAberta');
+            });
+        });
     </script>
 </body>
 </html>
