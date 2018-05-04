@@ -1,0 +1,31 @@
+.social {
+    .compartilhar {
+        text-align: center;
+        a {
+            margin: {
+                left: 1rem;
+                right: 1rem;
+            }
+        }
+    }
+    .comentar {
+        text-align: center;
+        .comentarios {
+            text-align: left;
+            .campo-comentar {
+                margin-top: 1rem;
+            }
+            .lista-comentarios {
+                padding: 1rem;
+                margin-top: 1rem;
+                border: 1px solid rgba(0,0,0,0.4);
+                min-height: 3rem;
+            }
+        }
+    }
+}
+
+.comentarios-fechado {
+    height: 0;
+    overflow: hidden;
+}
