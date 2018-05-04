@@ -80,7 +80,7 @@
             <section class="postsDoBlog col-md-9 order-md-1">
 
 
-                <article class="post" data-postNome="">
+                <article class="post" data-urlName="primeiro-post">
                     <header>
                         <h1>Primeiro Post</h1>
                         <p>por <a href="">Maria</a>, em 30/01/2018</p>
@@ -123,13 +123,34 @@
                             a pain that produces no resultant pleasure?"
                         </p>
                     </section>
-                    <section class="componenteCompartilhamento">
-                        <ul>
-                            <li><a href="#" class="linkCompartilhamento"><img src="img/icones/icone-facebook-32px.png" alt="Icone facebook"></a></li>
-                            <li><a href="#" class="linkCompartilhamento"><img src="img/icones/icone-twitter-32px.png" alt="Icone twitter"></a></li>
-                            <li><a href="#" class="linkCompartilhamento"><img src="img/icones/icone-instagram-32px.png" alt="Icone instagram"></a></li>
-                        </ul>
-                    </section><!-- /componenteCompartilhamento -->
+                    <section class="social">
+                        <div class="compartilhar">
+                            <a href="">Facebook</a>
+                            <a href="">Twitter</a>
+                            <a href="">Linkedin</a>
+                        </div>
+                        <hr>
+                        <div class="comentar">
+                            <button type="button" class="toggle-comentarios">Comentários</button>
+                            <div class="comentarios comentarios-fechado">
+                                <div class="campo-comentar">
+                                    <form action="">
+                                        <label for="nome-autor">Nome</label>
+                                        <input type="text" name="autor" id="nome-autor">
+                                        <label for="comentario-autor">Comentario</label>
+                                        <input type="text" name="comentario-autor">
+                                        <button type="button">Comentar</button>
+                                    </form>
+                                </div>
+                                <div class="lista-comentarios">
+                                    <div class="item-comentario">
+                                        <div class="comentario"></div>
+                                        <div class="autor"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </article>
 
 
@@ -235,6 +256,14 @@
                 $(aside).toggleClass('navegacaoRapidaAberta');
             });
         });
+    </script>
+    <script>
+    // abrir/fechar comentários
+    $(document).ready(function () {
+        $('.toggle-comentarios').on('click', function () {
+            $('.comentarios').toggleClass('comentarios-fechado');
+        })
+    });
     </script>
 </body>
 </html>
