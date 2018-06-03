@@ -4,6 +4,8 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Facebook moderation config -->
+    <meta property="fb:app_id" content="{537100973372978}" />
     <link rel="icon" href="/img/icones/blog_icon_15px.png" type="img/png" sizes="15x15">
     <!-- Titulo na aba da página -->
     <title>Nome do Blog</title>
@@ -14,6 +16,33 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.0&appId=537100973372978&autoLogAppEvents=1';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <script>
+    // atualiza o titulo da pagina ao mudar o hash da url
+    window.addEventListener("hashchange", () => {
+        this.document.title = this.document.location.hash;
+    });
+    </script>
+    <script>
+    // atualiza o hash da url dinamicamente
+    window.addEventListener("scroll", () => {
+        var posts = document.getElementsByClassName('post');
+        for(var i =0; i < posts.length; i++) {
+            if( (posts[i].getBoundingClientRect().top < 300) && (posts[i].getBoundingClientRect().bottom > 300) ) {
+                document.location.hash = posts[i].getAttribute('data-urlName');
+            }
+        }
+    });
+    </script>
+
     <header class="container barraNavTopo text-center mb-5 mt-5">
         <div class="grupoNavegacao mb-5">
             <div class="toggleNavegacao">
@@ -136,13 +165,14 @@
                                 <div class="campo-comentar">
                                     <form action="">
                                         <label for="nome-autor">Nome</label>
-                                        <input type="text" name="autor" id="nome-autor">
+                                        <input type="text" name="nome-autor" id="nome-autor">
                                         <label for="comentario-autor">Comentario</label>
-                                        <input type="text" name="comentario-autor">
+                                        <input type="text" name="comentario-autor" id ="comentario-autor">
                                         <button type="button">Comentar</button>
                                     </form>
                                 </div>
                                 <div class="lista-comentarios">
+                                    <div class="fb-comments" data-href="http://localhost:3000/#primeiro-post" data-colorscheme="light" data-numposts="5"></div>
                                     <div class="item-comentario">
                                         <div class="comentario"></div>
                                         <div class="autor"></div>
@@ -154,7 +184,7 @@
                 </article>
 
 
-                <article class="post">
+                <article class="post" data-urlName="segundo-post">
                     <header>
                         <h1>Segundo Post</h1>
                         <p>por <a href="">João</a>, em 29/01/2018</hp>
@@ -263,6 +293,20 @@
         $('.toggle-comentarios').on('click', function () {
             $('.comentarios').toggleClass('comentarios-fechado');
         })
+    });
+    </script>
+    <script>
+    $(document).ready(function () {
+        $('.campo-comentar button').on('click', function () {
+            var $autor = $('#nome-autor').val();
+            var $comentario = $('#comentario-autor').val();
+            if ( $autor !== undefined && $comentario !== undefined) {
+                var $item = $('.item-comentario:first-child').clone();
+                $item.children('div.comentario').text($comentario);
+                $item.children('div.autor').text($autor);
+                $('.lista-comentarios').append($item);
+            }
+        });
     });
     </script>
 </body>

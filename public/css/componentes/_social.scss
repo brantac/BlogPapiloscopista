@@ -10,6 +10,9 @@
     }
     .comentar {
         text-align: center;
+        input {
+            display: block;
+        }
         .comentarios {
             text-align: left;
             .campo-comentar {
