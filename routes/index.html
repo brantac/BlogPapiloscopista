@@ -154,31 +154,14 @@
                     </section>
                     <section class="social">
                         <div class="compartilhar">
-                            <a href="">Facebook</a>
-                            <a href="">Twitter</a>
-                            <a href="">Linkedin</a>
+                            <a href="#">Facebook</a>
+                            <a href="#">Twitter</a>
+                            <a href="#">Linkedin</a>
                         </div>
                         <hr>
-                        <div class="comentar">
-                            <button type="button" class="toggle-comentarios">Comentários</button>
-                            <div class="comentarios comentarios-fechado">
-                                <div class="campo-comentar">
-                                    <form action="">
-                                        <label for="nome-autor">Nome</label>
-                                        <input type="text" name="nome-autor" id="nome-autor">
-                                        <label for="comentario-autor">Comentario</label>
-                                        <input type="text" name="comentario-autor" id ="comentario-autor">
-                                        <button type="button">Comentar</button>
-                                    </form>
-                                </div>
-                                <div class="lista-comentarios">
-                                    <div class="fb-comments" data-href="http://localhost:3000/#primeiro-post" data-colorscheme="light" data-numposts="5"></div>
-                                    <div class="item-comentario">
-                                        <div class="comentario"></div>
-                                        <div class="autor"></div>
-                                    </div>
-                                </div>
-                            </div>
+                        <button type="button" class="toggle-comentarios">Comentários</button>
+                        <div class="comentarios fechado">
+                            <div class="fb-comments" data-href="http://localhost:3000/#primeiro-post" data-colorscheme="light" data-numposts="5"></div>
                         </div>
                     </section>
                 </article>
@@ -220,13 +203,18 @@
                         <p></p>
                         <p></p>
                     </section>
-                    <section class="componenteCompartilhamento">
-                        <ul>
-                            <li><a href="#" class="linkCompartilhamento"><img src="img/icones/icone-facebook-32px.png" alt="Icone facebook"></a></li>
-                            <li><a href="#" class="linkCompartilhamento"><img src="img/icones/icone-twitter-32px.png" alt="Icone twitter"></a></li>
-                            <li><a href="#" class="linkCompartilhamento"><img src="img/icones/icone-instagram-32px.png" alt="Icone instagram"></a></li>
-                        </ul>
-                    </section><!-- /componenteCompartilhamento -->
+                    <section class="social">
+                        <div class="compartilhar">
+                            <a href="#">Facebook</a>
+                            <a href="#">Twitter</a>
+                            <a href="#">Linkedin</a>
+                        </div>
+                        <hr>
+                        <button type="button" class="toggle-comentarios">Comentários</button>
+                        <div class="comentarios fechado">
+                            <div class="fb-comments" data-href="http://localhost:3000/#segundo-post" data-colorscheme="light" data-numposts="5"></div>
+                        </div>
+                    </section>
                 </article>
 
 
@@ -291,7 +279,7 @@
     // abrir/fechar comentários
     $(document).ready(function () {
         $('.toggle-comentarios').on('click', function () {
-            $('.comentarios').toggleClass('comentarios-fechado');
+            $('.comentarios').toggleClass('fechado');
         })
     });
     </script>

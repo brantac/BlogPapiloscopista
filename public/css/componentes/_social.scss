@@ -8,27 +8,9 @@
             }
         }
     }
-    .comentar {
-        text-align: center;
-        input {
-            display: block;
-        }
-        .comentarios {
-            text-align: left;
-            .campo-comentar {
-                margin-top: 1rem;
-            }
-            .lista-comentarios {
-                padding: 1rem;
-                margin-top: 1rem;
-                border: 1px solid rgba(0,0,0,0.4);
-                min-height: 3rem;
-            }
-        }
-    }
 }
 
-.comentarios-fechado {
+.fechado {
     height: 0;
     overflow: hidden;
 }
