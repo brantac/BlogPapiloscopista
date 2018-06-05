@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
-/* Evitar um pouco usar a view engine
+/* evitar um pouco usar a view engine
 app.set('view engine', 'ejs');
 app.get('/profile/:name', function (req, res) {
     var data = {age: 25, job: 'student', hobbies: ['eating', 'fighting', 'fishing']};
@@ -10,14 +10,14 @@ app.get('/profile/:name', function (req, res) {
 });
 */
 
-// Aqui eu sirvo os arquivos estáticos, como imagens, css, bibliotecas
+// arquivos estáticos
 app.use(express.static('public'));
 
+// rotas
 app.get('/', (req, res) => res.sendFile(__dirname + '/routes/index.html'));
 app.get('/contact', (req, res) => res.send('Contact Page'));
 app.get('/about', (req, res) => res.send('About Page'));
-
-app.get('/post3_teste.html', (req, res) => res.sendFile(__dirname + '/routes/post3_teste.html'));
+app.get('/primeiro-post', (req, res) => res.sendFile(__dirname + '/routes/primeiro-post.html'));
 
 
 app.listen(3000, () => console.log('App.js running at http://localhost:3000'));
