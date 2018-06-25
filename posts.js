@@ -1,3 +1,6 @@
+const express = require('express');
+const postsRouter = express.Router();
+const path = require('path');
 /**
  * Here I have an object that stores information about all
  * my posts. It can be used to manage them in any way that
@@ -12,20 +15,43 @@ let myPosts = [
  * Here I have functions that can be used to manage my posts,
  * such as retrieving them to the client if asked. 
  */
-module.exports = {
-    getList: () => {
-        return myPosts;
-    },
-    postExist: (postPath, posts) => {
-        var pLen = posts.length;
-        var postFound = false;
-        var ind = 0;
-        while (!postFound && ind < pLen) {
-            if (postPath == posts[ind].postPath) {
-                postFound = true;
-            }
-            ind++;
-        }
-        return postFound;
-    }
+let getList = () => {
+    return myPosts;
 }
+let postExist = (post, postsList, key) => {
+    var pLen = postsList.length;
+    var postFound = false;
+    var ind = 0;
+    while (!postFound && ind < pLen) {
+        if (post == postsList[ind][key]) {
+            postFound = true;
+        }
+        ind++;
+    }
+    return postFound;
+}
+/**
+ * My posts controllers
+ */
+postsRouter.get('/:slug', (req, res, next) => {
+    /**
+     * if '!jquery', send the index,
+     * else send the specific post
+     */
+    if (!req.xhr) {
+        res.sendFile(path.join(__dirname, 'routes/index.html'));
+    } else {
+        next();
+    }
+}, (req, res, next) => {
+    if (postExist(req.params.slug, myPosts, 'tagId')) {
+        res.sendFile(path.join(__dirname , '/routes/post/' + req.params.slug + '.html'));
+        // res.send('Este post existe');
+    } else {
+        /**
+         * handle this response in the index page
+         */
+        res.sendStatus(404);
+    }
+});
+module.exports = postsRouter;

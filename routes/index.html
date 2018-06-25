@@ -10,11 +10,14 @@
     <title>Nome do Blog</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="libs/bootstrap/4.0.0/css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" media="screen" href="css/output.css" />
+    <link rel="stylesheet" type="text/css" href="/libs/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/output.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <script type="text/javascript" src="libs/jquery//3.2.1/jquery.js"></script>
+    <script type="text/javascript" src="/libs/jquery//3.2.1/jquery.js"></script>
+</head>
+<body>
+    <div id="fb-root"></div>
     <script>
         $(document).ready(function() {
             $.ajaxSetup({cache:'true'});
@@ -28,18 +31,6 @@
             });
         });
     </script>
-</head>
-<body>
-    <div id="fb-root"></div>
-    <!--
-    <script>(function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.0&appId=537100973372978&autoLogAppEvents=1';
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-    </script>-->
 
     <header class="container barraNavTopo text-center mb-5 mt-5">
         <div class="grupoNavegacao mb-5">
@@ -50,7 +41,7 @@
             </div>
         </div>
         
-        <img class="img-fluid d-inline" src="img/icones/digital_640px.png" alt="Logo: digital do dedo">
+        <img class="img-fluid d-inline" src="/img/icones/digital_640px.png" alt="Logo: digital do dedo">
         <a class="navbar-brand d-inline" href="/"><span class="transform90">NOME</span> DO BLOG</a>
         <hr class="mt-5">
     </header>
@@ -97,7 +88,7 @@
                     
                     <section class="sigame">
                         <h6>Siga-me</h6>
-                        <a href="#"><img src="img/icones/facebook-box.png" alt="Icone do facebook"></a>
+                        <a href="#"><img src="/img/icones/facebook-box.png" alt="Icone do facebook"></a>
                         <a href="#"></a>
                     </section>
                 </div>
@@ -113,8 +104,8 @@
     </main>
     <!-- jQuery, Popper.js, JavaScript -->
     <!--<script type="text/javascript" src="libs/jquery//3.2.1/jquery.js"></script>-->
-    <script type="text/javascript" src="libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script type="text/javascript" src="libs/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script type="text/javascript" src="/libs/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script>
     /* carrega proximo post
     var proxPost = 1;
@@ -200,51 +191,15 @@
     */
     </script>
     <script>
-    /* var getAndPost = (getUrl, container) => {
+    var getAndPost = (getUrl, container) => {
+        $.ajaxSetup({cache: 'true'});
         $.get(getUrl, (post) => $(container).append(post));
     }
-    var postExist = (postPath, posts) => {
-        var pLen = posts.length;
-        var postFound = false;
-        var ind = 0;
-        while (!postFound && ind < pLen) {
-            if (postPath == posts[ind].postPath) {
-                postFound = true;
-            }
-            ind++;
+    $(document).ready( function () {
+        if (window.location.pathname.length > 1) {
+            getAndPost(window.location.href, '.postsDoBlog');
         }
-        return postFound;
-    }
-    var myPosts = [
-    {id: 1, title: 'Primeiro Post', tagId: 'primeiro-post', postPath: '/post/primeiro-post'},
-    {id: 2, title: 'Segundo Post', tagId: 'segundo-post', postPath: '/post/segundo-post'},
-    {id: 3, title: 'Terceiro Post', tagId: 'terceiro-post', postPath: '/post/terceiro-post'}
-    ];
-    var lastPostIndex = myPosts.length - 1;
-    var lastPostPath = myPosts[lastPostIndex].postPath;
-
-    $(document).ready(function() {
-        try {
-            var path = window.location.pathname;
-            if ( path === '/') {
-                getAndPost(lastPostPath, '.postsDoBlog');
-            } else if ( postExist(path, myPosts) ) {
-                getAndPost(path, '.postsDoBlog');
-            }
-        } catch (error) {
-            console.log(error);
-        }
-    }); */
-    fetch('/postList')
-    .then( (json) => JSON.parse(json))
-    .then( (postList) => {
-        let postUrl = postList[2]["postPath"];
-        return Promise.all(fetch(postUrl));
-    })
-    .then( (post) => {
-        $('.postsDoBlog').append(post);
-    })
-    .catch( (error) => console.log(error));
+    });
     </script>
 </body>
 </html>
