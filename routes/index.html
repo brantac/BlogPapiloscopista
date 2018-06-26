@@ -32,9 +32,9 @@
         });
     </script>
 
-    <header class="container barraNavTopo text-center mb-5 mt-5">
+    <header class="container-fluid barraNavTopo text-center mb-5 mt-5">
         <div class="grupoNavegacao mb-5">
-            <div class="toggleNavegacao">
+            <div id="toggleNavegacao">
                 <div class="traco1"></div>
                 <div class="traco2"></div>
                 <div class="traco3"></div>
@@ -144,9 +144,9 @@
     <script>
     /* animacao do toggler que abre e fecha a area de navegação */
     $(document).ready(function () {
-        var toggleNavegacao = $('.toggleNavegacao');
+        var toggleNavegacao = $('#toggleNavegacao');
         var navbarLateral = $('.navbarLateral');
-        $('.toggleNavegacao').on('click', function () {
+        $('#toggleNavegacao').on('click', function () {
             $(this).toggleClass('abreFechaMenu');
 
             if ( -1 !== $(toggleNavegacao).prop('class').search('abreFechaMenu') ) {
@@ -192,13 +192,16 @@
     </script>
     <script>
     var getAndPost = (getUrl, container) => {
-        $.ajaxSetup({cache: 'true'});
+        $.ajaxSetup({async: true,cache: 'true'});
         $.get(getUrl, (post) => $(container).append(post));
     }
     $(document).ready( function () {
         if (window.location.pathname.length > 1) {
             getAndPost(window.location.href, '.postsDoBlog');
         }
+        /* else {
+            getAndPost(window.location.href, '.postsDoBlog');
+        } */
     });
     </script>
 </body>

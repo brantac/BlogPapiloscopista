@@ -1,6 +1,6 @@
 .barraNavTopo {
     .grupoNavegacao {
-        .toggleNavegacao {
+        #toggleNavegacao {
             position: relative;
             z-index: 2;
             width: 40px;
@@ -25,15 +25,18 @@
             .traco3 {
                 bottom: 0;
             }
-            &.abreFechaMenu .traco1 {
-                @include transform(45deg);
+            &.abreFechaMenu {
+                .traco1 {
+                    @include transform(45deg);
+                }
+                .traco2 {
+                    background: rgba(0,0,0,0.0);
+                }
+                .traco3 {
+                    @include transform(315deg);
+                }
             }
-            &.abreFechaMenu .traco2 {
-             background: rgba(0,0,0,0.0);
-            }
-            &.abreFechaMenu .traco3 {
-                @include transform(315deg);
-            }
+            
             &.abreFechaMenu .traco1,
             &.abreFechaMenu .traco3 {
                 top: 50%;
@@ -77,10 +80,11 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background: $cinzaEscuro;
+    background: white;
     overflow-x: hidden;
     padding-top: 10rem;
     transition: 0.5s;
+    box-shadow: 1.5px 0px rgba(0,0,0,0.1);
 
     ul {
         padding-left: 0;
@@ -100,7 +104,7 @@
             a {
                 margin-left: 1rem;
                 font-size: 1.2rem;
-                color: #fff;
+                color: gray;
                 text-decoration: unset;
             }
         }

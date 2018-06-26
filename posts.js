@@ -1,5 +1,5 @@
 const express = require('express');
-const postsRouter = express.Router();
+const router = express.Router();
 const path = require('path');
 /**
  * Here I have an object that stores information about all
@@ -7,17 +7,22 @@ const path = require('path');
  * I want
  */
 let myPosts = [
-    {"id": 1, "title": 'Primeiro Post', "tagId": 'primeiro-post', "postPath": '/post/primeiro-post'},
-    {"id": 2, "title": 'Segundo Post', "tagId": 'segundo-post', "postPath": '/post/segundo-post'},
-    {"id": 3, "title": 'Terceiro Post', "tagId": 'terceiro-post', "postPath": '/post/terceiro-post'}
+    {"id": 1, "title": 'Primeiro Post', "tagId": 'primeiro-post', "path": '/post/primeiro-post'},
+    {"id": 2, "title": 'Segundo Post', "tagId": 'segundo-post', "path": '/post/segundo-post'},
+    {"id": 3, "title": 'Terceiro Post', "tagId": 'terceiro-post', "path": '/post/terceiro-post'}
 ];
 /**
  * Here I have functions that can be used to manage my posts,
  * such as retrieving them to the client if asked. 
  */
-let getList = () => {
-    return myPosts;
-}
+let getLastPost = (postsListName = []) => {
+    let path = '';
+    if (postsListName.length === 0) {
+        var indexLast = postsListName.length - 1;
+        path = postsListName[indexLast]['path'];
+    }
+    return path;
+};
 let postExist = (post, postsList, key) => {
     var pLen = postsList.length;
     var postFound = false;
@@ -29,13 +34,13 @@ let postExist = (post, postsList, key) => {
         ind++;
     }
     return postFound;
-}
+};
 /**
  * My posts controllers
  */
-postsRouter.get('/:slug', (req, res, next) => {
+router.get('/:slug', (req, res, next) => {
     /**
-     * if '!jquery', send the index,
+     * if '!jquery' request, send the index,
      * else send the specific post
      */
     if (!req.xhr) {
@@ -46,7 +51,6 @@ postsRouter.get('/:slug', (req, res, next) => {
 }, (req, res, next) => {
     if (postExist(req.params.slug, myPosts, 'tagId')) {
         res.sendFile(path.join(__dirname , '/routes/post/' + req.params.slug + '.html'));
-        // res.send('Este post existe');
     } else {
         /**
          * handle this response in the index page
@@ -54,4 +58,4 @@ postsRouter.get('/:slug', (req, res, next) => {
         res.sendStatus(404);
     }
 });
-module.exports = postsRouter;
+module.exports = router;
