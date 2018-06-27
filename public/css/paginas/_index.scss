@@ -1,9 +1,15 @@
 /* página principal */
 body {
     background: #eeeeee;
-    p {
+    h1, h2, h3, h4, h5, h6 {
         font: {
             family: $playfair;
+        }
+    }
+    p {
+        font: {
+            family: $lora;
+            size: 1.2rem;
         }
     }
 }
