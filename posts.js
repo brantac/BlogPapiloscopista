@@ -15,6 +15,7 @@ let myPosts = [
  * Here I have functions that can be used to manage my posts,
  * such as retrieving them to the client if asked. 
  */
+// var arr = myPosts.map( function (ele) { return '/' + ele.tagId;} ); USE IN THE URL MATCHING
 let getLastPost = (postsListName = []) => {
     let path = '';
     if (postsListName.length === 0) {
