@@ -6,6 +6,7 @@ public/css/output.css.map
 public/css/.sass-cache
 *.png
 *.json
+!package.json
 *.log
 routes/*
 !routes/index.html
