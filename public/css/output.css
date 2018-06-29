@@ -1,0 +1,128 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display");
+@import url("https://fonts.googleapis.com/css?family=Lora");
+.barraNavTopo {
+  background: #d83e3e; }
+  .barraNavTopo .grupoNavegacao #toggleNavegacao {
+    position: relative;
+    z-index: 2;
+    width: 30px;
+    height: 30px; }
+    @media (min-width: 768px) {
+      .barraNavTopo .grupoNavegacao #toggleNavegacao {
+        width: 40px;
+        height: 40px; } }
+    .barraNavTopo .grupoNavegacao #toggleNavegacao:hover {
+      cursor: pointer; }
+    .barraNavTopo .grupoNavegacao #toggleNavegacao .traco1, .barraNavTopo .grupoNavegacao #toggleNavegacao .traco2, .barraNavTopo .grupoNavegacao #toggleNavegacao .traco3 {
+      position: absolute;
+      width: 30px;
+      height: 4px;
+      background: #424242;
+      border-radius: 4px;
+      transition-duration: 0.5s; }
+      @media (min-width: 768px) {
+        .barraNavTopo .grupoNavegacao #toggleNavegacao .traco1, .barraNavTopo .grupoNavegacao #toggleNavegacao .traco2, .barraNavTopo .grupoNavegacao #toggleNavegacao .traco3 {
+          width: 40px; } }
+    .barraNavTopo .grupoNavegacao #toggleNavegacao .traco1 {
+      top: 0; }
+    .barraNavTopo .grupoNavegacao #toggleNavegacao .traco2 {
+      top: 50%; }
+    .barraNavTopo .grupoNavegacao #toggleNavegacao .traco3 {
+      bottom: 0; }
+    .barraNavTopo .grupoNavegacao #toggleNavegacao.abreFechaMenu .traco1 {
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg); }
+    .barraNavTopo .grupoNavegacao #toggleNavegacao.abreFechaMenu .traco2 {
+      background: rgba(0, 0, 0, 0); }
+    .barraNavTopo .grupoNavegacao #toggleNavegacao.abreFechaMenu .traco3 {
+      -webkit-transform: rotate(315deg);
+      -ms-transform: rotate(315deg);
+      transform: rotate(315deg); }
+    .barraNavTopo .grupoNavegacao #toggleNavegacao.abreFechaMenu .traco1, .barraNavTopo .grupoNavegacao #toggleNavegacao.abreFechaMenu .traco3 {
+      top: 50%; }
+    @media screen and (max-width: 1560px) {
+      .barraNavTopo .grupoNavegacao #toggleNavegacao.abreFechaMenu .traco1, .barraNavTopo .grupoNavegacao #toggleNavegacao.abreFechaMenu .traco3 {
+        background: #7c7c7c; } }
+  .barraNavTopo img {
+    height: 3.5rem; }
+  .barraNavTopo a {
+    vertical-align: middle;
+    font-size: 1.5rem; }
+    .barraNavTopo a .transform90 {
+      font-size: 1.0rem;
+      display: inline-block;
+      vertical-align: middle;
+      -ms-transform: rotate(-90deg);
+      -webkit-transform: rotate(-90deg);
+      transform: rotate(-90deg); }
+      @media (min-width: 768px) {
+        .barraNavTopo a .transform90 {
+          font-size: 1.9rem; } }
+    .barraNavTopo a:link, .barraNavTopo a:visited {
+      color: black; }
+    @media (min-width: 768px) {
+      .barraNavTopo a {
+        font-size: 2.5rem; } }
+
+.navbarLateral {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background: white;
+  overflow-x: hidden;
+  padding-top: 10rem;
+  transition: 0.5s;
+  box-shadow: 1.5px 0px rgba(0, 0, 0, 0.1); }
+  .navbarLateral ul {
+    padding-left: 0; }
+    .navbarLateral ul li {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      list-style: none;
+      transition: 0.3s;
+      cursor: pointer; }
+      .navbarLateral ul li:hover a {
+        color: #d83e3e; }
+      .navbarLateral ul li a {
+        margin-left: 1rem;
+        font-size: 1.2rem;
+        color: gray;
+        text-decoration: unset; }
+
+.social .compartilhar {
+  text-align: center; }
+  .social .compartilhar a {
+    margin-left: 1rem;
+    margin-right: 1rem; }
+
+.fechado {
+  height: 0;
+  overflow: hidden; }
+
+.post {
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5); }
+
+/* página principal */
+body {
+  background: #eeeeee; }
+  body h1, body h2, body h3, body h4, body h5, body h6 {
+    font-family: "Playfair Display", serif; }
+  body p {
+    font-family: "Lora", serif;
+    font-size: 1.2rem; }
+
+/* bootstrap */
+.navbar-brand {
+  font-family: "Playfair Display", serif; }
+
+/*# sourceMappingURL=output.css.map */
