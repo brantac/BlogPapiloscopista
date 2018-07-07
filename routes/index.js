@@ -1,7 +1,8 @@
 const express = require('express');
+const home_controller = require('../controllers/homeController');
 const router = express.Router();
 
-/* Require controller modules */
-const posts_controller = require('../controllers/postsControllers');
+// GET home page
+router.get('/', home_controller.index);
 
-/*  */
+module.exports = router;
