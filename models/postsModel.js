@@ -65,6 +65,7 @@ function getFile (filename) {
 // Returns all posts as a Promise
 exports.collectAllPosts = () => {
     return readdirAsync('./routes/post/').then( (filenames) => {
+        console.log('Filenames: ' + filenames);
         return Promise.all( filenames.map(getFile) )
     })
     .catch( (reason) => reason);

@@ -41,6 +41,7 @@ exports.getLastPost = function (req, res, next) {
 // Send all posts stored in a directory
 exports.getAllPostsPromise = function (req, res, next) {
     posts_model.collectAllPosts().then( (posts) => {
+        console.log("Posts controller promise.");
         res.send(posts);
     })
     .catch( (err) => console.log(err));
