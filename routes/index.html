@@ -10,25 +10,11 @@
     <title>The Finger Print</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="/libs/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <!-- <link rel="stylesheet" type="text/css" href="/libs/bootstrap/4.0.0/css/bootstrap.min.css"/> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="/css/output.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <script type="text/javascript" src="/libs/jquery//3.2.1/jquery.js"></script>
-    <script>
-    var getAndPost = (getUrl, container) => {
-        $.ajaxSetup({async: true,cache: 'true'});
-        $.get(getUrl, (post) => $(container).append(post));
-    }
-    $(document).ready( function () {
-        if (window.location.pathname.length > 1) {
-            getAndPost(window.location.href, '.postsDoBlog');
-        }
-        /* else {
-            getAndPost(window.location.href, '.postsDoBlog');
-        } */
-    });
-    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="fb-root"></div>
@@ -76,43 +62,69 @@
         </div><!-- /row -->
     </main>
     <!-- jQuery, Popper.js, JavaScript -->
-    <!--<script type="text/javascript" src="libs/jquery//3.2.1/jquery.js"></script>-->
+    <!-- <script type="text/javascript" src="libs/jquery//3.2.1/jquery.js"></script>
     <script type="text/javascript" src="/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script type="text/javascript" src="/libs/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/libs/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
     <script>
-    /* carrega proximo post
-    var proxPost = 1;
-    var posts = {
-        1:{titulo:"Primeiro Post",url:"/primeiro-post",id:"post1"},
-        2:{titulo:"Segundo Post",url:"/segundo-post",id:"post2"},
-        3:{titulo:"Terceiro Post",url:"/terceiro-post",id:"post3"}
-    };
-    $(document).ready(function () {
-         melhorar o carregamento de posts antigos!
-        var reqPost = function () {
-            if (proxPost > 0) {
-                jQuery.get(
-                    posts[proxPost].url,
-                    function (data) {
-                        try {
-                            $('.postsDoBlog').append(data);
-                            FB.XFBML.parse(document.getElementById(posts[proxPost].id));
-                            proxPost--;
-                        } catch (error) {
-                            console.log(error);
-                        }                    
-                    },
-                    'html'
-                );
-            }
-        }
-        window.addEventListener("scroll", () => {
-            var elem = document.querySelector('html');
-            if (elem.clientHeight + elem.scrollTop >= elem.scrollHeight) {
-                reqPost();
-            }
+    /**
+     * Handling posts
+     */
+    let allposts = [];
+    let post = [];
+    let pathname = location.pathname;
+
+    // Map posts into an array
+    let mapPosts = (res) => allposts = res.map( ele => ele );
+    // Append posts inside a container
+    let appendContent = (container = '', content) => $(container).append(content);
+    // GET posts using ajax
+    let req_data = (url = '', fn) => {
+        $.ajax( url, {
+            async: true,
+            success: (res) => fn(res),
+            error: (xhr, s, error) => console.log(error)
         });
-    });*/
+    };
+    // Test if window is in the end of the page
+    let isEndOfPage = () => {
+        let elem = document.querySelector('html');
+        if (elem.clientHeight + elem.scrollTop >= elem.scrollHeight) {
+            return true;
+        }
+        return false;
+    };
+
+    // Request all posts
+    $( document ).ready( () => {
+        if (pathname == '/') req_data('/post/all', mapPosts);
+    })
+    .ajaxSuccess( (event, xhr, settings) => {
+        if (settings.url == '/post/all') {
+            // console.log("Amount of posts: " + allposts.length);
+            allposts.forEach( (v,i) => appendContent('.postsDoBlog', allposts[i]));
+        }
+    });
+    // Request specific post
+    $(document).ready( () => {
+        if (pathname.length > 1) {
+            req_data(pathname, res => post = res);
+        }
+    })
+    .ajaxSuccess( (e, xhr, settings) => {
+        if (settings.url == pathname) appendContent('.postsDoBlog', post);
+    });
+    </script>
+    <script>
+    /**
+     * Handle posts in the home page
+     */
+    // UTILIZAR A FUNÇÃO ABAIXO PARA RENDERIZAR OS COMENTARIOS DO POST RECEM CARREGADO
+    // FB.XFBML.parse(document.getElementById(posts[proxPost].id));
+    // Append posts as the user scrolls down
+    window.addEventListener("scroll", () => {
+    });
     </script>
     <script>
     /* animacao do toggler que abre e fecha a area de navegação */
@@ -127,15 +139,6 @@
             } else {
                 $(navbarLateral).css('width', 0);
             }
-        });
-    });
-    </script>
-    <script>
-    /* animação de abertura do menu lateral direito */
-    var aside = $('aside');
-    $(document).ready( function() {
-        $('.toggleLadoDireito').on('click', function() {
-            $(aside).toggleClass('navegacaoRapidaAberta');
         });
     });
     </script>
