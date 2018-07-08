@@ -48,7 +48,7 @@ let readdirAsync =  (dir) => {
 };
 
 // Read one file asynchronously
-fs.readFileAsync = (filename, enc) => {
+let readFileAsync = (filename, enc) => {
     return new Promise( (resolve, reject) => {
         fs.readFile('./routes/post/' + filename, enc, (err, data) => {
             if (err) reject(err);
@@ -58,8 +58,8 @@ fs.readFileAsync = (filename, enc) => {
 };
 
 // Utility function that returns a Promise
-function getFile (filename) {
-    return fs.readFileAsync(filename, 'utf8');
+let getFile = (filename) => {
+    return readFileAsync(filename, 'utf8');
 };
 
 // Returns all posts as a Promise
