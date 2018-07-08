@@ -98,10 +98,10 @@
 
     // Request all posts
     $( document ).ready( () => {
-        if (pathname == '/') req_data('/post/all', mapPosts);
+        if (pathname == '/') req_data( 'http://' + location.host + '/post/all', mapPosts);
     })
     .ajaxSuccess( (event, xhr, settings) => {
-        if (settings.url == '/post/all') {
+        if (settings.url == 'http://' + location.host + '/post/all') {
             // console.log("Amount of posts: " + allposts.length);
             allposts.forEach( (v,i) => appendContent('.postsDoBlog', allposts[i]));
         }
