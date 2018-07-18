@@ -1,5 +1,4 @@
 node_modules/
-views/
 public/css/.sass-cache
 app_just_node.js
 *.log
