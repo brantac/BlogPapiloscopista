@@ -1,4 +1,6 @@
 const fs = require('fs');
+const butter = require('buttercms')('8b41c028f37bd170bd68bb4c9f4e3578950cfc0a');
+
 /* Array list about all posts */
 exports.blog_posts = [
     {"id": 1, "title": 'Primeiro Post', "slug": 'primeiro-post', "path": '/post/primeiro-post'},
@@ -70,3 +72,10 @@ exports.collectAllPosts = () => {
     })
     .catch( (reason) => reason);
 };
+
+// Butter CMS fuction calls
+exports.getAll = (fn) => {
+    return butter.post.list({page: 1, page_size: 10})
+    .then( fn )
+    .catch( reason => console.log(reason) );
+}
