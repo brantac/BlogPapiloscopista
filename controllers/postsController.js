@@ -48,3 +48,14 @@ exports.getAllPostsPromise = function (req, res, next) {
     })
     .catch( (err) => console.log(err));
 };
+
+// Send specific post collected from Buttercms
+exports.sendPost = (req, res, next) => {
+    let slug = req.params.slug;
+    posts_model.getpost( (response) => {
+        res.render('post', {
+            title: response.data.data.title,
+            content: response.data.data
+        });
+    });
+};
