@@ -17,7 +17,7 @@ exports.indexRender = (req, res, next) => {
         res.render('index', {'posts': posts});
     })
     .catch( reason => console.log(reason) ); */
-    let posts = posts_model.getAll( (response) => {
+    let posts = posts_model.all( (response) => {
         res.render('index', {posts: response.data.data});
     });
 };
