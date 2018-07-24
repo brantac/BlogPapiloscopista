@@ -73,9 +73,16 @@ exports.collectAllPosts = () => {
     .catch( (reason) => reason);
 };
 
-// Butter CMS fuction calls
-exports.getAll = (fn) => {
+// Butter CMS API calls
+// fetch all posts in one page
+exports.all = (fn) => {
     return butter.post.list({page: 1, page_size: 10})
     .then( fn )
     .catch( reason => console.log(reason) );
-}
+};
+// fetch one specific post
+exports.getpost = (slug, fn) => {
+    return butter.post.retrieve(slug)
+    .then( fn )
+    .catch( reason => console.log(reason) );
+};
