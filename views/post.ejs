@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <% include ./partials/head %>
+    </head>
+    <body>
+        <header class="container-fluid barraNavTopo text-center mb-5 pt-3">
+            <% include ./partials/header %>
+        </header>
+
+        <!-- Menu de navegação esquerdo -->
+        <nav class="navbarLateral">
+            <% include ./partials/sidenavbar %>
+        </nav>
+
+        <main class="container">
+            <div class="row justify-content-md-center">
+                <div class="postsDoBlog col-md-8">
+                    <article class="post">
+                        <h1><%= title %></h1>
+                        <%- content.body %>
+                    </article>
+                </div>
+            </div>
+        </main>
+
+        <!-- jQuery, Popper.js, JavaScript -->
+        <script type="text/javascript" src="/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script type="text/javascript" src="/libs/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script> -->
+        <script>
+        /* abre/fecha sidenavbar */
+        $(document).ready(function () {
+            var toggleNavegacao = $('#toggleNavegacao');
+            var navbarLateral = $('.navbarLateral');
+            $('#toggleNavegacao').on('click', function () {
+                $(this).toggleClass('abreFechaMenu');
+    
+                if ( -1 !== $(toggleNavegacao).prop('class').search('abreFechaMenu') ) {
+                    $(navbarLateral).css('width', 190);
+                } else {
+                    $(navbarLateral).css('width', 0);
+                }
+            });
+        });
+        </script>
+    </body>
+</html>
