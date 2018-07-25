@@ -80,9 +80,9 @@ exports.all = (fn) => {
     .then( fn )
     .catch( reason => console.log(reason) );
 };
-// fetch one specific post
-exports.getpost = (slug, fn) => {
+// fetch a specific post
+exports.getpost = (slug, fn1, fn2) => {
     return butter.post.retrieve(slug)
-    .then( fn )
-    .catch( reason => console.log(reason) );
+    .then( fn1 )
+    .catch( fn2 );
 };
