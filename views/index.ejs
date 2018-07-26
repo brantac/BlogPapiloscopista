@@ -40,88 +40,21 @@
                     <% }) %>
                 </div>
             </div><!-- /row -->
+
+            <% if (previous_page) { %>
+                <a class="pagination" href="/p/<%= previous_page %>">Anterior</a>
+            <% } %>
+
+            <% if (next_page) { %>
+                <a class="pagination" href="/p/<%= next_page %>">Proxima</a>
+            <% } %>
         </main>
 
         <!-- jQuery, Popper.js, JavaScript -->
-        <script type="text/javascript" src="/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-        <script type="text/javascript" src="/libs/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script> -->
-        <!-- Butter cdn -->
-        <!-- <script src="https://cdnjs.buttercms.com/buttercms-1.1.0.min.js"></script> -->
-        <script>
-            // var butter = Butter('8b41c028f37bd170bd68bb4c9f4e3578950cfc0a');
-        </script>
-        <script>
-        /**
-         * Handling posts
-         */
-        let allposts = [];
-        let post = [];
-        let pathname = location.pathname;
-        let position = 0; // the last loaded post
-        let index;
-        let lastPostIndex = -1;
-    
-        // Map posts into an array
-        let mapPosts = (res) => allposts = res.map( ele => ele );
-        // Append posts inside a container
-        let appendContent = (container = '', content) => $(container).append(content);
-        // GET posts using ajax
-        let req_data = (url = '', fn) => {
-            $.ajax( url, {
-                async: true,
-                success: (res) => fn(res),
-                error: (xhr, s, error) => console.log(error)
-            });
-        };
-        // Test if window is in the end of the page
-        let isEndOfPage = () => {
-            let elem = document.querySelector('html');
-            if (elem.clientHeight + elem.scrollTop >= elem.scrollHeight) {
-                return true;
-            }
-            return false;
-        };
-    
-        // Request all posts
-        $( document ).ready( () => {
-            if (pathname == '/') req_data( 'http://' + location.host + '/post/all', mapPosts);
-        })
-        .ajaxSuccess( (event, xhr, settings) => {
-            if (settings.url == 'http://' + location.host + '/post/all') {
-                // console.log("Amount of posts: " + allposts.length);
-                // allposts.forEach( (v,i) => appendContent('.postsDoBlog', allposts[i]));
-                if ( allposts.length > 0) {
-                    lastPostIndex = allposts.length - 1;
-                    index = lastPostIndex;
-                    position++;
-                    appendContent('.postsDoBlog', allposts[lastPostIndex]);
-                }
-            }
-        });
-        // Request specific post
-        $(document).ready( () => {
-            if (pathname.length > 1) {
-                req_data(pathname, res => post = res);
-            }
-        })
-        .ajaxSuccess( (e, xhr, settings) => {
-            if (settings.url == pathname) appendContent('.postsDoBlog', post);
-        });
-        // Show only one post and hide the ones that are not in the center of the screen
-        // It's important to keep track of which post is being showed.
-        // The first post is the number 0: it has 'display: ' and the others 'display: hidden'.
-    
-        // Load a new post IF there's more and the screen is in the end of the page
-        $(document).scroll( () => {
-            if ( position < allposts.length && isEndOfPage() ) {
-                index--;
-                appendContent('.postsDoBlog', allposts[index]);
-                position++;
-            }
-        });
-        </script>
+        <!-- <script type="text/javascript" src="/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script type="text/javascript" src="/libs/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
         <script>
         /* animacao do toggler que abre e fecha a area de navegação */
         $(document).ready(function () {
