@@ -1,23 +1,24 @@
 const posts_model = require('../models/postsModel');
 
-const fileOptions = {
-    root: '.'
-}
-
-// Send the index.html
-exports.index = function (req, res, next) {
-    res.sendFile(__dirname + '/routes/index.html');
+// Butter CMS
+// Send index page
+exports.index = (req, res, next) => {
+    posts_model.list( (response) => {
+        res.render('index', {
+            posts: response.data.data,
+            previous_page: response.data.meta.previous_page,
+            next_page: response.data.meta.next_page
+        });
+    });
 };
 
-// Send the index view (ESJ)
-exports.indexRender = (req, res, next) => {
-    /* posts_model.collectAllPosts()
-    .then( posts => {
-        console.log(typeof posts[0]);
-        res.render('index', {'posts': posts});
-    })
-    .catch( reason => console.log(reason) ); */
-    let posts = posts_model.all( (response) => {
-        res.render('index', {posts: response.data.data});
-    });
+// Send numbered page
+exports.page = (req, res, next) => {
+    posts_model.list( (response) => {
+        res.render('index', {
+            posts: response.data.data,
+            previous_page: response.data.meta.previous_page,
+            next_page: response.data.meta.next_page
+        });
+    }, req.params.page);
 };
