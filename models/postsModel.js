@@ -75,8 +75,8 @@ exports.collectAllPosts = () => {
 
 // Butter CMS API calls
 // fetch all posts in one page
-exports.all = (fn) => {
-    return butter.post.list({page: 1, page_size: 10})
+exports.list = (fn, page = 1) => {
+    return butter.post.list({page: page, page_size: 10})
     .then( fn )
     .catch( reason => console.log(reason) );
 };
