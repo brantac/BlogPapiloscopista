@@ -16,10 +16,5 @@ app.use( express.static(path.join(__dirname, 'public')) );
 // Routes
 app.use('/', index);
 app.use('/post', posts);
-/* app.get('/',(req, res) => {
-    if (!req.xhr) {
-        res.sendFile(path.join(__dirname, 'routes/index.html'));
-    }
-}); */
 
 app.listen(3000, () => console.log('App.js running at http://localhost:3000'));
