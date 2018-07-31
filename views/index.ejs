@@ -34,7 +34,7 @@
                 <div class="postsDoBlog col-md-8">
                     <% posts.forEach( (post) => {%>
                         <article class="post">
-                            <h1><%= post.title %></h1>
+                            <h1><a href="http://localhost:3000/post/<%= post.slug %>"><%= post.title %></a></h1>
                             <%- post.body %>
                         </article>
                     <% }) %>
@@ -49,6 +49,10 @@
                 <a class="pagination" href="/p/<%= next_page %>">Proxima</a>
             <% } %>
         </main>
+
+        <footer class="container-fluid mt-5">
+            <% include ./partials/footer %>
+        </footer>
 
         <!-- jQuery, Popper.js, JavaScript -->
         <!-- <script type="text/javascript" src="/libs/popper.js/1.12.9/umd/popper.min.js"></script>
