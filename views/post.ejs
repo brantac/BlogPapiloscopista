@@ -19,6 +19,8 @@
                     <article class="post">
                         <% if (status === 200) { %> 
                             <h1><%= title %></h1>
+                            <h5><%= published.getDay() %>/<%= published.getMonth()+1 %>/<%= published.getFullYear() %></h5>
+                            <h5><%= content.author.first_name%> <%= content.author.last_name%></h5>
                             <%- content.body %>
                         <% } else if (status === 404) { %>
                             <h3>Página não encontrada!</h3>
