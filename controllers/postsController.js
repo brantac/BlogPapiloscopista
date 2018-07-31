@@ -56,9 +56,11 @@ exports.sendPost = (req, res, next) => {
     posts_model.getpost(slug,
         // sends the post if it exist
         (response) => {
+            console.log(response);
         res.render('post', {
             title: response.data.data.title,
             content: response.data.data,
+            published: new Date(response.data.data.published),
             status: response.status
         });
     },
