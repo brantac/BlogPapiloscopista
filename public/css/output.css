@@ -112,6 +112,11 @@
   border-radius: 4px;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.5); }
 
+.pagination a {
+  color: #313138; }
+  .pagination a:hover {
+    color: #313138; }
+
 footer {
   background: #313138;
   padding: 1rem; }
