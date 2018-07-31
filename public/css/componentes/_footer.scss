@@ -1,7 +1,17 @@
 footer {
+    background: #313138;
+    padding: 1rem;
     p {
+        color: rgba(200,200,200,0.8);
         font: {
             size: 0.8rem;
+        }
+        a {
+            color: #17CC6A;
+            &:hover {
+                text-decoration: none;
+                color: #17CC6A;
+            }
         }
     }
 }

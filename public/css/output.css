@@ -112,8 +112,17 @@
   border-radius: 4px;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.5); }
 
-footer p {
-  font-size: 0.8rem; }
+footer {
+  background: #313138;
+  padding: 1rem; }
+  footer p {
+    color: rgba(200, 200, 200, 0.8);
+    font-size: 0.8rem; }
+    footer p a {
+      color: #17CC6A; }
+      footer p a:hover {
+        text-decoration: none;
+        color: #17CC6A; }
 
 /* página principal */
 body {
