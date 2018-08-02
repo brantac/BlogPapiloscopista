@@ -4,6 +4,23 @@
     background: white;
     border-radius: 4px;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+
+    a {
+        text-decoration: none;
+    }
+    h3 > a, h6, .summary {
+        color: $onyx;
+    }
+    .summary-header {
+        a {
+            &:hover {
+                color: $onyx;
+            }
+        }
+    }
+    .summary {
+        text-align: justify;
+    }
 }
 
 .pagination {

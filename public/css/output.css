@@ -111,6 +111,14 @@
   background: white;
   border-radius: 4px;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.5); }
+  .post a {
+    text-decoration: none; }
+  .post h3 > a, .post h6, .post .summary {
+    color: #313638; }
+  .post .summary-header a:hover {
+    color: #313638; }
+  .post .summary {
+    text-align: justify; }
 
 .pagination a {
   color: #313138; }
