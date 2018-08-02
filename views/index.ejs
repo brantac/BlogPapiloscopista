@@ -34,9 +34,13 @@
                 <div class="postsDoBlog col-md-8">
                     <% posts.forEach( (post) => {%>
                         <article class="post">
-                            <h3><a href="/post/<%= post.slug %>"><%= post.title %></a></h3>
-                            <h5>Por <%= post.author.first_name %> <%= post.author.last_name %></h5>
-                            <%- post.summary %>
+                            <div class="summary-header text-center mb-4">
+                                <h3><a href="/post/<%= post.slug %>"><%= post.title %></a></h3>
+                                <h6>Por <%= post.author.first_name %> <%= post.author.last_name %></h6>
+                            </div>
+                            <div class="summary">
+                                <%- post.summary %>
+                            </div>
                         </article>
                     <% }) %>
                 </div>
