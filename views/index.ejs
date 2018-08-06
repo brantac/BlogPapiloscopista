@@ -20,7 +20,7 @@
             });
         </script>
         
-        <header class="container-fluid barraNavTopo text-center mb-5 pt-3">
+        <header class="container-fluid barraNavTopo pt-3 pb-3 mb-4">
             <% include ./partials/header %>
         </header>
 
@@ -71,12 +71,12 @@
         <script>
         /* animacao do toggler que abre e fecha a area de navegação */
         $(document).ready(function () {
-            var toggleNavegacao = $('#toggleNavegacao');
+            var toggle = $('#sidenav-toggle');
             var navbarLateral = $('.navbarLateral');
-            $('#toggleNavegacao').on('click', function () {
+            $('#sidenav-toggle').on('click', function () {
                 $(this).toggleClass('abreFechaMenu');
     
-                if ( -1 !== $(toggleNavegacao).prop('class').search('abreFechaMenu') ) {
+                if ( -1 !== $(toggle).prop('class').search('abreFechaMenu') ) {
                     $(navbarLateral).css('width', 190);
                 } else {
                     $(navbarLateral).css('width', 0);
