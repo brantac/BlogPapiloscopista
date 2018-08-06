@@ -3,69 +3,54 @@
 @import url("https://fonts.googleapis.com/css?family=Playfair+Display");
 @import url("https://fonts.googleapis.com/css?family=Lora");
 .barraNavTopo {
-  background: #d83e3e; }
-  .barraNavTopo .grupoNavegacao #toggleNavegacao {
-    position: relative;
-    z-index: 2;
-    width: 30px;
-    height: 30px; }
-    @media (min-width: 768px) {
-      .barraNavTopo .grupoNavegacao #toggleNavegacao {
-        width: 40px;
-        height: 40px; } }
-    .barraNavTopo .grupoNavegacao #toggleNavegacao:hover {
-      cursor: pointer; }
-    .barraNavTopo .grupoNavegacao #toggleNavegacao .traco1, .barraNavTopo .grupoNavegacao #toggleNavegacao .traco2, .barraNavTopo .grupoNavegacao #toggleNavegacao .traco3 {
-      position: absolute;
-      width: 30px;
-      height: 4px;
-      background: #424242;
-      border-radius: 4px;
-      transition-duration: 0.5s; }
-      @media (min-width: 768px) {
-        .barraNavTopo .grupoNavegacao #toggleNavegacao .traco1, .barraNavTopo .grupoNavegacao #toggleNavegacao .traco2, .barraNavTopo .grupoNavegacao #toggleNavegacao .traco3 {
-          width: 40px; } }
-    .barraNavTopo .grupoNavegacao #toggleNavegacao .traco1 {
-      top: 0; }
-    .barraNavTopo .grupoNavegacao #toggleNavegacao .traco2 {
-      top: 50%; }
-    .barraNavTopo .grupoNavegacao #toggleNavegacao .traco3 {
-      bottom: 0; }
-    .barraNavTopo .grupoNavegacao #toggleNavegacao.abreFechaMenu .traco1 {
-      -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-      transform: rotate(45deg); }
-    .barraNavTopo .grupoNavegacao #toggleNavegacao.abreFechaMenu .traco2 {
-      background: rgba(0, 0, 0, 0); }
-    .barraNavTopo .grupoNavegacao #toggleNavegacao.abreFechaMenu .traco3 {
-      -webkit-transform: rotate(315deg);
-      -ms-transform: rotate(315deg);
-      transform: rotate(315deg); }
-    .barraNavTopo .grupoNavegacao #toggleNavegacao.abreFechaMenu .traco1, .barraNavTopo .grupoNavegacao #toggleNavegacao.abreFechaMenu .traco3 {
-      top: 50%; }
-    @media screen and (max-width: 1560px) {
-      .barraNavTopo .grupoNavegacao #toggleNavegacao.abreFechaMenu .traco1, .barraNavTopo .grupoNavegacao #toggleNavegacao.abreFechaMenu .traco3 {
-        background: #7c7c7c; } }
-  .barraNavTopo img {
-    height: 3.5rem; }
-  .barraNavTopo a {
-    vertical-align: middle;
-    font-size: 1.5rem; }
-    .barraNavTopo a .transform90 {
-      font-size: 1.0rem;
-      display: inline-block;
-      vertical-align: middle;
-      -ms-transform: rotate(-90deg);
-      -webkit-transform: rotate(-90deg);
-      transform: rotate(-90deg); }
-      @media (min-width: 768px) {
-        .barraNavTopo a .transform90 {
-          font-size: 1.9rem; } }
-    .barraNavTopo a:link, .barraNavTopo a:visited {
-      color: black; }
-    @media (min-width: 768px) {
-      .barraNavTopo a {
-        font-size: 2.5rem; } }
+  background: white; }
+
+.logo-group img {
+  height: 30px; }
+.logo-group a {
+  letter-spacing: 2px;
+  vertical-align: middle;
+  font-size: 1.2rem; }
+  .logo-group a:link, .logo-group a:visited {
+    color: black; }
+
+/* toggler used to open sidenav */
+#sidenav-toggle {
+  display: inline-block;
+  position: fixed;
+  z-index: 2;
+  width: 25px;
+  height: 25px;
+  vertical-align: middle; }
+  #sidenav-toggle:hover {
+    cursor: pointer; }
+  #sidenav-toggle .traco1, #sidenav-toggle .traco2, #sidenav-toggle .traco3 {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: #D83E3E;
+    border-radius: 4px;
+    transition-duration: 0.5s; }
+  #sidenav-toggle .traco1 {
+    top: 0; }
+  #sidenav-toggle .traco2 {
+    top: 50%; }
+  #sidenav-toggle .traco3 {
+    bottom: 0; }
+  #sidenav-toggle.abreFechaMenu .traco1, #sidenav-toggle.abreFechaMenu .traco3 {
+    background: #313638; }
+  #sidenav-toggle.abreFechaMenu .traco1 {
+    top: 50%;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg); }
+  #sidenav-toggle.abreFechaMenu .traco2 {
+    background: rgba(0, 0, 0, 0); }
+  #sidenav-toggle.abreFechaMenu .traco3 {
+    top: 50%;
+    -webkit-transform: rotate(315deg);
+    -ms-transform: rotate(315deg);
+    transform: rotate(315deg); }
 
 .navbarLateral {
   height: 100%;
@@ -74,7 +59,7 @@
   z-index: 1;
   top: 0;
   left: 0;
-  background: white;
+  background: #D83E3E;
   overflow-x: hidden;
   padding-top: 10rem;
   transition: 0.5s;
@@ -82,17 +67,20 @@
   .navbarLateral ul {
     padding-left: 0; }
     .navbarLateral ul li {
-      padding-top: 1rem;
-      padding-bottom: 1rem;
+      letter-spacing: 1.2px;
+      font-weight: 500;
       list-style: none;
-      transition: 0.3s;
-      cursor: pointer; }
-      .navbarLateral ul li:hover a {
-        color: #d83e3e; }
+      cursor: pointer;
+      padding-top: 1rem;
+      padding-bottom: 1rem; }
+      .navbarLateral ul li:hover {
+        background: white; }
+        .navbarLateral ul li:hover a {
+          color: #313638; }
       .navbarLateral ul li a {
         margin-left: 1rem;
         font-size: 1.2rem;
-        color: gray;
+        color: white;
         text-decoration: unset; }
 
 .social .compartilhar {

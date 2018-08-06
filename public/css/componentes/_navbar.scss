@@ -1,88 +1,61 @@
 .barraNavTopo {
-    background: #d83e3e;
-    .grupoNavegacao {
-        #toggleNavegacao {
-            position: relative;
-            z-index: 2;
-            width: 30px;
-            height: 30px;
-            @include md {
-                width: 40px;
-                height: 40px;
-            }
-            &:hover {
-                cursor: pointer;
-            }
-            .traco1, .traco2, .traco3 {
-                position: absolute;
-                width: 30px;
-                height: 4px;
-                background: $cinzaEscuro;
-                border-radius: 4px;
-                transition-duration: 0.5s;
-                @include md {
-                    width: 40px;
-                }
-            }
-            .traco1 {
-                top: 0;
-            }
-            .traco2 {
-                top: 50%;
-            }
-            .traco3 {
-                bottom: 0;
-            }
-            &.abreFechaMenu {
-                .traco1 {
-                    @include transform(45deg);
-                }
-                .traco2 {
-                    background: rgba(0,0,0,0.0);
-                }
-                .traco3 {
-                    @include transform(315deg);
-                }
-            }
-            
-            &.abreFechaMenu .traco1,
-            &.abreFechaMenu .traco3 {
-                top: 50%;
-            }
-            @media screen and (max-width: 1560px) {
-                &.abreFechaMenu .traco1,
-                &.abreFechaMenu .traco3 {
-                    background: $cinzaClaro;
-                }
-            }
-        }
-    }
+    background: white;
+}
+.logo-group {
     img {
-        height: 3.5rem;
+        height: 30px;
     }
     a {
-        .transform90 {
-            font: {
-                size: 1.0rem;
-            }
-            display: inline-block;
-            vertical-align: middle;
-            -ms-transform: rotate(-90deg);
-            -webkit-transform: rotate(-90deg);
-            transform: rotate(-90deg);
-            @include md {
-                font-size: 1.9rem;
-            }
-        }
+        letter-spacing: 2px;
         vertical-align: middle;
+        font-size: 1.2rem;
         &:link, &:visited {
             color:black;
         }
-        font: {
-            size: 1.5rem;
+    }
+}
+/* toggler used to open sidenav */
+#sidenav-toggle {
+    display: inline-block;
+    position: fixed;
+    z-index: 2;
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+    &:hover {
+        cursor: pointer;
+    }
+    .traco1, .traco2, .traco3 {
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background: $red;
+        border-radius: 4px;
+        transition-duration: 0.5s;
+    }
+    .traco1 {
+        top: 0;
+    }
+    .traco2 {
+        top: 50%;
+    }
+    .traco3 {
+        bottom: 0;
+    }
+    &.abreFechaMenu {
+        .traco1, .traco3 {
+            background: $onyx;
         }
-        @include md {
-            font-size: 2.5rem;
+        .traco1 {
+            top: 50%;
+            @include transform(45deg);
+        }
+        .traco2 {
+            background: rgba(0,0,0,0.0);
+        }
+        .traco3 {
+            top: 50%;
+            @include transform(315deg);
         }
     }
 }
@@ -94,7 +67,7 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background: white;
+    background: $red;
     overflow-x: hidden;
     padding-top: 10rem;
     transition: 0.5s;
@@ -103,22 +76,24 @@
     ul {
         padding-left: 0;
         li {
+            letter-spacing: 1.2px;
+            font-weight: 500;
+            list-style: none;
+            cursor: pointer;
             padding: {
                 top: 1rem;
                 bottom: 1rem;
             }
-            list-style: none;
-            transition: 0.3s;
-            cursor: pointer;
             &:hover {
+                background: white;
                 a {
-                    color: #d83e3e;
+                    color: $onyx;
                 }
             }
             a {
                 margin-left: 1rem;
                 font-size: 1.2rem;
-                color: gray;
+                color: white;
                 text-decoration: unset;
             }
         }
