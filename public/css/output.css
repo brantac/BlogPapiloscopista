@@ -3,7 +3,8 @@
 @import url("https://fonts.googleapis.com/css?family=Playfair+Display");
 @import url("https://fonts.googleapis.com/css?family=Lora");
 .barraNavTopo {
-  background: white; }
+  background: white;
+  box-shadow: 0px 2px rgba(0, 0, 0, 0.1); }
 
 .logo-group img {
   height: 30px; }
@@ -54,17 +55,19 @@
 
 .navbarLateral {
   height: 100%;
-  width: 0;
+  width: 190px;
   position: fixed;
   z-index: 1;
   top: 0;
-  left: 0;
+  left: -190px;
   background: #D83E3E;
   overflow-x: hidden;
-  padding-top: 10rem;
   transition: 0.5s;
   box-shadow: 1.5px 0px rgba(0, 0, 0, 0.1); }
+  .navbarLateral hr {
+    background: white; }
   .navbarLateral ul {
+    margin-top: 80px;
     padding-left: 0; }
     .navbarLateral ul li {
       letter-spacing: 1.2px;
