@@ -5,6 +5,7 @@
     border-radius: 4px;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
 
+    /* summary in the index page */
     a {
         text-decoration: none;
     }
@@ -20,6 +21,22 @@
     }
     .summary {
         text-align: justify;
+    }
+
+    /* post page */
+    .post-header {
+        text-align: center;
+        margin-bottom: 3rem;
+
+        p {
+            margin-top: 2rem;
+            color: $gainsboro;
+        }
+    }
+    .post-body {
+        p {
+            text-align: justify;
+        }
     }
 }
 

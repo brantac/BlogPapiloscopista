@@ -17,11 +17,14 @@
             <div class="row justify-content-md-center">
                 <div class="postsDoBlog col-md-8">
                     <article class="post">
-                        <% if (status === 200) { %> 
-                            <h1><%= title %></h1>
-                            <h5><%= published.getDay() %>/<%= published.getMonth()+1 %>/<%= published.getFullYear() %></h5>
-                            <h5><%= content.author.first_name%> <%= content.author.last_name%></h5>
-                            <%- content.body %>
+                        <% if (status === 200) { %>
+                            <div class="post-header">
+                                <h1><%= title %></h1>
+                                <p><%= published.getDay() %>/<%= published.getMonth()+1 %>/<%= published.getFullYear() %>, por <a href="/autor"><%= content.author.first_name%> <%= content.author.last_name%></a></p>
+                            </div>
+                            <div class="post-body">
+                                <%- content.body %>
+                            </div>
                         <% } else if (status === 404) { %>
                             <h3>Página não encontrada!</h3>
                         <% } else { %> 
