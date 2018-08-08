@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
-        <% include ./partials/head %>
+        <% include ./partials/headpost %>
     </head>
     <body>
+        <!-- Facebook JavaScript SDK -->
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.1';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
         <header class="container-fluid barraNavTopo mb-4 pb-3 pt-3">
             <% include ./partials/header %>
         </header>
@@ -31,6 +41,9 @@
                             <h3>Ocorreu algum problema.</h3>
                         <% } %>
                     </article>
+                    <div class="post-social">
+                        <div class="fb-share-button" data-href="http://localhost:3000/post/<%= content.slug %>" data-layout="button" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A3000%2Fpost%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartilhar</a></div>
+                    </div>
                 </div>
             </div>
         </main>
@@ -40,10 +53,12 @@
 
         <!-- jQuery, Popper.js, JavaScript -->
         <!-- RETIRAR AS BIBLIOTECAS LOCAIS AO LANÇAR O SITE! -->
+        <!-- <script type="text/javascript" src="/libs/jquery//3.2.1/jquery.js"></script>
         <script type="text/javascript" src="/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-        <script type="text/javascript" src="/libs/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script> -->
+        <script type="text/javascript" src="/libs/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
         <script>
         /* abre/fecha sidenavbar */
         $(document).ready(function () {
