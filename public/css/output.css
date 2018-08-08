@@ -121,6 +121,10 @@
   .post .post-body p {
     text-align: justify; }
 
+.post-social {
+  background: #ffffff;
+  min-height: 2rem; }
+
 .pagination a {
   color: #313138; }
   .pagination a:hover {
