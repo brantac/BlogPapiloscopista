@@ -17,4 +17,8 @@ app.use( express.static(path.join(__dirname, 'public')) );
 app.use('/', index);
 app.use('/post', posts);
 
-app.listen(3000, () => console.log('App.js running at http://localhost:3000'));
+app.listen(process.env.PORT || 3000, () => {
+    const port = process.env.PORT || 3000;
+    const host = process.env.HOST || 'localhost';
+    console.log(`App.js running at http://${host}:${port}`);
+});
