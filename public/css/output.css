@@ -122,8 +122,18 @@
     text-align: justify; }
 
 .post-social {
+  position: relative;
+  list-style: none;
+  padding: 1rem;
   background: #ffffff;
-  min-height: 2rem; }
+  min-height: 1rem;
+  text-align: center; }
+  .post-social li {
+    display: inline;
+    vertical-align: middle;
+    margin-right: 0.5rem; }
+    .post-social li a {
+      font-size: 1.2rem; }
 
 .pagination a {
   color: #313138; }
