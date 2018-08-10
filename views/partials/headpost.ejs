@@ -4,8 +4,21 @@
 
 <!-- Icone da aba -->
 <link rel="icon" href="/img/icones/blog_icon_15px.png" type="img/png" sizes="15x15">
-<!-- Titulo na aba da página -->
-<title>Papiloscopiando - <%= title %></title>
+<% if (status === 200) { %>
+    <!-- Titulo na aba da página -->
+    <title><%= title %> - Papiloscopiando</title>
+    <!-- Facebook moderation config -->
+    <meta property="fb:app_id"         content="Facebook App ID"/>
+    <meta property="og:url"           content="https://papiloscopiando.com.br/post/<%= content.slug %>" />
+    <meta property="og:type"          content="article" />
+    <meta property="og:title"         content="<%= title %>" />
+    <meta property="og:description"   content="<%= content.meta_description %>" />
+    <meta property="og:image"         content="<%= content.featured_image ? content.featured_image : '' %>"/>
+<% } else { %>
+    <title>Não encontrada - Papiloscopiando</title>
+<% } %>
+<!-- Linkedin widget loader -->
+<script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: pt_BR</script>
 
 
 <!-- Stylesheets -->
@@ -13,9 +26,3 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" media="screen" href="/css/output.css" />
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-<!-- Facebook moderation config -->
-<meta property="og:url"           content="http://localhost:3000/post/<%= content.slug %>" />
-<meta property="og:type"          content="article" />
-<meta property="og:title"         content="<%= title %>" />
-<meta property="og:description"   content="<%= content.meta_description %>" />
