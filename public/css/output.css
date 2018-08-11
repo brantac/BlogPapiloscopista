@@ -8,12 +8,14 @@
 
 .logo-group img {
   height: 30px; }
-.logo-group a {
+.logo-group .navbar-brand {
+  border-bottom: 3px solid #D83E3E;
+  font-weight: 800;
   letter-spacing: 2px;
   vertical-align: middle;
-  font-size: 1.2rem; }
-  .logo-group a:link, .logo-group a:visited {
-    color: black; }
+  font-size: 1.5rem; }
+  .logo-group .navbar-brand:link, .logo-group .navbar-brand:visited {
+    color: #253069; }
 
 /* toggler used to open sidenav */
 #sidenav-toggle {
