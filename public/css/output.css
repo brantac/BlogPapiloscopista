@@ -3,8 +3,10 @@
 @import url("https://fonts.googleapis.com/css?family=Playfair+Display");
 @import url("https://fonts.googleapis.com/css?family=Lora");
 .barraNavTopo {
-  background: white;
-  box-shadow: 0px 2px rgba(0, 0, 0, 0.1); }
+  position: fixed;
+  top: 0;
+  background: rgba(255, 255, 255, 0.95);
+  z-index: 2; }
 
 .logo-group img {
   height: 30px; }
@@ -21,7 +23,6 @@
 #sidenav-toggle {
   display: inline-block;
   position: fixed;
-  z-index: 2;
   width: 25px;
   height: 25px;
   vertical-align: middle; }
@@ -98,6 +99,10 @@
   height: 0;
   overflow: hidden; }
 
+main > div {
+  position: relative;
+  margin-top: 7rem; }
+
 .post {
   padding: 1.5rem;
   margin-bottom: 2rem;
@@ -154,15 +159,12 @@ footer {
         text-decoration: none;
         color: #17CC6A; }
 
+body {
+  margin: 0; }
+
 /* página principal */
 body {
   background: #eeeeee; }
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Playfair Display", serif; }
-
-p {
-  font-family: "Lora", serif; }
 
 /* bootstrap */
 .navbar-brand {
