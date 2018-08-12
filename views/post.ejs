@@ -46,10 +46,12 @@
                     <% if (status === 200) { %>
                         <article class="post">
                                 <div class="post-header">
-                                    <h1><%= title %></h1>
-                                    <p><%= published.getDay() %>/<%= published.getMonth()+1 %>/<%= published.getFullYear() %>, por <a href="/autor"><%= content.author.first_name%> <%= content.author.last_name%></a></p>
+                                    <a class="post-header-author-img" href="/autor"><img class="img-fluid" src="" alt="" /></a>
+                                    <a href="/autor"><%= content.author.first_name%> <%= content.author.last_name%></a>
+                                    <p><%= published.getDay()+1 %>/<%= published.getMonth()+1 %>/<%= published.getFullYear() %></p>
                                 </div>
                                 <div class="post-body">
+                                    <h1><%= title %></h1>
                                     <%- content.body %>
                                 </div>
                             </article>

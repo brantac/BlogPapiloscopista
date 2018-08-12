@@ -108,8 +108,6 @@ main > div {
   border-radius: 4px;
   /* summary in the index page */
   /* post page */ }
-  .post a {
-    text-decoration: none; }
   .post h3 > a, .post h6, .post .summary {
     color: #313638; }
   .post .summary-header a:hover {
@@ -117,11 +115,19 @@ main > div {
   .post .summary {
     text-align: justify; }
   .post .post-header {
-    text-align: center;
-    margin-bottom: 3rem; }
+    margin-bottom: 1.4rem; }
+    .post .post-header a:link, .post .post-header a:hover {
+      color: rgba(0, 0, 0, 0.8); }
     .post .post-header p {
-      margin-top: 2rem;
-      color: #E0DFD5; }
+      color: rgba(0, 0, 0, 0.5); }
+    .post .post-header .post-header-author-img {
+      position: relative;
+      float: left;
+      margin-right: 8px;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      background: gray; }
   .post .post-body p {
     text-align: justify; }
 

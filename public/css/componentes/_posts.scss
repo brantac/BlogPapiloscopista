@@ -7,9 +7,6 @@ main > div {
     border-radius: 4px;
 
     /* summary in the index page */
-    a {
-        text-decoration: none;
-    }
     h3 > a, h6, .summary {
         color: $onyx;
     }
@@ -26,12 +23,23 @@ main > div {
 
     /* post page */
     .post-header {
-        text-align: center;
-        margin-bottom: 3rem;
-
+        margin-bottom: 1.4rem;
+        a {
+            &:link, &:hover {
+                color: rgba(0,0,0,0.8);
+            }
+        }
         p {
-            margin-top: 2rem;
-            color: $gainsboro;
+            color: rgba(0,0,0,0.5);
+        }
+        .post-header-author-img {
+            position: relative;
+            float: left;
+            margin-right: 8px;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            background: gray;
         }
     }
     .post-body {
