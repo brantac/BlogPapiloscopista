@@ -99,15 +99,17 @@
   height: 0;
   overflow: hidden; }
 
-main > div {
-  position: relative;
-  margin-top: 7rem; }
+main.container-fluid {
+  padding-right: 0;
+  padding-left: 0; }
+
+.content {
+  margin-top: 7rem;
+  margin-bottom: 2rem; }
 
 .post {
-  margin-bottom: 2rem;
-  border-radius: 4px;
-  /* summary in the index page */
-  /* post page */ }
+  /* INDEX PAGE */
+  /* POST PAGE */ }
   .post h3 > a, .post h6, .post .summary {
     color: #313638; }
   .post .summary-header a:hover {
@@ -135,7 +137,7 @@ main > div {
   position: relative;
   list-style: none;
   padding: 1rem;
-  background: #ffffff;
+  background: rgba(0, 0, 0, 0.02);
   min-height: 1rem;
   text-align: center; }
   .post-social li {
@@ -144,6 +146,12 @@ main > div {
     margin-right: 0.5rem; }
     .post-social li a {
       font-size: 1.2rem; }
+      .post-social li a, .post-social li a:hover {
+        color: rgba(0, 0, 0, 0.5); }
+
+.post-comments {
+  min-height: 2rem;
+  background: rgba(0, 0, 0, 0.02); }
 
 .pagination a {
   color: #313138; }

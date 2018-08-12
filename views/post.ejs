@@ -40,47 +40,52 @@
             <% include ./partials/sidenavbar %>
         </nav>
 
-        <main class="container">
-            <div class="row justify-content-md-center">
-                <div class="postsDoBlog col-md-8">
-                    <% if (status === 200) { %>
-                        <article class="post">
-                                <div class="post-header">
-                                    <a class="post-header-author-img" href="/autor"><img class="img-fluid" src="" alt="" /></a>
-                                    <a href="/autor"><%= content.author.first_name%> <%= content.author.last_name%></a>
-                                    <p><%= published.getDay()+1 %>/<%= published.getMonth()+1 %>/<%= published.getFullYear() %></p>
-                                </div>
-                                <div class="post-body">
-                                    <h1><%= title %></h1>
-                                    <%- content.body %>
-                                </div>
-                            </article>
-                            <ul class="post-social">
-                                <!-- linkedin -->
-                                <li>
-                                    <!-- <script type="IN/Share" data-url="https://papiloscopiando.com.br/post/"></script> -->
-                                    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://papiloscopiando.com.br/post/<%= content.slug %>&source=Papiloscopiando" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                                </li>
-                                <!-- twitter -->
-                                <li>
-                                    <a href="https://twitter.com/intent/tweet?url=https://papiloscopiando.com.br/post/<%= content.slug %>" target="_blank"><i class="fab fa-twitter"></i></a>
-                                </li>
-                                <!-- facebbok -->
-                                <li>
-                                    <!-- <div class="fb-share-button" data-href="https://papiloscopista.com.br/post/<%= content.slug %>" data-layout="button" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpapiloscopista.com.br%2Fpost%2F<%= content.slug %>&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartilhar</a></div> -->
-                                    <div class="fb-share-button" data-href="https://papiloscopiando.com.br/post/terceiro-post" data-layout="button" data-size="small" data-mobile-iframe="false"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpapiloscopiando.com.br%2Fpost%2F<%= content.slug %>&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartilhar</a></div>
-                                </li>
-                            </ul>
-                            <div class="post-comments"></div>
-                        </div>
-                    <% } else if (status === 404) { %>
-                        <h3>Página não encontrada!</h3>
-                    <% } else { %> 
-                        <h3>Ocorreu algum problema.</h3>
-                    <% } %>
+        <main class="container-fluid">
+            <div class="container content">
+                <div class="row justify-content-md-center">
+                    <div class="postsDoBlog col-md-8">
+                        <% if (status === 200) { %>
+                            <article class="post">
+                                    <div class="post-header">
+                                        <a class="post-header-author-img" href="/autor"><img class="img-fluid" src="" alt="" /></a>
+                                        <a href="/autor"><%= content.author.first_name%> <%= content.author.last_name%></a>
+                                        <p><%= published.getDay()+1 %>/<%= published.getMonth()+1 %>/<%= published.getFullYear() %></p>
+                                    </div>
+                                    <div class="post-body">
+                                        <h1><%= title %></h1>
+                                        <%- content.body %>
+                                    </div>
+                                </article>
+                            </div>
+                        <% } else if (status === 404) { %>
+                            <h3>Página não encontrada!</h3>
+                        <% } else { %> 
+                            <h3>Ocorreu algum problema.</h3>
+                        <% } %>
+                    </div>
                 </div>
             </div>
+            <div class="after-content">
+                <ul class="post-social">
+                    <!-- linkedin -->
+                    <li>
+                        <!-- <script type="IN/Share" data-url="https://papiloscopiando.com.br/post/"></script> -->
+                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://papiloscopiando.com.br/post/<%= content.slug %>&source=Papiloscopiando" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </li>
+                    <!-- twitter -->
+                    <li>
+                        <a href="https://twitter.com/intent/tweet?url=https://papiloscopiando.com.br/post/<%= content.slug %>" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <!-- facebbok -->
+                    <li>
+                        <!-- <div class="fb-share-button" data-href="https://papiloscopista.com.br/post/<%= content.slug %>" data-layout="button" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpapiloscopista.com.br%2Fpost%2F<%= content.slug %>&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartilhar</a></div> -->
+                        <div class="fb-share-button" data-href="https://papiloscopiando.com.br/post/terceiro-post" data-layout="button" data-size="small" data-mobile-iframe="false"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpapiloscopiando.com.br%2Fpost%2F<%= content.slug %>&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartilhar</a></div>
+                    </li>
+                </ul>
+                <div class="post-comments"></div>
+            </div>
         </main>
+
         <footer class="container-fluid mt-5 text-center">
             <% include ./partials/footer %>
         </footer>

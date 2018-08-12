@@ -1,12 +1,15 @@
-main > div {
-    position: relative;
+main.container-fluid {
+    padding: {
+        right: 0;
+        left: 0;
+    }
+}
+.content {
     margin-top:7rem;
+    margin-bottom: 2rem;
 }
 .post {
-    margin-bottom: 2rem;
-    border-radius: 4px;
-
-    /* summary in the index page */
+    /* INDEX PAGE */
     h3 > a, h6, .summary {
         color: $onyx;
     }
@@ -21,7 +24,7 @@ main > div {
         text-align: justify;
     }
 
-    /* post page */
+    /* POST PAGE */
     .post-header {
         margin-bottom: 1.4rem;
         a {
@@ -52,7 +55,7 @@ main > div {
     position: relative;
     list-style: none;
     padding: 1rem;
-    background: #ffffff;
+    background: rgba(0,0,0,0.02);
     min-height: 1rem;
     text-align: center;
     
@@ -62,8 +65,15 @@ main > div {
         margin-right: 0.5rem;
         a {
             font-size: 1.2rem;
+            &, &:hover {
+                color: rgba(0,0,0,0.5);
+            }
         }
     }
+}
+.post-comments {
+    min-height: 2rem;
+    background: rgba(0,0,0,0.02);
 }
 
 .pagination {
