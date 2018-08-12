@@ -52,15 +52,29 @@ main.container-fluid {
     }
 }
 .after-content {
+    position: relative;
     background: rgba(0,0,0,0.02);
+}
+.share-title {
+    position: relative;
+    display: block;
+    width: 90px;
+    top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 600;
+    color: rgba(0,0,0,0.5);
 }
 .post-social {
     position: relative;
     list-style: none;
-    padding: 1rem;
+    padding: {
+        top: 3rem;
+        bottom: 3rem;
+    }
     min-height: 1rem;
     text-align: center;
-    
+
     li {
         display: inline;
         vertical-align: middle;
@@ -75,6 +89,7 @@ main.container-fluid {
 }
 .post-comments {
     min-height: 2rem;
+    padding-bottom: 3rem;
 }
 
 .pagination {
