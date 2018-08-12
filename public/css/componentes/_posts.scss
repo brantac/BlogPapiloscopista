@@ -51,11 +51,13 @@ main.container-fluid {
         }
     }
 }
+.after-content {
+    background: rgba(0,0,0,0.02);
+}
 .post-social {
     position: relative;
     list-style: none;
     padding: 1rem;
-    background: rgba(0,0,0,0.02);
     min-height: 1rem;
     text-align: center;
     
@@ -73,7 +75,6 @@ main.container-fluid {
 }
 .post-comments {
     min-height: 2rem;
-    background: rgba(0,0,0,0.02);
 }
 
 .pagination {

@@ -133,11 +133,13 @@ main.container-fluid {
   .post .post-body p {
     text-align: justify; }
 
+.after-content {
+  background: rgba(0, 0, 0, 0.02); }
+
 .post-social {
   position: relative;
   list-style: none;
   padding: 1rem;
-  background: rgba(0, 0, 0, 0.02);
   min-height: 1rem;
   text-align: center; }
   .post-social li {
@@ -150,8 +152,7 @@ main.container-fluid {
         color: rgba(0, 0, 0, 0.5); }
 
 .post-comments {
-  min-height: 2rem;
-  background: rgba(0, 0, 0, 0.02); }
+  min-height: 2rem; }
 
 .pagination a {
   color: #313138; }
