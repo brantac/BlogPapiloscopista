@@ -9,21 +9,6 @@ main.container-fluid {
     margin-bottom: 2rem;
 }
 .post {
-    /* INDEX PAGE */
-    h3 > a, h6, .summary {
-        color: $onyx;
-    }
-    .summary-header {
-        a {
-            &:hover {
-                color: $onyx;
-            }
-        }
-    }
-    .summary {
-        text-align: justify;
-    }
-
     /* POST PAGE */
     .post-header {
         margin-bottom: 1.4rem;
