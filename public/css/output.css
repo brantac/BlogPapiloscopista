@@ -159,11 +159,6 @@ main.container-fluid {
   min-height: 2rem;
   padding-bottom: 3rem; }
 
-.pagination a {
-  color: #313138; }
-  .pagination a:hover {
-    color: #313138; }
-
 footer {
   background: #313138;
   padding: 1rem; }
