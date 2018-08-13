@@ -16,17 +16,23 @@
         <main class="container-fluid">
             <div class="container content">
                 <div class="row justify-content-md-center">
-                    <div class="postsDoBlog col-md-8">
+                    <div class="col-md-8">
                         <% posts.forEach( (post) => {%>
-                            <article class="post">
-                                <div class="summary-header text-center mb-4">
-                                    <h3><a href="/post/<%= post.slug %>"><%= post.title %></a></h3>
-                                    <h6>Por <%= post.author.first_name %> <%= post.author.last_name %></h6>
+                            <div class="preview row">
+                                <div class="preview-img col-md-6">
+                                    <img class="img-fluid" src=<%= post.featured_image ? post.featured_image : "#" %> alt="" />
                                 </div>
-                                <div class="summary">
-                                    <%- post.summary %>
+                                <!-- <img style="padding-left:0;padding-right:0;" class="preview-img img-fluid col-md-6" src=<%= post.featured_image ? post.featured_image : "#" %> alt="" /> -->
+                                <div class="preview-info col-md-6">
+                                    <div class="preview-header text-center">
+                                        <a class="preview-title" href="/post/<%= post.slug %>"><%= post.title %></a>
+                                        <a class="preview-author" href="/autor"><%= post.author.first_name %> <%= post.author.last_name %></a>
+                                    </div>
+                                    <div class="summary">
+                                        <%- post.summary %>
+                                    </div>
                                 </div>
-                            </article>
+                            </div><!-- /row -->
                         <% }) %>
                     </div>
                 </div><!-- /row -->
