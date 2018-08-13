@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 @import url("https://fonts.googleapis.com/css?family=Playfair+Display");
 @import url("https://fonts.googleapis.com/css?family=Lora");
@@ -108,14 +107,7 @@ main.container-fluid {
   margin-bottom: 2rem; }
 
 .post {
-  /* INDEX PAGE */
   /* POST PAGE */ }
-  .post h3 > a, .post h6, .post .summary {
-    color: #313638; }
-  .post .summary-header a:hover {
-    color: #313638; }
-  .post .summary {
-    text-align: justify; }
   .post .post-header {
     margin-bottom: 1.4rem; }
     .post .post-header a:link, .post .post-header a:hover {
@@ -184,12 +176,42 @@ footer {
         text-decoration: none;
         color: #17CC6A; }
 
+/* todas as paginas */
 body {
   margin: 0; }
 
-/* página principal */
 body {
   background: white; }
+
+/* pagina principal */
+.preview {
+  margin-bottom: 1rem; }
+
+.preview-img {
+  height: 220px;
+  background: rgba(0, 0, 0, 0.5); }
+  .preview-img img {
+    object-fit: cover; }
+  .preview-img.col-md-6 {
+    padding-right: 0;
+    padding-left: 0; }
+
+.preview-title, .preview-author {
+  display: block; }
+
+.preview-title {
+  font-size: 1.2rem;
+  font-weight: 600; }
+  .preview-title, .preview-title:hover {
+    color: black; }
+
+.summary {
+  text-align: justify; }
+
+.pagination a {
+  color: #313138; }
+  .pagination a:hover {
+    color: #313138; }
 
 /* bootstrap */
 .navbar-brand {

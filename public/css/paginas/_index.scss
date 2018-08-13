@@ -1,7 +1,49 @@
+/* todas as paginas */
 body {
     margin: 0;
 }
-/* página principal */
 body {
     background: rgba(255,255,255,1);
+}
+
+/* pagina principal */
+.preview {
+    margin-bottom: 1rem;
+}
+.preview-img {
+    height: 220px;
+    background: rgba(0,0,0,0.5);
+
+    img {
+        object-fit: cover;
+    }
+    &.col-md-6 {
+        padding: {
+            right: 0;
+            left: 0;
+        }
+    }
+}
+.preview-title, .preview-author {
+    display: block;
+}
+.preview-title {
+    font: {
+        size: 1.2rem;
+        weight: 600;
+    }
+    &, &:hover {
+        color: rgba(0,0,0,1);
+    }
+}
+.summary {
+    text-align: justify;
+}
+.pagination {
+    a {
+        color: #313138;
+        &:hover {
+            color: #313138;
+        }
+    }
 }
