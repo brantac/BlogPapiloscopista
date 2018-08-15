@@ -21,6 +21,10 @@
     "express": "^4.16.2"
   },
   "engines": {
-    "node": "8.x.x"
+    "node": "8.x.x",
+    "npm": "6.x.x"
+  },
+  "devDependencies": {
+    "eslint": "^5.3.0"
   }
 }
