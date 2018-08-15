@@ -11,17 +11,16 @@ body {
     margin-bottom: 1rem;
 }
 .preview-img {
+    padding: {
+        right: 0;
+        left: 0;
+    }
     height: 220px;
     background: rgba(0,0,0,0.5);
 
     img {
+        height: 100%;
         object-fit: cover;
-    }
-    &.col-md-6 {
-        padding: {
-            right: 0;
-            left: 0;
-        }
     }
 }
 .preview-title, .preview-author {
