@@ -2,8 +2,11 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
+
+// Routes
 const posts = require('./routes/posts');
 const index = require('./routes/index');
+const about = require('./routes/about');
 
 // Set the EJS view engine
 app.set('view engine', 'ejs');
@@ -16,6 +19,7 @@ app.use( express.static(path.join(__dirname, 'public')) );
 // Routes
 app.use('/', index);
 app.use('/post', posts);
+app.use('/sobre', about);
 
 app.listen(process.env.PORT || 3000, () => {
     const port = process.env.PORT || 3000;

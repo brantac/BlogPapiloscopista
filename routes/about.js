@@ -1,9 +1,9 @@
-import {about} from "../controllers/aboutController";
+const about_controller = require('../controllers/aboutController');
 
-import express from "express";
+const express = require('express');
 const router = express.Router();
 
 // GET author page
-router.get('/sobre', about);
+router.get('/', about_controller.about);
 
 module.exports = router;
