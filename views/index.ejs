@@ -19,11 +19,11 @@
                     <div class="col-md-8">
                         <% posts.forEach( (post) => {%>
                             <div class="preview row">
-                                <div class="preview-img col-md-6">
+                                <div class="preview-img col-12 col-xl-6">
                                     <img class="img-fluid" src=<%= post.featured_image ? post.featured_image : "#" %> alt="" />
                                 </div>
                                 <!-- <img style="padding-left:0;padding-right:0;" class="preview-img img-fluid col-md-6" src=<%= post.featured_image ? post.featured_image : "#" %> alt="" /> -->
-                                <div class="preview-info col-md-6">
+                                <div class="preview-info col-12 col-xl-6">
                                     <div class="preview-header text-center">
                                         <a class="preview-title" href="/post/<%= post.slug %>"><%= post.title %></a>
                                         <a class="preview-author" href="/autor"><%= post.author.first_name %> <%= post.author.last_name %></a>
@@ -31,6 +31,7 @@
                                     <div class="summary">
                                         <%- post.summary %>
                                     </div>
+                                    <div class="ler-mais"><a href="/post/<%= post.slug %>">Ler mais</a></div>
                                 </div>
                             </div><!-- /row -->
                         <% }) %>
