@@ -1,3 +1,3 @@
-exports.author = function (req, res) {
-    res.send("NOT IMPLEMENTED: send the author page");
+exports.author =  (req, res) => {
+    res.render("author");
 };
