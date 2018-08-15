@@ -9,6 +9,8 @@ const index = require('./routes/index');
 const about = require('./routes/about');
 const author = require('./routes/author');
 const advertisers = require('./routes/advertisers');
+const contact = require('./routes/contact');
+const videos = require('./routes/videos');
 
 // Set the EJS view engine
 app.set('view engine', 'ejs');
@@ -24,6 +26,8 @@ app.use('/post', posts);
 app.use('/sobre', about);
 app.use('/autor', author);
 app.use('/anunciantes', advertisers);
+app.use('/contato', contact);
+app.use('/videos', videos);
 
 app.listen(process.env.PORT || 3000, () => {
     const port = process.env.PORT || 3000;
