@@ -12,7 +12,7 @@
         <% include ./partials/sidenavbar %>
     </nav>
     <main class="container contentVersion2">
-        <p>Redes sociais</p>
+        <h5>Redes sociais</h5>
         <ul class="post-social">
             <li><a><i class="fab fa-facebook-in"></i></a></li>
             <li><a><i class="fab fa-linkedin-in"></i></a></li>
@@ -22,28 +22,33 @@
         <form action=""
         method="post"
         id="contactForm">
-            <div class="form-group">
+            <div class="formGroup">
                 <label for="name">Nome</label>
-                <input type="text" name="name" id="name" value="Nome completo" />
+                <input type="text" name="name" id="name" required />
             </div>
-            <div class="form-group">
+            <div class="formGroup">
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" required />
             </div>
-            <div class="form-group">
-                <label for="number">Numero</label>
-                <input type="number" name="number" id="number" />
+            <div class="formGroup">
+                <label for="assunto">Assunto</label>
+                <input type="text" name="assunto" id="assunto" required />
             </div>
-            <div class="form-group">
+            <div class="formGroup">
+                <label for="number">Telefone</label>
+                <input type="text" name="number" id="number" required />
+            </div>
+            <div class="formGroup">
                 <label for="message">Mensagem</label>
                 <textarea  id="message" required></textarea>
             </div>
+            <button type="submit">Enviar</button>
         </form>
     </main>
     <footer class="container-fluid mt-5 text-center">
         <% include ./partials/footer %>
     </footer>
-    
+
     <% include ./partials/scripts %>
 </body>
 </html>

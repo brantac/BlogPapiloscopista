@@ -5,6 +5,37 @@ body {
 body {
     background: rgba(255,255,255,1);
 }
+.contentVersion2 {
+    padding: {
+        top: 5rem;
+    }
+}
+// CONTATO
+#contactForm {
+    .formGroup {
+        display: inline-block;
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+    input, textarea {
+        width: 100%;
+        padding: 1rem;
+    }
+    button {
+        background: transparent;
+        outline-color: gray;
+        border: 1px solid $darkblue;
+        color: $darkblue;
+        font-weight: 600;
+
+        padding: {
+            top: 0.5rem;
+            bottom: 0.5rem;
+            left: 1rem;
+            right: 1rem;
+        }
+    }
+}
 
 /* pagina principal */
 .preview {

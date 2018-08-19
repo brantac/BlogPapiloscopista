@@ -178,6 +178,27 @@ body {
 body {
   background: white; }
 
+.contentVersion2 {
+  padding-top: 5rem; }
+
+#contactForm .formGroup {
+  display: inline-block;
+  margin-bottom: 1rem;
+  width: 100%; }
+#contactForm input, #contactForm textarea {
+  width: 100%;
+  padding: 1rem; }
+#contactForm button {
+  background: transparent;
+  outline-color: gray;
+  border: 1px solid #253069;
+  color: #253069;
+  font-weight: 600;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem; }
+
 /* pagina principal */
 .preview {
   margin-bottom: 1rem; }
