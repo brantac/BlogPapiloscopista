@@ -56,37 +56,6 @@
             <% include ./partials/footer %>
         </footer>
 
-        <!-- jQuery, Popper.js, JavaScript -->
-        <!-- <script type="text/javascript" src="/libs/jquery//3.2.1/jquery.js"></script>
-        <script type="text/javascript" src="/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-        <script type="text/javascript" src="/libs/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-        <script>
-        /* animacao do toggler que abre e fecha a area de navegação */
-        $(document).ready(function () {
-            var toggle = $('#sidenav-toggle');
-            var navbarLateral = $('.navbarLateral');
-            $('#sidenav-toggle').on('click', function () {
-                $(this).toggleClass('abreFechaMenu');
-    
-                if ( -1 !== $(toggle).prop('class').search('abreFechaMenu') ) {
-                    $(navbarLateral).css('left', '0');
-                } else {
-                    $(navbarLateral).css('left', '-190px');
-                }
-            });
-        });
-        </script>
-        <script>
-        /* toggle comentarios */
-        $(document).ready(function() {
-            let parent = $('.postsDoBlog');
-            parent.on('click','button',null,function() {
-                $($(this).next()).toggleClass('fechado');
-            });
-        });
-        </script>
+        <% include ./partials/scripts %>
     </body>
 </html>

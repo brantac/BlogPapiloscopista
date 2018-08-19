@@ -15,23 +15,6 @@
         <% include ./partials/footer %>
     </footer>
 
-    <!-- Bootstrap -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-    <script>
-    /* abre/fecha sidenavbar */
-    $(document).ready(function () {
-        var toggle = $('#sidenav-toggle');
-        var navbarLateral = $('.navbarLateral');
-        $('#sidenav-toggle').on('click', function () {
-            $(this).toggleClass('abreFechaMenu');
-
-            if ( -1 !== $(toggle).prop('class').search('abreFechaMenu') ) {
-                $(navbarLateral).css('left', 0);
-            } else {
-                $(navbarLateral).css('left', -190);
-            }
-        });
-    });
-    </script>
+    <% include ./partials/scripts %>
 </body>
 </html>
