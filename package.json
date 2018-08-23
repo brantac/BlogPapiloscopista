@@ -19,7 +19,9 @@
     "buttercms": "^1.1.1",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
-    "nodemailer": "^4.6.8"
+    "nodemailer": "^4.6.8",
+    "prismic-dom": "^2.1.0",
+    "prismic-javascript": "^1.5.0"
   },
   "engines": {
     "node": "8.x.x",
