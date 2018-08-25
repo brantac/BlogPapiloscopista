@@ -72,3 +72,32 @@ exports.sendPost = (req, res, next) => {
         // console.log(reason);
     });
 };
+
+// Prismic CMS
+exports.sendPost2 = (req, res) => {
+    let slug = req.params.slug;
+    let promiseHandlers = [];
+
+    // functions
+    const renderPost = function (response) {
+        // console.log(response.data);
+        let obj = {
+            author: response.data.author[0],
+            title: response.data.title,
+            published: new Date(response.data.publishing_date),
+            content: response.data.body,
+            status: 200
+        };
+        res.render('post', obj);
+    };
+    const renderError = function (reason) {
+        console.log(reason);
+        res.status(404).end('<p>Post não encontrado</p>');
+    };
+    promiseHandlers[0] = renderPost;
+    promiseHandlers[1] = renderError;
+
+    // store a closure
+    let queryPost = posts_model.queryPost();
+    queryPost(req, slug, promiseHandlers);
+};
