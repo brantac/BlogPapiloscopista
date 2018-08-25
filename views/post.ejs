@@ -48,12 +48,12 @@
                             <article class="post">
                                     <div class="post-header">
                                         <a class="post-header-author-img" href="/autor"><img class="img-fluid" src="" alt="" /></a>
-                                        <a href="/autor"><%= content.author.first_name%> <%= content.author.last_name%></a>
-                                        <p><%= published.getDay()+1 %>/<%= published.getMonth()+1 %>/<%= published.getFullYear() %></p>
+                                        <a href="/autor"><%= PrismicDOM.RichText.asText(author.first_name)%> <%= PrismicDOM.RichText.asText(author.last_name)%></a>
+                                        <p><%= published.getDay() %>/<%= published.getMonth() %>/<%= published.getFullYear() %></p>
                                     </div>
                                     <div class="post-body">
-                                        <h1><%= title %></h1>
-                                        <%- content.body %>
+                                        </h1><%- PrismicDOM.RichText.asHtml(title, ctx.linkResolver) %>
+                                        <%- PrismicDOM.RichText.asHtml(content, ctx.linkResolver) %>
                                     </div>
                                 </article>
                             </div>
