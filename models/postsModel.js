@@ -1,5 +1,9 @@
 const fs = require('fs');
-const butter = require('buttercms')('8b41c028f37bd170bd68bb4c9f4e3578950cfc0a');
+// const butter = require('buttercms')('8b41c028f37bd170bd68bb4c9f4e3578950cfc0a');
+const Prismic = require('prismic-javascript');
+
+// Prismic API endpoint
+const apiEndpoint = 'http://papiloscopiando.prismic.io/api/v2';
 
 /* Array list about all posts */
 exports.blog_posts = [
@@ -75,14 +79,31 @@ exports.collectAllPosts = () => {
 
 // Butter CMS API calls
 // fetch all posts in one page
-exports.list = (fn, page = 1) => {
-    return butter.post.list({page: page, page_size: 10})
-    .then( fn )
-    .catch( reason => console.log(reason) );
+// exports.list = (fn, page = 1) => {
+//     return butter.post.list({page: page, page_size: 10})
+//     .then( fn )
+//     .catch( reason => console.log(reason) );
+// };
+// // fetch a specific post
+// exports.getpost = (slug, fn1, fn2) => {
+//     return butter.post.retrieve(slug)
+//     .then( fn1 )
+//     .catch( fn2 );
+// };
+
+// Prismic CMS API calls
+function initApi (req) {
+    return Prismic.getApi(apiEndpoint, {
+        req, req
+    });
 };
-// fetch a specific post
-exports.getpost = (slug, fn1, fn2) => {
-    return butter.post.retrieve(slug)
-    .then( fn1 )
-    .catch( fn2 );
+
+exports.queryPost = function () {
+    return function (req, slug, promiseHandlers) {
+        return initApi(req).then( (api) => {
+            api.getByUID('blog_post', slug)
+            .then(promiseHandlers[0])
+            .catch(promiseHandlers[1]);
+        });
+    };
 };
