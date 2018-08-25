@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
+const PrismicDOM = require('prismic-dom');
+const prismicConfig = require('./public/libs/utils/prismic-config');
 
 // Routes
 const posts = require('./routes/posts');
@@ -12,13 +14,21 @@ const advertisers = require('./routes/advertisers');
 const contact = require('./routes/contact');
 const videos = require('./routes/videos');
 
-// Set the EJS view engine
+// Set ups
 app.set('view engine', 'ejs');
 
-// Middlewares
+// Config
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use( express.static(path.join(__dirname, 'public')) );
+app.use((req, res, next) => {
+    res.locals.ctx = {
+        endpoint: 'http://papiloscopiando.prismic.io/api/v2',
+        linkResolver: prismicConfig.linkResolver
+    };
+    res.locals.PrismicDOM = PrismicDOM;
+    next();
+});
 
 // Using routes
 app.use('/', index);
