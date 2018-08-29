@@ -80,6 +80,7 @@ exports.sendPost2 = (req, res) => {
 
     // functions
     promiseHandlers[0] = (response) => {
+        console.log(response.data.author[0]);
         let obj = {
             page: 'post',
             slug: slug,
@@ -89,7 +90,7 @@ exports.sendPost2 = (req, res) => {
         res.render('post', obj);
     };
     promiseHandlers[1] = (reason) => {
-        res.status(404).end('<p>Post não encontrado</p>');
+        res.status(404).render('404');
     };
 
     // store a closure
