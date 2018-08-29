@@ -47,7 +47,7 @@
                         <article class="post">
                                 <div class="post-header">
                                     <a class="post-header-author-img" href="/autor"><img class="img-fluid" src="" alt="" /></a>
-                                    <a href="/autor"><%= PrismicDOM.RichText.asText(response.data.author[0].first_name)%> <%= PrismicDOM.RichText.asText(response.data.author[0].last_name)%></a>
+                                    <a href="/autor"><%= response.data.author[0].first_name%> <%= response.data.author[0].last_name%></a>
                                     <p><%= published.getDay() %>/<%= published.getMonth() %>/<%= published.getFullYear() %></p>
                                 </div>
                                 <div class="post-body">
