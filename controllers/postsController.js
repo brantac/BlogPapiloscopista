@@ -79,23 +79,18 @@ exports.sendPost2 = (req, res) => {
     let promiseHandlers = [];
 
     // functions
-    const renderPost = function (response) {
-        // console.log(response.data);
+    promiseHandlers[0] = (response) => {
         let obj = {
-            author: response.data.author[0],
-            title: response.data.title,
-            published: new Date(response.data.publishing_date),
-            content: response.data.body,
-            status: 200
+            page: 'post',
+            slug: slug,
+            response: response,
+            published: new Date(response.data.publishing_date)
         };
         res.render('post', obj);
     };
-    const renderError = function (reason) {
-        console.log(reason);
+    promiseHandlers[1] = (reason) => {
         res.status(404).end('<p>Post não encontrado</p>');
     };
-    promiseHandlers[0] = renderPost;
-    promiseHandlers[1] = renderError;
 
     // store a closure
     let queryPost = posts_model.queryPost();
