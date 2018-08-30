@@ -1,3 +1,6 @@
 exports.videos = (req, res) => {
-    res.render('videos');
+    res.render('videos', {
+        page: 'videos',
+        slug: ''
+    });
 }

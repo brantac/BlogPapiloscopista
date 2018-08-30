@@ -1,3 +1,6 @@
 exports.advertisers = (req, res) => {
-    res.render("advertisers");
+    res.render("advertisers", {
+        page: 'advertisers',
+        slug: ''
+    });
 };

@@ -2,7 +2,10 @@ const nodemailer = require('nodemailer');
 
 // render contact page
 exports.contact = (req, res) => {
-    res.render('contact');
+    res.render('contact', {
+        page: 'contact',
+        slug: ''
+    });
 }
 
 // send email
