@@ -3,7 +3,7 @@ const index_controller = require('../controllers/indexController');
 const router = express.Router();
 
 // Handle GET to index
-router.get('/', index_controller.index);
+router.get('/', index_controller.index2);
 
 // GET page
 router.get('/p/:page', index_controller.page);
