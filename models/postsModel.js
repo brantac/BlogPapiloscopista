@@ -94,14 +94,24 @@ exports.collectAllPosts = () => {
 // Prismic CMS API calls
 function initApi (req) {
     return Prismic.getApi(apiEndpoint, {
-        req, req
+        req: req
     });
-};
+}
 
-exports.queryPost = function () {
+exports.queryPost = () => {
     return function (req, slug, promiseHandlers) {
         return initApi(req).then( (api) => {
             api.getByUID('blog_post', slug)
+            .then(promiseHandlers[0])
+            .catch(promiseHandlers[1]);
+        });
+    };
+};
+
+exports.queryList =  () => {
+    return function (req, promiseHandlers) {
+        return initApi(req).then( (api) => {
+            api.query(Prismic.Predicates.at('document.type', 'blog_post'))
             .then(promiseHandlers[0])
             .catch(promiseHandlers[1]);
         });
