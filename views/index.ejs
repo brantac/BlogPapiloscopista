@@ -20,35 +20,34 @@
                         <% posts.forEach( (post) => {%>
                             <div class="preview row">
                                 <div class="preview-img col-12 col-xl-6">
-                                    <img class="img-fluid" src=<%= post.featured_image ? post.featured_image : "#" %> alt="" />
+                                    <img class="img-fluid" src="<%= post.data.featured_image !== null ? post.featured_image : '#' %>" alt="" />
                                 </div>
-                                <!-- <img style="padding-left:0;padding-right:0;" class="preview-img img-fluid col-md-6" src=<%= post.featured_image ? post.featured_image : "#" %> alt="" /> -->
                                 <div class="preview-info col-12 col-xl-6">
                                     <div class="preview-header text-center">
-                                        <a class="preview-title" href="/post/<%= post.slug %>"><%= post.title %></a>
-                                        <a class="preview-author" href="/autor"><%= post.author.first_name %> <%= post.author.last_name %></a>
+                                        <a class="preview-title" href="/post/<%= post.slug %>"><%- PrismicDOM.RichText.asHtml(post.data.title, ctx.linkResolver) %></a>
+                                        <a class="preview-author" href="/autor"><%= post.data.author[0].first_name %> <%= post.data.author[0].last_name %></a>
                                     </div>
                                     <div class="summary">
-                                        <%- post.summary %>
+                                        <%- post.data.summary %>
                                     </div>
-                                    <div class="ler-mais"><a href="/post/<%= post.slug %>">Ler mais</a></div>
+                                    <div class="ler-mais"><a href="/post/<%= post.uid %>">Ler mais</a></div>
                                 </div>
                             </div><!-- /row -->
                         <% }) %>
                     </div>
                 </div><!-- /row -->
     
-                <nav aria-label="Page navigation">
+                <!-- <nav aria-label="Page navigation">
                     <ul class="pagination justify-content-center">
-                        <% if (previous_page) { %>
-                            <li class="page-item"><a class="page-link" href="/p/<%= previous_page %>">Anterior</a></li>
-                        <% } %>
+                        <% //if (previous_page) { %>
+                            <li class="page-item"><a class="page-link" href="/p/<%=// previous_page %>">Anterior</a></li>
+                        <% //} %>
     
-                        <% if (next_page) { %>
-                            <li class="page-item"><a class="page-link" href="/p/<%= next_page %>">Proxima</a></li>
-                        <% } %>
+                        <% //if (next_page) { %>
+                            <li class="page-item"><a class="page-link" href="/p/<%=// next_page %>">Proxima</a></li>
+                        <% //} %>
                     </ul>
-                </nav>
+                </nav> -->
             </div>
         </main>
 
