@@ -24,7 +24,7 @@
                                 </div>
                                 <div class="preview-info col-12 col-xl-6">
                                     <div class="preview-header text-center">
-                                        <a class="preview-title" href="/post/<%= post.slug %>"><%- PrismicDOM.RichText.asHtml(post.data.title, ctx.linkResolver) %></a>
+                                        <a class="preview-title" href="/post/<%= post.uid %>"><%- PrismicDOM.RichText.asHtml(post.data.title, ctx.linkResolver) %></a>
                                         <a class="preview-author" href="/autor"><%= post.data.author[0].first_name %> <%= post.data.author[0].last_name %></a>
                                     </div>
                                     <div class="summary">

@@ -6,7 +6,6 @@ exports.index = (req, res, next) => {
     posts_model.list( (response) => {
         res.render('index', {
             page: 'index',
-            slug: '',
             posts: response.data.data,
             previous_page: response.data.meta.previous_page,
             next_page: response.data.meta.next_page
