@@ -9,7 +9,22 @@
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display');
 @import url('https://fonts.googleapis.com/css?family=Lora');
 
+html, body {
+    height: 100%;
+}
+main {
+    padding: {
+        top: 7rem;
+        bottom: 4.1rem;
+    }
+}
 /* bootstrap */
+main.container-fluid {
+    padding: {
+        right: 0;
+        left: 0;
+    }
+}
 .navbar-brand {
     font: {
         family: $playfair;
