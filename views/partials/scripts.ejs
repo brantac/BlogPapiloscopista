@@ -16,3 +16,15 @@ toggle.addEventListener( 'click', () => {
     isOpen() ? sidenavbar.style.left = '-190px' : sidenavbar.style.left = '0px';
 });
 </script>
+<script>
+function changeDisplay () {
+    let footer = document.querySelector('footer');
+    let main = document.querySelector('main');
+    if (main.clientHeight <= window.innerHeight) {
+        footer.style.position = "absolute";
+        footer.style.bottom = '0';
+    }
+};
+window.addEventListener('resize', changeDisplay);
+changeDisplay();
+</script>
