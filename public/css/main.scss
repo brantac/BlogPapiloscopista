@@ -12,6 +12,10 @@
 html, body {
     height: 100%;
 }
+body {
+    margin: 0;
+    background: rgba(255,255,255,1);
+}
 main {
     min-height: 100%;
     padding: {

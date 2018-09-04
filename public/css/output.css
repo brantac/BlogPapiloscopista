@@ -172,16 +172,6 @@ footer {
 .blog-footer-social a:link, .blog-footer-social a:hover, .blog-footer-social a:visited {
   color: white; }
 
-/* todas as paginas */
-body {
-  margin: 0; }
-
-body {
-  background: white; }
-
-.contentVersion2 {
-  padding-top: 5rem; }
-
 #contactForm .formGroup {
   display: inline-block;
   margin-bottom: 1rem;
@@ -213,11 +203,17 @@ body {
     height: 100%;
     object-fit: cover; }
 
+/* .preview-info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+} */
 .preview-title, .preview-author {
   display: block; }
 
 .preview-title {
-  font-size: 1.2rem;
   font-weight: 600; }
   .preview-title, .preview-title:hover {
     color: black; }
@@ -225,13 +221,35 @@ body {
 .summary {
   text-align: justify; }
 
+.ler-mais {
+  text-align: center; }
+
 .pagination a {
   color: #313138; }
   .pagination a:hover {
     color: #313138; }
 
+.sidebar .sidebar-header {
+  width: 150px;
+  padding-bottom: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #253069;
+  border-bottom: 3px solid #D83E3E; }
+
+.author-index-page {
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px; }
+  .author-index-page p {
+    font-size: 13px; }
+
 html, body {
   height: 100%; }
+
+body {
+  margin: 0;
+  background: white; }
 
 main {
   min-height: 100%;

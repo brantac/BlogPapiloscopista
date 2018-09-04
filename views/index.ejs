@@ -15,7 +15,7 @@
 
         <main class="container-fluid">
             <div class="container content">
-                <div class="row justify-content-md-center">
+                <div class="row">
                     <div class="col-md-8">
                         <% posts.forEach( (post) => {%>
                             <div class="preview row">
@@ -24,17 +24,32 @@
                                 </div>
                                 <div class="preview-info col-12 col-xl-6">
                                     <div class="preview-header text-center">
-                                        <a class="preview-title" href="/post/<%= post.uid %>"><%- PrismicDOM.RichText.asHtml(post.data.title, ctx.linkResolver) %></a>
+                                        <a class="preview-title" href="/post/<%= post.uid %>"><h4><%- PrismicDOM.RichText.asText(post.data.title) %></h4></a>
                                         <a class="preview-author" href="/autor"><%= post.data.author[0].first_name %> <%= post.data.author[0].last_name %></a>
                                     </div>
                                     <div class="summary">
-                                        <%- post.data.summary %>
+                                        <p><%- post.data.summary %></p>
                                     </div>
-                                    <div class="ler-mais"><a href="/post/<%= post.uid %>">Ler mais</a></div>
+                                    <div class="ler-mais"><a href="/post/<%= post.uid %>">Leia mais</a></div>
                                 </div>
                             </div><!-- /row -->
                         <% }) %>
                     </div>
+                    <section class="col-md-4 sidebar">
+                        <div class="author-index-page">
+                            <h5 class="sidebar-header">Quem escreve</h5>
+                            <h6>Brasilio Caldeira Brant</h6>
+                            <p>
+                                Papiloscopista Policial Federal, formado
+                                pela Academia Nacional de Polícia em 1985, atuando principalmente
+                                nos seguintes temas Papiloscopia e Representação Facial Humana.
+                                Professor dessas áreas na Academia Nacional de Polícia e em curso
+                                de Pós-Graduação em Perícias Forenses na matéria fundamentos da
+                                Perícia Papiloscópica e Representação Facial Humana. É também
+                                palestrante dessas áreas.
+                            </p>
+                        </div>
+                    </section>
                 </div><!-- /row -->
     
                 <!-- <nav aria-label="Page navigation">
