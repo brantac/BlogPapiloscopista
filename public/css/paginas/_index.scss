@@ -42,13 +42,6 @@
         object-fit: cover;
     }
 }
-/* .preview-info {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-} */
 .preview-title, .preview-author {
     display: block;
 }
@@ -63,7 +56,27 @@
 .summary {
     text-align: justify;
 }
-.ler-mais {text-align: center}
+.ler-mais {
+    text-align: center;
+    a {
+        font-weight: 500;
+        border: 1px solid $red;
+        &:link, &:visited {
+            text-decoration: none;
+            color: $red;
+        }
+        &:hover {
+            background: $red;
+            color: rgba(255,255,255,1);
+        }
+        padding: {
+            top: 5px;
+            bottom: 5px;
+            left: 8px;
+            right: 8px;
+        }
+    }
+}
 .pagination {
     a {
         color: #313138;
@@ -76,16 +89,20 @@
     .sidebar-header {
         width: 150px;
         padding-bottom: 5px;
-        margin: {
+        /* margin: {
             left: auto;
             right: auto;
-        }
+        } */
         color: $darkblue;
         border-bottom: 3px solid $red;
+        font: {
+            weight: 600;
+            size: 21px;
+        }
     }
 }
 .author-index-page {
-    text-align: center;
+    // text-align: center;
     padding: {
         left: 15px;
         right: 15px;
