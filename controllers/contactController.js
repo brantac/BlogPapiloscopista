@@ -9,26 +9,35 @@ exports.contact = (req, res) => {
 }
 
 // send email
-// const transporter = nodemailer.createTransport({
-//     service: 'gmail',
-//     auth: {
-//         user: 'art.brant06@gmail.com',
-//         pass: 'aaa'
-//     }
-// });
-// const options = {
-//     from: '',
-//     to: '',
-//     subject: '',
-//     text: ''
-// };
-// transporter.sendMail(options, (error, info) => {
-//     if (error) {
-//         console.log(error);
-//     } else {
-//         console.log('Email sent: ' + info.response);
-//     }
-// });
-// exports.send = (req, res) => {
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'irisamon0@gmail.com',
+        pass: 'ir!SpL@gu3ha1'
+    }
+});
 
-// };
+exports.sendMail = (req, res) => {
+    transporter.sendMail({
+        from: 'irisamon0@gmail.com',
+        to: 'irisamon0@gmail.com',
+        subject: `${req.body.subject}`,
+        text: `
+        Nome: ${req.body.name}\n
+        Email: ${req.body.email}\n
+        Número: ${req.body.number}\n
+        Mensagem: ${req.body.message}`,
+        html: `
+        <p>Nome: ${req.body.name}</p>
+        <p>Email: ${req.body.email}</p>
+        <p>Número: ${req.body.number}</p>
+        <p>Mensagem: ${req.body.message}</p>`
+    }, (error, info) => {
+        if (error) {
+            console.log(error);
+        } else {
+            // console.log('Email sent: ' + info.response);
+            res.end('Enviado');
+        }
+    });
+};
