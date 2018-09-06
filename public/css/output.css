@@ -172,25 +172,58 @@ footer {
 .blog-footer-social a:link, .blog-footer-social a:hover, .blog-footer-social a:visited {
   color: white; }
 
-#contactForm .formGroup {
-  display: inline-block;
-  margin-bottom: 1rem;
+.social-flex-container {
+  display: flex;
+  flex-flow: row nowrap;
+  padding-top: 15px;
+  padding-bottom: 15px; }
+  .social-flex-container div {
+    width: 25px;
+    height: 25px;
+    margin-right: 15px; }
+  .social-flex-container a:link, .social-flex-container a:visited {
+    color: gray; }
+  .social-flex-container a:hover {
+    color: #253069; }
+  .social-flex-container i {
+    font-size: 25px; }
+
+.input-groups-flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+
+.formGroup {
+  margin-bottom: 15px;
   width: 100%; }
-#contactForm input, #contactForm textarea {
-  width: 100%;
-  padding: 1rem; }
+  @media (min-width: 768px) {
+    .formGroup {
+      width: 40%; } }
+
+input {
+  padding: 12px; }
+
+input, label, textarea {
+  display: block;
+  width: 100%; }
+
 #contactForm button {
-  background: transparent;
+  background: white;
   outline-color: gray;
   border: 1px solid #253069;
   color: #253069;
-  font-weight: 600;
+  font-weight: 500;
+  cursor: pointer;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 1rem;
   padding-right: 1rem; }
+  #contactForm button:hover {
+    background: #253069;
+    color: white; }
 
-/* pagina principal */
+/* PAGINA PRINCIPAL */
 .preview {
   margin-bottom: 1rem; }
 
@@ -203,13 +236,6 @@ footer {
     height: 100%;
     object-fit: cover; }
 
-/* .preview-info {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-} */
 .preview-title, .preview-author {
   display: block; }
 

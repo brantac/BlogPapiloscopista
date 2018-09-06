@@ -11,39 +11,51 @@
     <nav class="navbarLateral">
         <% include ./partials/sidenavbar %>
     </nav>
-    <main class="container contentVersion2">
-        <h5>Redes sociais</h5>
-        <ul class="post-social">
-            <li><a><i class="fab fa-facebook-in"></i></a></li>
-            <li><a><i class="fab fa-linkedin-in"></i></a></li>
-            <li><a><i class="fab fa-instagram-in"></i></a></li>
-        </ul>
-        <h2>Me envie uma mensagem</h2>
-        <form action="/contact"
-        method="post"
-        id="contactForm">
-            <div class="formGroup">
-                <label for="name">Nome</label>
-                <input type="text" name="name" id="name" required />
+    <main class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-md-8">
+                <h5>Siga-me nas redes sociais</h5>
+                <div class="social-flex-container">
+                    <div class="social-flex-items">
+                        <a href="https://facebook.com/brasilio.brant" target="_blank"><i class="fab fa-facebook"></i></a>
+                    </div>
+                    <div class="social-flex-items">
+                        <a href="https://linkedin.com/in/brasilio-brant-270b0733" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <div class="social-flex-items">
+                        <a href="https://instagram.com/brasiliobrant" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <h5>Entre em contato</h5>
+                <form action="/contact"
+                method="post"
+                id="contactForm">
+                    <div class="input-groups-flex-container">
+                        <div class="formGroup">
+                            <label for="name">Nome</label>
+                            <input type="text" name="name" id="name" required />
+                        </div>
+                        <div class="formGroup">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" required />
+                        </div>
+                        <div class="formGroup">
+                            <label for="subject">Assunto</label>
+                            <input type="text" name="subject" id="subject" required />
+                        </div>
+                        <div class="formGroup">
+                            <label for="number">Telefone</label>
+                            <input type="text" name="number" id="number" required />
+                        </div>
+                    </div>
+                    <div class="formGroup">
+                        <label for="message">Mensagem</label>
+                        <textarea  id="message" required></textarea>
+                    </div>
+                    <button type="submit">Enviar</button>
+                </form>
             </div>
-            <div class="formGroup">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" required />
-            </div>
-            <div class="formGroup">
-                <label for="subject">Assunto</label>
-                <input type="text" name="subject" id="subject" required />
-            </div>
-            <div class="formGroup">
-                <label for="number">Telefone</label>
-                <input type="text" name="number" id="number" required />
-            </div>
-            <div class="formGroup">
-                <label for="message">Mensagem</label>
-                <textarea  id="message" required></textarea>
-            </div>
-            <button type="submit">Enviar</button>
-        </form>
+        </div>
     </main>
     <footer class="container-fluid">
         <% include ./partials/footer %>
