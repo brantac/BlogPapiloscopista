@@ -7,6 +7,6 @@ const router = express.Router();
 router.get('/', contact_controller.contact);
 
 // POST contact form
-router.post('/', contact_controller.sendMail);
+// router.post('/', contact_controller.sendMail);
 
 module.exports = router;
