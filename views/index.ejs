@@ -20,7 +20,8 @@
                         <% posts.forEach( (post) => {%>
                             <div class="preview row">
                                 <div class="preview-img col-12 col-xl-6">
-                                    <img class="img-fluid" src="<%= post.data.featured_image !== null ? post.featured_image : '#' %>" alt="" />
+                                    <img class="img-fluid"
+                                    src="<%= post.data.featured_image.link_type != 'Any' ? post.data.featured_image.url : '#' %>" alt="" />
                                 </div>
                                 <div class="preview-info col-12 col-xl-6">
                                     <div class="preview-header text-center">
