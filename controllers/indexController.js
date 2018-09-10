@@ -19,7 +19,6 @@ exports.index2 = (req, res) => {
 
     // functions
     promiseHandlers[0] = (response) => {
-        console.log(response.results[0]);
         let obj = {
             page: 'index',
             slug: '',
