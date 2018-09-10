@@ -49,30 +49,6 @@ exports.getAllPostsPromise = function (req, res, next) {
     .catch( (err) => console.log(err));
 };
 
-// Buttercms
-// Send specific post
-exports.sendPost = (req, res, next) => {
-    let slug = req.params.slug;
-    posts_model.getpost(slug,
-        // sends the post if it exist
-        (response) => {
-            console.log(response);
-        res.render('post', {
-            title: response.data.data.title,
-            content: response.data.data,
-            published: new Date(response.data.data.published),
-            status: response.status
-        });
-    },
-    // or sends the status of the response
-    (reason) => {
-        res.render('post', {
-            status: reason.status
-        });
-        // console.log(reason);
-    });
-};
-
 // Prismic CMS
 exports.sendPost2 = (req, res) => {
     let slug = req.params.slug;
