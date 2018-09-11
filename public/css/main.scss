@@ -35,3 +35,9 @@ main.container-fluid {
         family: $playfair;
     }
 }
+div[data-type="static_image"] {
+    img {
+        width: 100%;
+        height: auto;
+    }
+}

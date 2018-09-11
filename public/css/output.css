@@ -306,4 +306,8 @@ main.container-fluid {
 .navbar-brand {
   font-family: "Playfair Display", serif; }
 
+div[data-type="static_image"] img {
+  width: 100%;
+  height: auto; }
+
 /*# sourceMappingURL=output.css.map */
