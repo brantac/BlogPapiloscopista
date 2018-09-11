@@ -45,16 +45,24 @@
                 <div class="row justify-content-md-center">
                     <div class="postsDoBlog col-md-8">
                         <article class="post">
-                                <div class="post-header">
-                                    <a class="post-header-author-img" href="/autor"><img class="img-fluid" src="" alt="" /></a>
-                                    <a href="/autor"><%= response.data.author[0].first_name%> <%= response.data.author[0].last_name%></a>
-                                    <p><%= published.getDay() %>/<%= published.getMonth() %>/<%= published.getFullYear() %></p>
-                                </div>
-                                <div class="post-body">
-                                    <%- PrismicDOM.RichText.asHtml(response.data.title, ctx.linkResolver) %>
-                                    <%- PrismicDOM.RichText.asHtml(response.data.body, ctx.linkResolver) %>
-                                </div>
-                            </article>
+                            <div class="post-header">
+                                <a class="post-header-author-img" href="/autor"><img class="img-fluid" src="" alt="" /></a>
+                                <a href="/autor"><%= response.data.author[0].first_name%> <%= response.data.author[0].last_name%></a>
+                                <p><%= published.getDay() %>/<%= published.getMonth() %>/<%= published.getFullYear() %></p>
+                            </div>
+                            <div class="post-body">
+                                <%- PrismicDOM.RichText.asHtml(response.data.title, ctx.linkResolver) %>
+                                <%- PrismicDOM.RichText.asHtml(response.data.body, ctx.linkResolver) %>
+                            </div>
+                        </article>
+                        <div class="docs">
+                            <% docs.forEach( (doc) => { %>
+                                <% for (var pdf in doc.primary) { %>
+                                    <% if (doc.primary[pdf] !== null) { %>
+                                        <a class="doc-item" href='<%= doc.primary[pdf] %>' target="_blank"><i class="fas fa-file-pdf"></i></a>
+                                    <% } %>
+                                <% } %>
+                            <% }); %>
                         </div>
                     </div>
                 </div>

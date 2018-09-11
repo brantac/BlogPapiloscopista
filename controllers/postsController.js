@@ -56,13 +56,14 @@ exports.sendPost2 = (req, res) => {
 
     // functions
     promiseHandlers[0] = (response) => {
+        console.log(response.data.body1);
         let obj = {
             page: 'post',
             slug: slug,
             response: response,
             published: new Date(response.first_publication_date),
             seo: response.data.seo_group[0],
-            docs: response.data.docs[0]
+            docs: response.data.body1
         };
         res.render('post', obj);
     };
