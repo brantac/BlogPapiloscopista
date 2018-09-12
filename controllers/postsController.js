@@ -56,16 +56,21 @@ exports.sendPost2 = (req, res) => {
 
     // functions
     promiseHandlers[0] = (response) => {
-        console.log(response.data.body1);
+        // testa se slice é do tipo documentos
+        let isDoc = function (el) {
+            return el.slice_type == 'documentos';
+        }
+        // console.log(response.data.body.filter(isDoc));
         let obj = {
             page: 'post',
             slug: slug,
             response: response,
             published: new Date(response.first_publication_date),
             seo: response.data.seo_group[0],
-            docs: response.data.body1
+            docs: response.data.body.filter(isDoc)
         };
         res.render('post', obj);
+        // res.end('Hello world');
     };
     promiseHandlers[1] = (reason) => {
         res.status(404).render('404');

@@ -52,15 +52,13 @@
                             </div>
                             <div class="post-body">
                                 <%- PrismicDOM.RichText.asHtml(response.data.title, ctx.linkResolver) %>
-                                <%- PrismicDOM.RichText.asHtml(response.data.body, ctx.linkResolver) %>
+                                <%- PrismicDOM.RichText.asHtml(response.data.body[0].primary.content, ctx.linkResolver) %>
                             </div>
                         </article>
                         <div class="docs">
                             <% docs.forEach( (doc) => { %>
-                                <% for (var pdf in doc.primary) { %>
-                                    <% if (doc.primary[pdf] !== null) { %>
-                                        <a class="doc-item" href='<%= doc.primary[pdf] %>' target="_blank"><i class="fas fa-file-pdf"></i></a>
-                                    <% } %>
+                                <% if (doc.primary['pdf'] !== null) { %>
+                                    <a class="doc-item" href="<%= doc.primary['pdf'] %>" target="_blank"><i class="fas fa-file-pdf"></i></a>
                                 <% } %>
                             <% }); %>
                         </div>
