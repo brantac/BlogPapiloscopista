@@ -20,8 +20,11 @@
                         <% posts.forEach( (post) => {%>
                             <div class="preview row">
                                 <div class="preview-img col-12 col-xl-6">
-                                    <img class="img-fluid"
-                                    src="<%= post.data.featured_image.link_type != 'Any' ? post.data.featured_image.url : '#' %>" alt="" />
+                                    <% let img = post.data.body.filter(ele => ele.slice_type == 'imagem_de_destaque'); %>
+                                    <% if (img.length > 0) { %>
+                                        <img class="img-fluid"
+                                        src="<%= img[0].primary.featured_image %>" alt="" />
+                                    <% } %>
                                 </div>
                                 <div class="preview-info col-12 col-xl-6">
                                     <div class="preview-header text-center">
