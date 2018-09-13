@@ -11,7 +11,6 @@ exports.post = (req, res) => {
         let isDoc = function (el) {
             return el.slice_type == 'documentos';
         }
-        console.log(response.data.seo_group[0]);
         let obj = {
             page: 'post',
             slug: slug,
