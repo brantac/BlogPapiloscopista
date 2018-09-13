@@ -5,7 +5,7 @@ exports.list_posts = (req, res) => {
     let promiseHandlers = [];
 
     /**
-     * callback functions that will execut when posts are retrieved
+     * callback functions that will execute when posts are retrieved
      */
     promiseHandlers[0] = (response) => {
         let obj = {
