@@ -1,23 +1,12 @@
 const posts_model = require('../models/postsModel');
 
-// Butter CMS
-// Send index page
-exports.index = (req, res, next) => {
-    posts_model.list( (response) => {
-        res.render('index', {
-            page: 'index',
-            posts: response.data.data,
-            previous_page: response.data.meta.previous_page,
-            next_page: response.data.meta.next_page
-        });
-    });
-};
-
 // Prismic CMS
-exports.index2 = (req, res) => {
+exports.list_posts = (req, res) => {
     let promiseHandlers = [];
 
-    // functions
+    /**
+     * callback functions that will execut when posts are retrieved
+     */
     promiseHandlers[0] = (response) => {
         let obj = {
             page: 'index',
@@ -40,17 +29,4 @@ exports.index2 = (req, res) => {
     // store a closure
     let queryList = posts_model.queryList();
     queryList(req, promiseHandlers);
-};
-
-// Send numbered page
-exports.page = (req, res, next) => {
-    posts_model.list( (response) => {
-        res.render('index', {
-            page: 'index',
-            slug: '',
-            posts: response.data.data,
-            previous_page: response.data.meta.previous_page,
-            next_page: response.data.meta.next_page
-        });
-    }, req.params.page);
 };
