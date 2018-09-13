@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!-- icone -->
 <link rel="icon" href="/img/icones/blog_icon_15px.png" type="img/png" sizes="15x15">
-<title><%= page === 'post' ? PrismicDOM.RichText.asText(response.data.title) + " - " : "" %>Papiloscopiando</title>
+<title><%= page === 'post' ? seo.seo_title + " - " : "" %>Papiloscopiando</title>
 <!-- OG tags -->
 <meta property="fb:app_id"         content="Papiloscopiando"/>
 <meta property="og:url"           content="https://papiloscopiando.com.br/<%= page === 'post' ? 'post/' + slug : '' %>" />
