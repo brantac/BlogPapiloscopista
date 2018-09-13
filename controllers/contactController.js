@@ -18,15 +18,15 @@ exports.contact = (req, res) => {
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'irisamon0@gmail.com',
-        pass: 'ir!SpL@gu3ha1'
+        user: 'gmail',
+        pass: ''
     }
 });
 
 exports.sendMail = (req, res) => {
     transporter.sendMail({
-        from: 'irisamon0@gmail.com',
-        to: 'irisamon0@gmail.com',
+        from: 'gmail',
+        to: 'gmail',
         subject: `${req.body.subject}`,
         text: `
         Nome: ${req.body.name}\n
