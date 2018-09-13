@@ -1,7 +1,7 @@
 const posts_model = require('../models/postsModel');
 
 // Prismic CMS
-exports.sendPost2 = (req, res) => {
+exports.post = (req, res) => {
     let slug = req.params.slug;
     let promiseHandlers = [];
 
