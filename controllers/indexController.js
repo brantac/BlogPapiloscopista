@@ -22,7 +22,13 @@ exports.index2 = (req, res) => {
         let obj = {
             page: 'index',
             slug: '',
-            posts: response.results
+            posts: response.results,
+            seo: {
+                title: 'Blog | ',
+                description: 'Fique por dentro das novidades sobre a papiloscopia' +
+                ' no Brasil e no mundo. Compartilhamos conhecimento, compartilhamos cidadania.',
+                image: '/img/icones/blog_icon_15px.png'
+            }
         };
         res.render('index', obj);
         // res.end('Hello world');
