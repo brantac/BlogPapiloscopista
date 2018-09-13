@@ -5,7 +5,7 @@
 <!-- icone -->
 <link rel="icon" href="/img/icones/blog_icon_15px.png" type="img/png" sizes="15x15">
 <title><%= page == 'post' ? PrismicDOM.RichText.asText(seo.seo_title) + " - " : seo.title %>Papiloscopiando</title>
-<meta property="description"      content="<%= seo.description %>" />
+<meta name="description"          content="<%= seo.description %>" />
 <!-- Open Graph -->
 <meta property="fb:app_id"        content="Papiloscopiando" />
 <meta property="og:url"           content="https://papiloscopiando.com.br/<%= page == 'post' ? 'post/' + slug : slug %>" />
