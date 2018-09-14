@@ -1,7 +1,9 @@
 require('dotenv').config();
 const nodemailer = require('nodemailer');
+const { google } = require('googleapis');
+const OAuth2 = google.auth.OAuth2;
 
-// render contact page
+// Render contact page
 exports.contact = (req, res) => {
     res.render('contact', {
         page: 'contact',
@@ -13,21 +15,52 @@ exports.contact = (req, res) => {
             image: '/img/icones/blog_icon_15px.png'
         }
     });
-}
+};
+
+// Google OAuth2
+const oauth2client = new OAuth2(
+    // ClientID
+    process.env.CLIENT_ID,
+    // Client Secret
+    process.env.CLIENT_SECRET,
+    // Redirect URL
+    "https://developers.google.com/oauthplayground"
+);
+
+oauth2client.setCredentials({
+    refresh_token: process.env.REFRESH_TOKEN
+});
+
+const accessToken = oauth2client.refreshAccessToken()
+.then(res => res.credentials.access_token);
 
 // send email
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'gmail',
-        pass: ''
+        type: 'OAuth2',
+        user: process.env.MAIL_USER,
+        clientId: process.env.CLIENT_ID,
+        clientSecret: process.env.CLIENT_SECRET,
+        refreshToken: process.env.REFRESH_TOKEN,
+        accessToken: accessToken
     }
 });
 
+/* transporter.set('oauth2_provision_cb', (user, renew, callback) => {
+    let accessToken = userTokens[user];
+    if (!accessToken) {
+        return callback(new Error('Unknown user'));
+    } else {
+        return callback(null, accessToken);
+    }
+}); */
+
+
 exports.sendMail = (req, res) => {
     transporter.sendMail({
-        from: 'gmail',
-        to: 'gmail',
+        from: process.env.MAIL_USER,
+        to: process.env.MAIL_USER,
         subject: `${req.body.subject}`,
         text: `
         Nome: ${req.body.name}\n
@@ -41,10 +74,10 @@ exports.sendMail = (req, res) => {
         <p>Mensagem: ${req.body.message}</p>`
     }, (error, info) => {
         if (error) {
-            console.log(error);
+            res.end(error);
         } else {
-            // console.log('Email sent: ' + info.response);
-            res.end('Enviado');
+            console.log('Email sent: ' + info.response);
+            res.status(200).end('Mensagem enviada com sucesso.');
         }
     });
 };
