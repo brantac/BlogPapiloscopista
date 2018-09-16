@@ -32,7 +32,11 @@
                                         <a class="preview-author" href="/autor"><%= post.data.author[0].first_name %> <%= post.data.author[0].last_name %></a>
                                     </div>
                                     <div class="summary">
-                                        <p><%- post.data.summary %></p>
+                                        <% let slices = post.data.body, i = 0; %>
+                                        <% while(slices[i].slice_type != 'resumo') {i += 1;} %>
+                                        <% if (slices[i].slice_type == 'resumo') { %>
+                                            <p><%= slices[i].primary.summary %></p>
+                                        <% } %>
                                     </div>
                                     <div class="ler-mais"><a href="/post/<%= post.uid %>">Leia mais</a></div>
                                 </div>
