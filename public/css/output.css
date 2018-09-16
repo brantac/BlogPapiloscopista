@@ -151,6 +151,18 @@
   min-height: 2rem;
   padding-bottom: 3rem; }
 
+.docs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap; }
+  .docs .doc-item {
+    font-size: 40px;
+    margin: 15px; }
+    .docs .doc-item:link, .docs .doc-item:visited {
+      color: rgba(0, 0, 0, 0.5); }
+    .docs .doc-item:hover {
+      color: rgba(0, 0, 0, 0.8); }
+
 footer {
   display: flex;
   flex-direction: column;

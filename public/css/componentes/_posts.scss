@@ -66,3 +66,20 @@
     min-height: 2rem;
     padding-bottom: 3rem;
 }
+.docs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    .doc-item {
+        font: {
+            size: 40px;
+        }
+        margin: 15px;
+        &:link, &:visited {
+            color: rgba(0,0,0,0.5);
+        }
+        &:hover {
+            color: rgba(0,0,0,0.8);
+        }
+    }
+}
