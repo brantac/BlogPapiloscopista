@@ -56,11 +56,14 @@
                             </div>
                         </article>
                         <div class="docs">
-                            <% docs.forEach( (doc) => { %>
-                                <% if (doc.primary['pdf'] !== null) { %>
-                                    <a class="doc-item" href="<%= doc.primary['pdf'] %>" target="_blank"><i class="fas fa-file-pdf"></i></a>
-                                <% } %>
-                            <% }); %>
+                            <% if (docs.length > 0) { %>
+                                <h4>Documentos</h4>
+                                <% docs.forEach( (doc) => { %>
+                                    <% if (doc.primary['pdf'] !== null) { %>
+                                        <a class="doc-item" href="<%= doc.primary['pdf'] %>" target="_blank"><i class="fas fa-file-pdf"></i></a>
+                                    <% } %>
+                                <% }); %>
+                            <% } %>
                         </div>
                     </div>
                 </div>
