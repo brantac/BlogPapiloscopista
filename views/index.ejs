@@ -29,7 +29,7 @@
                                 <div class="preview-info col-12 col-xl-6">
                                     <div class="preview-header text-center">
                                         <a class="preview-title" href="/post/<%= post.uid %>"><h4><%- PrismicDOM.RichText.asText(post.data.title) %></h4></a>
-                                        <a class="preview-author" href="/autor"><%= post.data.author[0].first_name %> <%= post.data.author[0].last_name %></a>
+                                        <a class="preview-author" href="/autor"><%= post.data.author[0].first_name %></a>
                                     </div>
                                     <div class="summary">
                                         <% let slices = post.data.body, i = 0; %>
