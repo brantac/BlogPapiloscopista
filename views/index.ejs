@@ -2,6 +2,13 @@
 <html lang="pt-BR">
     <head>
         <% include ./partials/head %>
+        <style>
+            body {
+                background-image: url("https://s3-sa-east-1.amazonaws.com/blog-papiloscopiando/papiloscopiando-bg-01.jpeg");
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        </style>
     </head>
     <body>        
         <header class="container-fluid barraNavTopo pt-3 pb-3">
@@ -32,11 +39,9 @@
                                         <a class="preview-author" href="/autor"><%= post.data.author[0].first_name %></a>
                                     </div>
                                     <div class="summary">
-                                        <% let slices = post.data.body, i = 0; %>
-                                        <% while(slices[i].slice_type != 'resumo') {i += 1;} %>
-                                        <% if (slices[i].slice_type == 'resumo') { %>
-                                            <p><%= slices[i].primary.summary %></p>
-                                        <% } %>
+                                        <% let summaryArray = post.data.body.filter(el=>{el.slice_type=='resumo'})[0] %>
+                                        <p><%= summaryArray == undefined ? 'Hi' : summaryArray.primary.summary %></p>
+                                        
                                     </div>
                                     <div class="ler-mais"><a href="/post/<%= post.uid %>">Leia mais</a></div>
                                 </div>
