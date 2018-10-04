@@ -236,17 +236,31 @@ input, label, textarea {
     color: white; }
 
 /* PAGINA PRINCIPAL */
+.image-index-page {
+  background-image: url("/img/bg-04.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 1;
+  height: 100%; }
+
 .preview {
   margin-bottom: 1rem; }
 
 .preview-img {
   padding-right: 0;
   padding-left: 0;
+  text-align: center;
   height: 220px;
-  background: rgba(0, 0, 0, 0.5); }
+  background: rgba(0, 0, 0, 0.02); }
   .preview-img img {
     height: 100%;
     object-fit: cover; }
+
+.preview-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
 
 .preview-title, .preview-author {
   display: block; }
@@ -256,12 +270,9 @@ input, label, textarea {
   .preview-title, .preview-title:hover {
     color: black; }
 
-.summary {
-  height: 132px;
-  text-align: justify; }
-
 .ler-mais {
-  text-align: center; }
+  text-align: center;
+  margin-top: 5px; }
   .ler-mais a {
     font-weight: 500;
     border: 1px solid #D83E3E;

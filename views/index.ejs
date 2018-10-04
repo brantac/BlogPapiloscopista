@@ -2,17 +2,6 @@
 <html lang="pt-BR">
     <head>
         <% include ./partials/head %>
-        <style>
-            body {
-                background-image: url("https://s3-sa-east-1.amazonaws.com/blog-papiloscopiando/papiloscopiando-bg-01.jpeg");
-                background-repeat: no-repeat;
-                background-position: center;
-            }
-            h4 {
-                color: white;
-                font-weight: 600;
-            }
-        </style>
     </head>
     <body>        
         <header class="container-fluid barraNavTopo pt-3 pb-3">
@@ -24,28 +13,23 @@
             <% include ./partials/sidenavbar %>
         </nav>
 
+        <div class="image-index-page"></div>
         <main class="container-fluid">
             <div class="container content">
                 <div class="row justify-content-center">
                     <div class="col-md-8">
+                        <h1>Publicações</h1>
                         <% posts.forEach( (post) => {%>
                             <div class="preview row">
                                 <div class="preview-img col-12 col-xl-6">
-                                    <% let img = post.data.body.filter(ele => ele.slice_type == 'imagem_de_destaque'); %>
-                                    <% if (img.length > 0) { %>
-                                        <img class="img-fluid"
-                                        src="<%= img[0].primary.featured_image %>" alt="" />
-                                    <% } %>
+                                    <% let img = post.data.body.filter(ele=>ele.slice_type=='imagem_de_destaque')[0]; %>
+                                    <img class="img-fluid"
+                                    src="<%= img != undefined ? img.primary.featured_image : '#' %>" alt=""/>
                                 </div>
                                 <div class="preview-info col-12 col-xl-6">
                                     <div class="preview-header text-center">
                                         <a class="preview-title" href="/post/<%= post.uid %>"><h4><%- PrismicDOM.RichText.asText(post.data.title) %></h4></a>
                                         <a class="preview-author" href="/autor"><%= post.data.author[0].first_name %></a>
-                                    </div>
-                                    <div class="summary">
-                                        <% let summaryArray = post.data.body.filter(el=>{el.slice_type=='resumo'})[0] %>
-                                        <p><%= summaryArray == undefined ? 'Hi' : summaryArray.primary.summary %></p>
-                                        
                                     </div>
                                     <div class="ler-mais"><a href="/post/<%= post.uid %>">Leia mais</a></div>
                                 </div>

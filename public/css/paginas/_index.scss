@@ -63,6 +63,18 @@ input, label, textarea {
 }
 
 /* PAGINA PRINCIPAL */
+.image-index-page {
+    // background-image: url("https://s3-sa-east-1.amazonaws.com/blog-papiloscopiando/papiloscopiando-bg-01.jpeg");
+    // background-image: url("/img/papiloscopiando-bg-01.jpeg");
+    // background-image: url("/img/WhatsApp Image 2018-10-04 at 08.24.12-bg-02.jpeg");
+    // background-image: url("/img/WhatsApp Image 2018-10-04 at 08.24.13-bg-03.jpeg");
+    background-image: url("/img/bg-04.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 1;
+    height: 100%;
+}
 .preview {
     margin-bottom: 1rem;
 }
@@ -71,13 +83,19 @@ input, label, textarea {
         right: 0;
         left: 0;
     }
+    text-align: center;
     height: 220px;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.02);
 
     img {
         height: 100%;
         object-fit: cover;
     }
+}
+.preview-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .preview-title, .preview-author {
     display: block;
@@ -90,12 +108,9 @@ input, label, textarea {
         color: rgba(0,0,0,1);
     }
 }
-.summary {
-    height: 132px;
-    text-align: justify;
-}
 .ler-mais {
     text-align: center;
+    margin-top: 5px;
     a {
         font-weight: 500;
         border: 1px solid $red;
