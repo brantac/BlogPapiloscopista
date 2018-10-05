@@ -69,12 +69,12 @@
 .docs {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    align-items: center;
     .doc-item {
         font: {
             size: 40px;
         }
-        margin: 15px;
+        margin: 0 15px 0 0;
         &:link, &:visited {
             color: rgba(0,0,0,0.5);
         }

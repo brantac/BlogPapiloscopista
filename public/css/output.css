@@ -154,10 +154,10 @@
 .docs {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap; }
+  align-items: center; }
   .docs .doc-item {
     font-size: 40px;
-    margin: 15px; }
+    margin: 0 15px 0 0; }
     .docs .doc-item:link, .docs .doc-item:visited {
       color: rgba(0, 0, 0, 0.5); }
     .docs .doc-item:hover {

@@ -55,9 +55,9 @@
                                 <%- PrismicDOM.RichText.asHtml(response.data.body[0].primary.content, ctx.linkResolver) %>
                             </div>
                         </article>
+                        <h5>Abra o documento</h5>
                         <div class="docs">
                             <% if (docs.length > 0) { %>
-                                <h4>Documentos</h4>
                                 <% docs.forEach( (doc) => { %>
                                     <% if (doc.primary['pdf'] !== null) { %>
                                         <a class="doc-item" href="<%= doc.primary['pdf'] %>" target="_blank"><i class="fas fa-file-pdf"></i></a>
