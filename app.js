@@ -19,24 +19,6 @@ const videos = require('./routes/videos');
 app.set('view engine', 'ejs');
 
 // Config
-app.use((req, res, next) => {
-    if (!req.secure) {
-        /*  return res.redirect([
-            'https://',
-            req.get('Host'),
-            req.url
-            ].join('')); */
-            console.log([
-                    'https://',
-                    req.get('Host'),
-                    req.url
-                    ].join('')
-            );
-    }
-    next();
-});
-// if (process.env.NODE_ENV == 'production') {
-// }
 app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -62,5 +44,5 @@ app.use('/videos', videos);
 app.listen(process.env.PORT || 3000, () => {
     const port = process.env.PORT || 3000;
     const host = process.env.HOST || 'localhost';
-    console.log(`App.js running at http://${host}:${port}`);
+    // console.log(`App.js running at http://${host}:${port}`);
 });
