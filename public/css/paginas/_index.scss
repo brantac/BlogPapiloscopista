@@ -1,3 +1,23 @@
+// SOBRE
+.portrait-text {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+.portrait {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+@media screen and (min-width: 576px) {
+    .portrait-text {
+        flex-wrap: nowrap;
+    }
+    .portrait {
+        margin-right: 15px;
+    }
+}
 // CONTATO
 .social-flex-container {
     display: flex;
