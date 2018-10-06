@@ -55,7 +55,7 @@
                                 <%- PrismicDOM.RichText.asHtml(response.data.body[0].primary.content, ctx.linkResolver) %>
                             </div>
                         </article>
-                        <h5>Abra o documento</h5>
+                        <h5>Links</h5>
                         <div class="docs">
                             <% if (docs.length > 0) { %>
                                 <% docs.forEach( (doc) => { %>
@@ -119,5 +119,14 @@
         </footer>
 
         <% include ./partials/scripts %>
+        <script>
+            // retira a largura imposta a revista vinda do 'issuu'
+            window.onload = function() {
+                if(document.querySelector('.issuuembed')) {
+                    let issuuembed = document.querySelector('.issuuembed');
+                    issuuembed.style.width = 'auto';
+                }
+            };
+        </script>
     </body>
 </html>
