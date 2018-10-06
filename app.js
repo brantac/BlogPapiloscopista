@@ -18,18 +18,6 @@ const videos = require('./routes/videos');
 app.set('view engine', 'ejs');
 
 // Config
-if (process.env.NODE_ENV == 'production') {
-    app.use((req, res, next) => {
-        if (!req.secure) {
-            res.redirect([
-                'https://',
-                req.get('Host'),
-                req.url
-                ].join(''));
-        }
-        next();
-    });
-}
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use( express.static(path.join(__dirname, 'public')) );
