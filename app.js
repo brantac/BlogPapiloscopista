@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const compression = require('compression');
 const bodyParser = require('body-parser');
 const PrismicDOM = require('prismic-dom');
 const prismicConfig = require('./public/libs/utils/prismic-config');
@@ -18,6 +19,25 @@ const videos = require('./routes/videos');
 app.set('view engine', 'ejs');
 
 // Config
+app.use((req, res, next) => {
+    if (!req.secure) {
+        /*  return res.redirect([
+            'https://',
+            req.get('Host'),
+            req.url
+            ].join('')); */
+            console.log([
+                    'https://',
+                    req.get('Host'),
+                    req.url
+                    ].join('')
+            );
+    }
+    next();
+});
+// if (process.env.NODE_ENV == 'production') {
+// }
+app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use( express.static(path.join(__dirname, 'public')) );
