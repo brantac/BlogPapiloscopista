@@ -32,12 +32,12 @@
         }(document, "script", "twitter-wjs"));</script>
 
         <header class="container-fluid barraNavTopo pb-3 pt-3">
-            <% include ./partials/header %>
+            <%- include('partials/header') %>
         </header>
 
         <!-- Menu de navegação esquerdo -->
         <nav class="navbarLateral">
-            <% include ./partials/sidenavbar %>
+            <%- include('partials/sidenavbar') %>
         </nav>
 
         <main class="container-fluid" style="padding-bottom:0;">
@@ -114,10 +114,10 @@
         </main>
 
         <footer class="container-fluid">
-            <% include ./partials/footer %>
+            <%- include('partials/footer') %>
         </footer>
 
-        <% include ./partials/scripts %>
+        <%- include('partials/scripts') %>
         <script>
             // retira a largura imposta a revista vinda do 'issuu'
             window.onload = function() {

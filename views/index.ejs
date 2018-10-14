@@ -6,12 +6,12 @@
     </head>
     <body>        
         <header class="container-fluid barraNavTopo pt-3 pb-3">
-            <% include ./partials/header %>
+            <%- include('partials/header') %>
         </header>
 
         <!-- Menu de navegação esquerdo -->
         <nav class="navbarLateral">
-            <% include ./partials/sidenavbar %>
+            <%- include('partials/sidenavbar') %>
         </nav>
 
         <div class="image-index-page"></div>
@@ -70,9 +70,9 @@
         </main>
 
         <footer class="container-fluid">
-            <% include ./partials/footer %>
+            <%- include('partials/footer') %>
         </footer>
 
-        <% include ./partials/scripts %>
+        <%- include('partials/scripts') %>
     </body>
 </html>
