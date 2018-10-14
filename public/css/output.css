@@ -199,7 +199,7 @@ footer {
   .portrait-text {
     flex-wrap: nowrap; }
 
-  .portrait {
+  .portrait-container {
     margin-right: 15px; } }
 .social-flex-container {
   display: flex;

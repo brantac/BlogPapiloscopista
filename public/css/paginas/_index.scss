@@ -1,4 +1,4 @@
-// SOBRE
+// AUTOR
 .portrait-text {
     display: flex;
     flex-direction: row;
@@ -14,7 +14,7 @@
     .portrait-text {
         flex-wrap: nowrap;
     }
-    .portrait {
+    .portrait-container {
         margin-right: 15px;
     }
 }
