@@ -1,4 +1,8 @@
 const posts_model = require('../models/postsModel');
+const Prismic = require('prismic-javascript');
+const PrismicConfig = require('../public/libs/utils/prismic-config');
+
+const apiEndpoint = 'http://papiloscopiando.prismic.io/api/v2';
 
 // Prismic CMS
 exports.post = (req, res) => {
@@ -30,3 +34,20 @@ exports.post = (req, res) => {
     let queryPost = posts_model.queryPost();
     queryPost(req, slug, promiseHandlers);
 };
+
+// Generate the sitemap used by search engines
+exports.generateSitemap = (req, res) => {
+    Prismic.getApi(apiEndpoint, {req}).then((api) => {
+        return posts_model.getPages(api, 1, []);
+    })
+    .then((documents) => {
+        let body = '';
+        documents.forEach((doc) => {
+            body += `https://papiloscopiando.com.br${PrismicConfig.linkResolver(doc)}\r\n`;
+        });
+        res.send(body);
+    })
+    .catch((err) => {
+        res.status(500).send(`Error: ${err.message}`);
+    })
+}

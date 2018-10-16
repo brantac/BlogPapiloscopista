@@ -32,3 +32,19 @@ exports.queryList =  () => {
         });
     };
 };
+
+// Fetch all pages recursively
+exports.getPages = function (api, page, documents) {
+    return api.query(
+        Prismic.Predicates.any('document.type', ['blog_post']),
+        {page, pageSize: 100, fetch: []}
+    ).then((response) => {
+        if (response.next_page !== null) {
+            return getPages(api, page + 1, documents.concat(response.results));
+        }
+        return documents.concat(response.results);
+    })
+    .catch((err) => {
+        return err;
+    });
+};
