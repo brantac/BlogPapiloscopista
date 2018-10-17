@@ -17,6 +17,7 @@ const videos = require('./routes/videos');
 
 // Set ups
 app.set('view engine', 'ejs');
+app.set('trust proxy', true);
 
 // Config
 app.use(compression());
