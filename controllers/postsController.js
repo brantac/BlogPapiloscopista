@@ -45,7 +45,11 @@ exports.generateSitemap = (req, res) => {
         documents.forEach((doc) => {
             body += `https://papiloscopiando.com.br${PrismicConfig.linkResolver(doc)}\r\n`;
         });
-        res.send(body);
+        res.set({
+            'Content-Type': 'text/plain',
+            'max-age': '0'
+        });
+        res.status(200).send(body);
     })
     .catch((err) => {
         res.status(500).send(`Error: ${err.message}`);
