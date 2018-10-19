@@ -254,7 +254,7 @@ input, label, textarea {
 
 /* PAGINA PRINCIPAL */
 .image-index-page {
-  background-image: url("/img/bg-04.png");
+  background-image: url("https://s3-sa-east-1.amazonaws.com/blog-papiloscopiando/blog/principal/pagina-principal-bg.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
