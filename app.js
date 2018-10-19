@@ -23,7 +23,15 @@ app.set('trust proxy', true);
 app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use( express.static(path.join(__dirname, 'public')) );
+app.use(express.static(path.join(__dirname, 'public'), {
+    setHeaders: function (res, path, stat) {
+        res.setHeader('Cache-Control', 'public, max-age=30672000ms');
+    }
+}));
+app.use(function(req,res,next) {
+    res.set({'max-age': '1800000ms'});
+    next();
+});
 app.use((req, res, next) => {
     res.locals.ctx = {
         endpoint: 'http://papiloscopiando.prismic.io/api/v2',
