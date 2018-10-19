@@ -11,12 +11,8 @@
     object-fit: contain;
 }
 @media screen and (min-width: 576px) {
-    .portrait-text {
-        flex-wrap: nowrap;
-    }
-    .portrait-container {
-        margin-right: 15px;
-    }
+    .portrait-text {flex-wrap: nowrap;}
+    .portrait-container {margin-right: 15px;}
 }
 // CONTATO
 .social-flex-container {
@@ -31,15 +27,9 @@
         height: 25px;
         margin-right: 15px;
     }
-    a:link, a:visited {
-        color: gray;
-    }
-    a:hover {
-        color: $darkblue;
-    }
-    i {
-        font-size: 25px;
-    }
+    a:link, a:visited {color: gray;}
+    a:hover {color: $darkblue;}
+    i {font-size: 25px;}
 }
 .input-groups-flex-container {
     display: flex;
@@ -50,13 +40,9 @@
 .formGroup {
     margin-bottom: 15px;
     width: 100%;
-    @include md {
-        width: 40%;
-    }
+    @include md {width: 40%;}
 }
-input {
-    padding: 12px;
-}
+input {padding: 12px;}
 input, label, textarea {
     display: block;
     width: 100%;
@@ -81,11 +67,8 @@ input, label, textarea {
         }
     }
 }
-
 /* PAGINA PRINCIPAL */
 .image-index-page {
-    background-image: url("https://s3-sa-east-1.amazonaws.com/blog-papiloscopiando/blog/principal/pagina-principal-bg.jpg");
-    // background-image: url("/img/pagina-principal-bg.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -103,7 +86,6 @@ input, label, textarea {
     text-align: center;
     height: 220px;
     background: rgba(0,0,0,0.02);
-
     img {
         height: 100%;
         object-fit: cover;
@@ -114,16 +96,10 @@ input, label, textarea {
     flex-direction: column;
     justify-content: space-between;
 }
-.preview-title, .preview-author {
-    display: block;
-}
+.preview-title, .preview-author {display: block;}
 .preview-title {
-    font: {
-        weight: 600;
-    }
-    &, &:hover {
-        color: rgba(0,0,0,1);
-    }
+    font: {weight: 600;}
+    &, &:hover {color: rgba(0,0,0,1);}
 }
 .ler-mais {
     text-align: center;
@@ -150,19 +126,13 @@ input, label, textarea {
 .pagination {
     a {
         color: #313138;
-        &:hover {
-            color: #313138;
-        }
+        &:hover {color: #313138;}
     }
 }
 .sidebar {
     .sidebar-header {
         width: 150px;
         padding-bottom: 5px;
-        /* margin: {
-            left: auto;
-            right: auto;
-        } */
         color: $darkblue;
         border-bottom: 3px solid $red;
         font: {
@@ -172,14 +142,11 @@ input, label, textarea {
     }
 }
 .author-index-page {
-    // text-align: center;
     padding: {
         left: 15px;
         right: 15px;
     }
     p {
-        font: {
-            size: 13px;
-        }
+        font: {size: 13px;}
     }
 }

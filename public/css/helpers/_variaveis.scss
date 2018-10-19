@@ -1,29 +1,11 @@
 // font family
-$roboto:'Roboto', serif;
 $playfair:'Playfair Display', serif;
-$raleway: 'Raleway', sans-serif;
-$lora: 'Lora', serif;
 // colors
-$vermelhoClaro:rgba(204, 72, 72, 0.986);
-$cinzaEscuro:#424242;
-$cinzaClaro:#7c7c7c;
-// color pallet
 $red: #D83E3E;
-$platinum: #E8E9EB;
-$white: #FFFFFF;
-$gainsboro: #E0DFD5;
 $onyx: #313638;
-// third palette
 $darkblue: #253069;
-
-// Small tablets and large smartphones (landscape view)
+// Screen breakpoints
 $screen-sm-min: 576px;
-
-// Small tablets (portrait view)
 $screen-md-min: 768px;
-
-// Tablets and small desktops
 $screen-lg-min: 992px;
-
-// Large tablets and desktops
 $screen-xl-min: 1200px;

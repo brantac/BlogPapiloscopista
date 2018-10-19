@@ -37,20 +37,6 @@
     top: 50%; }
   #sidenav-toggle .traco3 {
     bottom: 0; }
-  #sidenav-toggle.abreFechaMenu .traco1, #sidenav-toggle.abreFechaMenu .traco3 {
-    background: #313638; }
-  #sidenav-toggle.abreFechaMenu .traco1 {
-    top: 50%;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg); }
-  #sidenav-toggle.abreFechaMenu .traco2 {
-    background: rgba(0, 0, 0, 0); }
-  #sidenav-toggle.abreFechaMenu .traco3 {
-    top: 50%;
-    -webkit-transform: rotate(315deg);
-    -ms-transform: rotate(315deg);
-    transform: rotate(315deg); }
 
 .navbarLateral {
   height: 100%;
@@ -95,24 +81,22 @@
   height: 0;
   overflow: hidden; }
 
-.post {
-  /* POST PAGE */ }
-  .post .post-header {
-    margin-bottom: 1.4rem; }
-    .post .post-header a:link, .post .post-header a:hover {
-      color: rgba(0, 0, 0, 0.8); }
-    .post .post-header p {
-      color: rgba(0, 0, 0, 0.5); }
-    .post .post-header .post-header-author-img {
-      position: relative;
-      float: left;
-      margin-right: 8px;
-      height: 50px;
-      width: 50px;
-      border-radius: 50%;
-      background: gray; }
-  .post .post-body p {
-    text-align: justify; }
+.post .post-header {
+  margin-bottom: 1.4rem; }
+  .post .post-header a:link, .post .post-header a:hover {
+    color: rgba(0, 0, 0, 0.8); }
+  .post .post-header p {
+    color: rgba(0, 0, 0, 0.5); }
+  .post .post-header .post-header-author-img {
+    position: relative;
+    float: left;
+    margin-right: 8px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: gray; }
+.post .post-body p {
+  text-align: justify; }
 
 .after-content {
   position: relative;
@@ -251,7 +235,6 @@ input, label, textarea {
 
 /* PAGINA PRINCIPAL */
 .image-index-page {
-  background-image: url("https://s3-sa-east-1.amazonaws.com/blog-papiloscopiando/blog/principal/pagina-principal-bg.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -309,10 +292,6 @@ input, label, textarea {
 .sidebar .sidebar-header {
   width: 150px;
   padding-bottom: 5px;
-  /* margin: {
-      left: auto;
-      right: auto;
-  } */
   color: #253069;
   border-bottom: 3px solid #D83E3E;
   font-weight: 600;
@@ -336,7 +315,7 @@ main {
   padding-top: 7rem;
   padding-bottom: 4.1rem; }
 
-/* bootstrap */
+/* overriding bootstrap */
 main.container-fluid {
   padding-right: 0;
   padding-left: 0; }

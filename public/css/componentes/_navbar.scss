@@ -5,18 +5,14 @@
     z-index: 2;
 }
 .logo-group {
-    img {
-        height: 30px;
-    }
+    img {height: 30px;}
     .navbar-brand {
         border-bottom: 3px solid $red;
         font-weight: 800;
         letter-spacing: 2px;
         vertical-align: middle;
         font-size: 1.5rem;
-        &:link, &:visited {
-            color:$darkblue;
-        }
+        &:link, &:visited {color:$darkblue;}
     }
 }
 /* toggler used to open sidenav */
@@ -26,9 +22,7 @@
     width: 25px;
     height: 25px;
     vertical-align: middle;
-    &:hover {
-        cursor: pointer;
-    }
+    &:hover {cursor: pointer;}
     .traco1, .traco2, .traco3 {
         position: absolute;
         width: 100%;
@@ -37,33 +31,10 @@
         border-radius: 4px;
         transition-duration: 0.5s;
     }
-    .traco1 {
-        top: 0;
-    }
-    .traco2 {
-        top: 50%;
-    }
-    .traco3 {
-        bottom: 0;
-    }
-    &.abreFechaMenu {
-        .traco1, .traco3 {
-            background: $onyx;
-        }
-        .traco1 {
-            top: 50%;
-            @include transform(45deg);
-        }
-        .traco2 {
-            background: rgba(0,0,0,0.0);
-        }
-        .traco3 {
-            top: 50%;
-            @include transform(315deg);
-        }
-    }
+    .traco1 {top: 0;}
+    .traco2 {top: 50%;}
+    .traco3 {bottom: 0;}
 }
-
 .navbarLateral {
     height: 100%;
     width: 190px;
@@ -75,14 +46,9 @@
     overflow-x: hidden;
     transition: 0.5s;
     box-shadow: 1.5px 0px rgba(0,0,0,0.1);
-
-    hr {
-        background: white;
-    }
+    hr {background: white;}
     ul {
-        margin: {
-            top: 80px;
-        }
+        margin: {top: 80px;}
         padding-left: 0;
         li {
             letter-spacing: 1.2px;
@@ -95,9 +61,7 @@
             }
             &:hover {
                 background: white;
-                a {
-                    color: $onyx;
-                }
+                a {color: $onyx;}
             }
             a {
                 margin-left: 1rem;
