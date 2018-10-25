@@ -182,6 +182,21 @@ footer {
 
   .portrait-container {
     margin-right: 15px; } }
+/* Video */
+.videos-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap; }
+
+.video-container {
+  width: 100%;
+  margin-bottom: 25px; }
+  @media screen and (min-width: 576px) {
+    .video-container {
+      width: 290px;
+      margin-right: 25px; } }
+
 .social-flex-container {
   display: flex;
   flex-flow: row nowrap;
@@ -207,7 +222,7 @@ footer {
 .formGroup {
   margin-bottom: 15px;
   width: 100%; }
-  @media (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     .formGroup {
       width: 40%; } }
 

@@ -11,7 +11,26 @@
     <nav class="navbarLateral">
         <%- include('partials/sidenavbar') %>
     </nav>
-    <main class="container-fluid"></main>
+    <main class="container-fluid">
+        <div class="container">
+            <section class="videos-section">
+                <% if (prismicDocuments.length > 0) { %>
+                    <% prismicDocuments.forEach((doc) => { %>
+                        <div class="video-container">
+                            <div class="video-title">
+                                <p><%= doc.data.post_title %></p>
+                            </div>
+                            <iframe width="100%" height="auto"
+                                src="<%= doc.data.video_link %>"
+                                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+                                Iframe não carregado
+                            </iframe>
+                        </div>
+                    <% }); %>
+                <% } %>
+            </section>
+        </div>
+    </main>
     <footer class="container-fluid">
         <%- include('partials/footer') %>
     </footer>
