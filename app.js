@@ -25,7 +25,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public'), {
     setHeaders: function (res, path, stat) {
-        res.setHeader('Cache-Control', 'public, max-age=30672000ms');
+        res.setHeader('Cache-Control', 'public, max-age=3600000ms');
     }
 }));
 app.use(function(req,res,next) {
