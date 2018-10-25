@@ -15,12 +15,12 @@
         </nav>
 
         <div class="image-index-page"
-        style="background-image:url('https://s3-sa-east-1.amazonaws.com/blog-papiloscopiando/blog/principal/pagina-principal-bg.jpg')"></div>
+            style="background-image:url('https://s3-sa-east-1.amazonaws.com/blog-papiloscopiando/blog/principal/pagina-principal-bg.jpg')"></div>
         <main class="container-fluid">
             <div class="container content">
                 <div class="row justify-content-center">
-                    <div class="col-md-8">
-                        <h1>Publicações</h1>
+                    <section class="col-md-8 publication-section">
+                        <h1 class="publication-section-title">Publicações</h1>
                         <% posts.forEach( (post) => {%>
                             <div class="preview row">
                                 <div class="preview-img col-12 col-xl-6">
@@ -37,13 +37,14 @@
                                 </div>
                             </div><!-- /row -->
                         <% }) %>
-                    </div>
-                    <!-- Retornar aqui quando terminar as outras páginas!
-                    <section class="col-md-4 sidebar">
-                        <div class="author-index-page">
-                            <p class="sidebar-header">Quem escreve?</p>
-                            <h6>Brasilio Caldeira Brant</h6>
-                            <p>
+                    </section>
+                    <section class="col-md-4 sidebar-section">
+                        <div class="sidebar-author">
+                            <p class="autor-do-blog">Autor do Blog</p>
+                            <img src="https://s3-sa-east-1.amazonaws.com/blog-papiloscopiando/blog/autor/foto_perfil_brasilio.jpg"
+                                alt="" height="100px" width="100px" />
+                            <a class="author-name" href="/autor">Brasilio Caldeira Brant</a>
+                            <!-- <p>
                                 Papiloscopista Policial Federal, formado
                                 pela Academia Nacional de Polícia em 1985, atuando principalmente
                                 nos seguintes temas Papiloscopia e Representação Facial Humana.
@@ -51,9 +52,9 @@
                                 de Pós-Graduação em Perícias Forenses na matéria fundamentos da
                                 Perícia Papiloscópica e Representação Facial Humana. É também
                                 palestrante dessas áreas.
-                            </p>
+                            </p> -->
                         </div>
-                    </section> -->
+                    </section>
                 </div><!-- /row -->
     
                 <!-- <nav aria-label="Page navigation">

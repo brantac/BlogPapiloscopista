@@ -1,3 +1,4 @@
+/* cores de teste */
 .barraNavTopo {
   position: fixed;
   top: 0;
@@ -256,6 +257,12 @@ input, label, textarea {
   opacity: 1;
   height: 100%; }
 
+.publication-section {
+  margin-bottom: 32px; }
+
+.publication-section-title {
+  color: #5262B5; }
+
 .preview {
   margin-bottom: 1rem; }
 
@@ -304,19 +311,32 @@ input, label, textarea {
   .pagination a:hover {
     color: #313138; }
 
-.sidebar .sidebar-header {
-  width: 150px;
-  padding-bottom: 5px;
-  color: #253069;
-  border-bottom: 3px solid #D83E3E;
-  font-weight: 600;
-  font-size: 21px; }
+.sidebar-section {
+  display: flex;
+  flex-direction: column; }
 
-.author-index-page {
-  padding-left: 15px;
-  padding-right: 15px; }
-  .author-index-page p {
-    font-size: 13px; }
+.autor-do-blog {
+  width: 100%;
+  color: white;
+  background: #5262B5;
+  border-radius: 4px;
+  font-size: 21px;
+  text-align: center; }
+
+.sidebar-author {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .sidebar-author img {
+    margin-bottom: 16px; }
+
+.author-name:link,
+.author-name:visited {
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration: none; }
+  .author-name:link:hover,
+  .author-name:visited:hover {
+    color: black; }
 
 html, body {
   height: 100%; }

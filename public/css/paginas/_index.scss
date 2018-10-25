@@ -90,6 +90,8 @@ input, label, textarea {
     opacity: 1;
     height: 100%;
 }
+.publication-section {margin-bottom: 32px;}
+.publication-section-title {color: $light-blue;}
 .preview {
     margin-bottom: 1rem;
 }
@@ -144,24 +146,27 @@ input, label, textarea {
         &:hover {color: #313138;}
     }
 }
-.sidebar {
-    .sidebar-header {
-        width: 150px;
-        padding-bottom: 5px;
-        color: $darkblue;
-        border-bottom: 3px solid $red;
-        font: {
-            weight: 600;
-            size: 21px;
-        }
-    }
+.sidebar-section {
+    display: flex;
+    flex-direction: column;
 }
-.author-index-page {
-    padding: {
-        left: 15px;
-        right: 15px;
-    }
-    p {
-        font: {size: 13px;}
-    }
+.autor-do-blog {
+    width: 100%;
+    color: rgba(255,255,255,1);
+    background: $light-blue;
+    border-radius: 4px;
+    font: {size: 21px;}
+    text-align: center;
+}
+.sidebar-author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {margin-bottom: 16px;}
+}
+.author-name:link,
+.author-name:visited {
+    color: rgba(0,0,0,0.7);
+    text-decoration: none;
+    &:hover {color: rgba(0,0,0,1);}
 }
