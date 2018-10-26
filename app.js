@@ -23,8 +23,11 @@ app.set('trust proxy', true);
 app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-// ! Set header controls !
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'), {
+    setHeaders: function (res, pat, stat) {
+        res.setHeader('Cache-Control', 'public, max-age=1800000ms');
+    }
+}));
 
 /**
  * Objects and Methods that can be used
