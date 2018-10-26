@@ -23,15 +23,13 @@ app.set('trust proxy', true);
 app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public'), {
-    setHeaders: function (res, path, stat) {
-        res.setHeader('Cache-Control', 'public, max-age=3600000ms');
-    }
-}));
-app.use(function(req,res,next) {
-    res.set({'max-age': '1800000ms'});
-    next();
-});
+// ! Set header controls !
+app.use(express.static(path.join(__dirname, 'public')));
+
+/**
+ * Objects and Methods that can be used
+ * inside all HTML pages.
+ */
 app.use((req, res, next) => {
     res.locals.ctx = {
         endpoint: 'http://papiloscopiando.prismic.io/api/v2',
@@ -50,8 +48,4 @@ app.use('/anunciantes', advertisers);
 app.use('/contato', contact);
 app.use('/videos', videos);
 
-app.listen(process.env.PORT || 3000, () => {
-    const port = process.env.PORT || 3000;
-    const host = process.env.HOST || 'localhost';
-    // console.log(`App.js running at http://${host}:${port}`);
-});
+app.listen(process.env.PORT || 3000);
