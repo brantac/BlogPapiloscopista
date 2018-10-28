@@ -83,12 +83,11 @@ input, label, textarea {
     }
 }
 /* PAGINA PRINCIPAL */
-.image-index-page {
+.index-main-image {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    opacity: 1;
-    height: 100%;
+    opacity: .9;
 }
 .publication-section {margin-bottom: 32px;}
 .publication-section-title {color: $light-blue;}
