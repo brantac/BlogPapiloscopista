@@ -17,7 +17,7 @@
         <section class="image-index-page index-main-image"
             style="background-image:url('https://s3-sa-east-1.amazonaws.com/blog-papiloscopiando/blog/principal/pagina-principal-bg.jpg'); height: 70%;">
         </section>
-        <main class="container-fluid">
+        <main class="container-fluid main-home">
             <div class="container content">
                 <div class="row justify-content-center">
                     <section class="col-md-8 publication-section">
@@ -31,35 +31,30 @@
                                 </div>
                                 <div class="preview-info col-12 col-xl-6">
                                     <div class="preview-header text-center">
-                                        <a class="preview-title" href="/post/<%= post.uid %>"><h4><%- PrismicDOM.RichText.asText(post.data.title) %></h4></a>
+                                        <a class="preview-title" href="/post/<%= post.uid %>"><h5><%- PrismicDOM.RichText.asText(post.data.title) %></h5></a>
                                         <a class="preview-author" href="/autor"><%= post.data.author[0].first_name %></a>
                                     </div>
                                     <div class="ler-mais"><a href="/post/<%= post.uid %>">Leia mais</a></div>
                                 </div>
                             </div><!-- /row -->
                         <% }) %>
+                        <!-- pagination -->
+                        <!-- <nav aria-label="Page navigation">
+                            <ul class="pagination justify-content-center">
+                                <li></li>
+                            </ul>
+                        </nav> -->
                     </section>
-                    <!-- <section class="col-md-4 sidebar-section">
+                    <section class="col-md-4 sidebar-section">
                         <div class="sidebar-author">
                             <p class="autor-do-blog">Autor do Blog</p>
                             <img src="https://s3-sa-east-1.amazonaws.com/blog-papiloscopiando/blog/autor/foto_perfil_brasilio.jpg"
                                 alt="" height="100px" width="100px" />
                             <a class="author-name" href="/autor">Brasilio Caldeira Brant</a>
                         </div>
-                    </section> -->
+                    </section>
                 </div><!-- /row -->
-    
-                <!-- <nav aria-label="Page navigation">
-                    <ul class="pagination justify-content-center">
-                        <% //if (previous_page) { %>
-                            <li class="page-item"><a class="page-link" href="/p/<%=// previous_page %>">Anterior</a></li>
-                        <% //} %>
-    
-                        <% //if (next_page) { %>
-                            <li class="page-item"><a class="page-link" href="/p/<%=// next_page %>">Proxima</a></li>
-                        <% //} %>
-                    </ul>
-                </nav> -->
+                
             </div>
         </main>
 

@@ -90,7 +90,10 @@ input, label, textarea {
     opacity: .9;
 }
 .publication-section {margin-bottom: 32px;}
-.publication-section-title {color: $light-blue;}
+.publication-section-title {
+    color: $darkblue;
+    margin-bottom: 1rem;
+}
 .preview {
     margin-bottom: 1rem;
 }
@@ -111,31 +114,36 @@ input, label, textarea {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-top: .5rem;
+    @include xl {
+        margin-top: 0;
+    }
 }
 .preview-title, .preview-author {display: block;}
 .preview-title {
     font: {weight: 600;}
-    &, &:hover {color: rgba(0,0,0,1);}
+    &:link, &:visited {color: $dark-light-blue;}
 }
+.preview-title:hover {color: $light-blue;}
 .ler-mais {
     text-align: center;
     margin-top: 5px;
     a {
         font-weight: 500;
-        border: 1px solid $red;
+        border: 1px solid $light-blue;
         &:link, &:visited {
             text-decoration: none;
-            color: $red;
+            color: $light-blue;
         }
         &:hover {
-            background: $red;
+            background: $light-blue;
             color: rgba(255,255,255,1);
         }
         padding: {
             top: 5px;
             bottom: 5px;
-            left: 8px;
-            right: 8px;
+            left: 16px;
+            right: 16px;
         }
     }
 }
@@ -151,17 +159,17 @@ input, label, textarea {
 }
 .autor-do-blog {
     width: 100%;
-    color: rgba(255,255,255,1);
-    background: $light-blue;
-    border-radius: 4px;
-    font: {size: 21px;}
+    color: $darkblue;
+    font: {size: 1.5rem;}
     text-align: center;
+    border-top: 1px solid $light-blue;
+    margin-bottom: .3rem;
 }
 .sidebar-author {
     display: flex;
     flex-direction: column;
     align-items: center;
-    img {margin-bottom: 16px;}
+    img {margin-bottom: .2rem;}
 }
 .author-name:link,
 .author-name:visited {

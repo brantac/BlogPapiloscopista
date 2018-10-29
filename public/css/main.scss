@@ -17,6 +17,23 @@ main {
         bottom: 4.1rem;
     }
 }
+/* .main-about,
+.main-author,
+.main-videos,
+.main-advertisers,
+.main-contact {
+    min-height: 100%;
+    padding: {
+        top: 7rem;
+        bottom: 4.1rem;
+    }
+} */
+.main-home {
+    padding: {
+        top:1.5rem;
+        bottom: 1rem;
+    }
+}
 /* overriding bootstrap */
 main.container-fluid {
     padding: {
