@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const PrismicDOM = require('prismic-dom');
 const prismicConfig = require('./public/libs/utils/prismic-config');
 
-// Routes
+/* Routes */
 const posts = require('./routes/posts');
 const index = require('./routes/index');
 const about = require('./routes/about');
@@ -15,14 +15,26 @@ const advertisers = require('./routes/advertisers');
 const contact = require('./routes/contact');
 const videos = require('./routes/videos');
 
-// Set ups
+/* Set ups */
 app.set('view engine', 'ejs');
 app.set('trust proxy', true);
 
-// Config
+/* Config */
 app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+// cache-busting css
+app.use((req, res, next) => {
+    if (path.extname(req.url) === '.css') {
+        let fsplit = path.basename(req.url).split('.');
+        if (fsplit.length > 2) {
+            req.url = path.join('/css/',
+                fsplit.filter((ele, ind) => ind !== 1).join('.'));
+        }
+    }
+    next();
+});
+// set static files cache control headers
 app.use(express.static(path.join(__dirname, 'public'), {
     maxAge: '30m'
 }));
