@@ -36,7 +36,9 @@ app.use((req, res, next) => {
 });
 // set static files cache control headers
 app.use(express.static(path.join(__dirname, 'public'), {
-    maxAge: '30m'
+    setHeaders: function (res, pat, stat) {
+        res.set('Cache-Control', 'public, max-age=1800000');
+    }
 }));
 
 /**
