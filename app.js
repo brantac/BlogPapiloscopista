@@ -24,9 +24,7 @@ app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public'), {
-    setHeaders: function (res, pat, stat) {
-        res.setHeader('Cache-Control', 'public, max-age=1800000ms');
-    }
+    maxAge: '30m'
 }));
 
 /**
