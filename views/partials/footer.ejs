@@ -1,8 +1,21 @@
-<div class="blog-footer-social">
-    <a href="https://linkedin.com/in/brasilio-brant-270b0733" target="_blank"><i class="fab fa-linkedin-in" /></i></a>
-    <a href="https://facebook.com/brasilio.brant" target="_blank"><i class="fab fa-facebook" /></i></a>
-    <a href="https://instagram.com/brasiliobrant" target="_blank"><i class="fab fa-instagram" /></i></a>
-</div>
-<div class="blog-footer-credits">
-    <p>Desenvolvido por <a href="https://github.com/brantac" target="_blank">brantac</a>.</a></p>
-</div>
+<footer class="container-fluid">
+    <div class="blog-footer-social">
+        <a href="https://linkedin.com/in/brasilio-brant-270b0733" target="_blank"><i class="fab fa-linkedin-in" /></i></a>
+        <a href="https://facebook.com/brasilio.brant" target="_blank"><i class="fab fa-facebook" /></i></a>
+        <a href="https://instagram.com/brasiliobrant" target="_blank"><i class="fab fa-instagram" /></i></a>
+    </div>
+    <div class="blog-footer-credits">
+        <p>Desenvolvido por <a href="https://github.com/brantac" target="_blank">brantac</a>.</a></p>
+    </div>
+</footer>
+<script>
+/* abre/fecha sidenavbar */
+const toggle = document.getElementById('sidenav-toggle');
+const sidenavbar = document.getElementsByClassName('navbarLateral')[0];
+function isOpen ()  {
+    return sidenavbar.style.left === '0px' ? true : false;
+}
+toggle.addEventListener( 'click', () => {
+    isOpen() ? sidenavbar.style.left = '-190px' : sidenavbar.style.left = '0px';
+});
+</script>
