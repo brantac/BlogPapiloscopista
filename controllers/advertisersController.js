@@ -1,5 +1,5 @@
 exports.advertisers = (req, res) => {
-    res.render("advertisers", {
+    res.render("main", {
         page: 'advertisers',
         slug: 'anunciantes',
         seo: {

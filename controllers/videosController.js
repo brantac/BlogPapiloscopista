@@ -23,7 +23,7 @@ exports.videos = (req, res) => {
             prismicDocuments: documents
         };
 
-        res.status(200).render('videos', renderData);
+        res.status(200).render('main', renderData);
     })
     .catch((err) => {
         res.status(500).send(`Erro: ${err.message}`);

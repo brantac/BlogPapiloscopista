@@ -5,7 +5,7 @@ const OAuth2 = google.auth.OAuth2;
 
 // Render contact page
 exports.contact = (req, res) => {
-    res.render('contact', {
+    res.render('main', {
         page: 'contact',
         slug: 'contato',
         seo: {
@@ -66,7 +66,6 @@ exports.sendMail = (req, res) => {
         if (error) {
             res.end(error);
         } else {
-            console.log('Email sent: ' + info.response);
             res.status(200).end('Mensagem enviada com sucesso.');
         }
     });

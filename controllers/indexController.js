@@ -19,7 +19,7 @@ exports.list_posts = (req, res) => {
                 image: '/img/icones/blog_icon_15px.png'
             }
         };
-        res.render('index', obj);
+        res.render('main', obj);
         // res.end('Hello world');
     };
     promiseHandlers[1] = (reason) => {

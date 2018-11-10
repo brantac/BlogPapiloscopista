@@ -1,126 +1,72 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-    <head>
-        <%- include('partials/head') %>
-    </head>
-    <body>
-        <!-- Facebook JavaScript SDK -->
-        <div id="fb-root"></div>
-        <script>(function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = 'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.1';
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
-        <!-- Twitter JS -->
-        <script>window.twttr = (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0],
-            t = window.twttr || {};
-        if (d.getElementById(id)) return t;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "https://platform.twitter.com/widgets.js";
-        fjs.parentNode.insertBefore(js, fjs);
-        
-        t._e = [];
-        t.ready = function(f) {
-            t._e.push(f);
-        };
-        
-        return t;
-        }(document, "script", "twitter-wjs"));</script>
-
-        <header class="container-fluid barraNavTopo pb-3 pt-3">
-            <%- include('partials/header') %>
-        </header>
-
-        <!-- Menu de navegação esquerdo -->
-        <nav class="navbarLateral">
-            <%- include('partials/sidenavbar') %>
-        </nav>
-
-        <main class="container-fluid" style="padding-bottom:0;">
-            <div class="container content">
-                <div class="row justify-content-md-center">
-                    <div class="postsDoBlog col-md-8">
-                        <article class="post">
-                            <div class="post-header">
-                                <a class="post-header-author-img" href="/autor"><img class="img-fluid" src="" alt="" /></a>
-                                <a href="/autor"><%= response.data.author[0].first_name%></a>
-                                <p><%= published.getDay() %>/<%= published.getMonth() %>/<%= published.getFullYear() %></p>
-                            </div>
-                            <div class="post-body">
-                                <%- PrismicDOM.RichText.asHtml(response.data.title, ctx.linkResolver) %>
-                                <%- PrismicDOM.RichText.asHtml(response.data.body[0].primary.content, ctx.linkResolver) %>
-                            </div>
-                        </article>
-                        <div class="docs">
-                            <% if (docs.length > 0) { %>
-                                <% docs.forEach( (doc) => { %>
-                                    <% if (doc.primary['pdf'] !== null) { %>
-                                        <a class="doc-item" href="<%= doc.primary['pdf'] %>" target="_blank"><i class="fas fa-file-pdf"></i></a>
-                                    <% } %>
-                                <% }); %>
+<main class="container-fluid" style="padding-bottom:0;">
+    <div class="container content">
+        <div class="row justify-content-md-center">
+            <div class="postsDoBlog col-md-8">
+                <article class="post">
+                    <div class="post-header">
+                        <a class="post-header-author-img" href="/autor"><img class="img-fluid" src="" alt="" /></a>
+                        <a href="/autor"><%= response.data.author[0].first_name%></a>
+                        <p><%= published.getDay() %>/<%= published.getMonth() %>/<%= published.getFullYear() %></p>
+                    </div>
+                    <div class="post-body">
+                        <%- PrismicDOM.RichText.asHtml(response.data.title, ctx.linkResolver) %>
+                        <%- PrismicDOM.RichText.asHtml(response.data.body[0].primary.content, ctx.linkResolver) %>
+                    </div>
+                </article>
+                <div class="docs">
+                    <% if (docs.length > 0) { %>
+                        <% docs.forEach( (doc) => { %>
+                            <% if (doc.primary['pdf'] !== null) { %>
+                                <a class="doc-item" href="<%= doc.primary['pdf'] %>" target="_blank"><i class="fas fa-file-pdf"></i></a>
                             <% } %>
-                        </div>
+                        <% }); %>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="after-content">
+        <div class="container">
+            <span class="share-title">Compartilhe</span>
+            <ul class="post-social">
+                <!-- linkedin -->
+                <li>
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://papiloscopiando.com.br/post/<%= slug %>&source=Papiloscopiando" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </li>
+                <!-- twitter -->
+                <li>
+                    <a href="https://twitter.com/intent/tweet?url=https://papiloscopiando.com.br/post/<%= slug %>" target="_blank"><i class="fab fa-twitter"></i></a>
+                </li>
+                <!-- facebbok -->
+                <li>
+                    <div class="fb-share-button" data-href="https://papiloscopiando.com.br/post/<%= slug %>" data-layout="button" data-size="small" data-mobile-iframe="false"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpapiloscopiando.com.br%2Fpost%2F<%= slug %>&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartilhar</a></div>
+                </li>
+            </ul>
+            <div class="post-comments">
+                <div class="row justify-content-md-center">
+                    <div class="col-md-8">
+                        <div id="disqus_thread"></div>
+                        <script>
+                        /**
+                        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                        
+                        var disqus_config = function () {
+                        this.page.url = "https://papiloscopiando.com.br/post/<%= slug %>";  // Replace PAGE_URL with your page's canonical URL variable
+                        this.page.identifier = "<%- PrismicDOM.RichText.asText(response.data.title) %>"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                        };
+                        
+                        (function() { // DON'T EDIT BELOW THIS LINE
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://papiloscopiando.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                        })();
+                        </script>
+                        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
                     </div>
                 </div>
             </div>
-            <div class="after-content">
-                <div class="container">
-                    <span class="share-title">Compartilhe</span>
-                    <ul class="post-social">
-                        <!-- linkedin -->
-                        <li>
-                            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://papiloscopiando.com.br/post/<%= slug %>&source=Papiloscopiando" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        </li>
-                        <!-- twitter -->
-                        <li>
-                            <a href="https://twitter.com/intent/tweet?url=https://papiloscopiando.com.br/post/<%= slug %>" target="_blank"><i class="fab fa-twitter"></i></a>
-                        </li>
-                        <!-- facebbok -->
-                        <li>
-                            <div class="fb-share-button" data-href="https://papiloscopiando.com.br/post/<%= slug %>" data-layout="button" data-size="small" data-mobile-iframe="false"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpapiloscopiando.com.br%2Fpost%2F<%= slug %>&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartilhar</a></div>
-                        </li>
-                    </ul>
-                    <div class="post-comments">
-                        <div class="row justify-content-md-center">
-                            <div class="col-md-8">
-                                <div id="disqus_thread"></div>
-                                <script>
-                                /**
-                                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-                                
-                                var disqus_config = function () {
-                                this.page.url = "https://papiloscopiando.com.br/post/<%= slug %>";  // Replace PAGE_URL with your page's canonical URL variable
-                                this.page.identifier = "<%- PrismicDOM.RichText.asText(response.data.title) %>"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                                };
-                               
-                                (function() { // DON'T EDIT BELOW THIS LINE
-                                var d = document, s = d.createElement('script');
-                                s.src = 'https://papiloscopiando.disqus.com/embed.js';
-                                s.setAttribute('data-timestamp', +new Date());
-                                (d.head || d.body).appendChild(s);
-                                })();
-                                </script>
-                                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
-        <%- include('partials/footer') %>
-        <script>
-            // retira a largura imposta a revista vinda do 'issuu'
-            window.onload = function() {
-                if(document.querySelector('.issuuembed')) {
-                    let issuuembed = document.querySelector('.issuuembed');
-                    issuuembed.style.width = 'auto';
-                }
-            };
-        </script>
-    </body>
-</html>
+        </div>
+    </div>
+</main>

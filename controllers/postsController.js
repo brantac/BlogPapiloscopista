@@ -23,7 +23,7 @@ exports.post = (req, res) => {
             seo: response.data.seo_group[0],
             docs: response.data.body.filter(isDoc)
         };
-        res.render('post', obj);
+        res.render('main', obj);
         // res.end('Hello world');
     };
     promiseHandlers[1] = (reason) => {

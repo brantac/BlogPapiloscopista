@@ -1,5 +1,5 @@
 exports.author =  (req, res) => {
-    res.render("author", {
+    res.render("main", {
         page: 'author',
         slug: 'autor',
         seo: {

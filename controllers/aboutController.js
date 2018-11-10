@@ -1,5 +1,5 @@
 exports.about = (req, res) => {
-    res.render("about", {
+    res.render("main", {
         page: 'about',
         slug: 'sobre',
         seo: {

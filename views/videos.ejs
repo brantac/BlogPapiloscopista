@@ -1,36 +1,20 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <%- include('partials/head') %>
-</head>
-<body>
-    <header class="container-fluid barraNavTopo pt-3 pb-3">
-        <%- include('partials/header') %>
-    </header>
-    <!-- Menu de navegação esquerdo -->
-    <nav class="navbarLateral">
-        <%- include('partials/sidenavbar') %>
-    </nav>
-    <main class="container-fluid">
-        <div class="container">
-            <section class="videos-section">
-                <% if (prismicDocuments.length > 0) { %>
-                    <% prismicDocuments.forEach((doc) => { %>
-                        <div class="video-container">
-                            <div class="video-title">
-                                <p><%= doc.data.post_title %></p>
-                            </div>
-                            <iframe width="100%" height="auto"
-                                src="<%= doc.data.video_link %>"
-                                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-                                Iframe não carregado
-                            </iframe>
+<main class="container-fluid">
+    <div class="container">
+        <section class="videos-section">
+            <% if (prismicDocuments.length > 0) { %>
+                <% prismicDocuments.forEach((doc) => { %>
+                    <div class="video-container">
+                        <div class="video-title">
+                            <p><%= doc.data.post_title %></p>
                         </div>
-                    <% }); %>
-                <% } %>
-            </section>
-        </div>
-    </main>
-    <%- include('partials/footer') %>
-</body>
-</html>
+                        <iframe width="100%" height="auto"
+                            src="<%= doc.data.video_link %>"
+                            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+                            Iframe não carregado
+                        </iframe>
+                    </div>
+                <% }); %>
+            <% } %>
+        </section>
+    </div>
+</main>
