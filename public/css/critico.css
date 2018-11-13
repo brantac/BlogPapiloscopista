@@ -1,48 +1,3 @@
-.f-row {
-  display: flex;
-  flex-direction: row; }
-
-.f-col {
-  display: flex;
-  flex-direction: column; }
-
-.justify-c-center {
-  justify-content: center; }
-
-.justify-c-start {
-  justify-content: flex-start; }
-
-.justify-c-end {
-  justify-content: flex-end; }
-
-.justify-c-space-around {
-  justify-content: space-around; }
-
-.justify-c-space-between {
-  justify-content: space-between; }
-
-.align-items-center {
-  align-items: center; }
-
-.container-fluid, .container {
-  width: 100%;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-right: auto;
-  margin-left: auto; }
-
-@media screen and (min-width: 1200px) {
-  .container {
-    max-width: 1140px; } }
-@media screen and (min-width: 992px) {
-  .container {
-    max-width: 960px; } }
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 720px; } }
-@media screen and (min-width: 576px) {
-  .container {
-    max-width: 540px; } }
 .barraNavTopo {
   position: fixed;
   top: 0;
@@ -115,10 +70,6 @@
         font-size: 1.2rem;
         color: white;
         text-decoration: unset; }
-
-.img-fluid {
-  width: 100%;
-  height: auto; }
 
 .hero-image-bg {
   background-image: url("https://s3-sa-east-1.amazonaws.com/blog-papiloscopiando/blog/principal/pagina-principal-bg.jpg");
