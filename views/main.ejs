@@ -15,21 +15,7 @@
     <meta property="og:title"         content="<%= page == 'post' ? seo.seo_title : seo.title + 'Papiloscopiando' %>" />
     <meta property="og:description"   content="<%= page == 'post' ? seo.seo_description : seo.description %>" />
     <meta property="og:image"         content="<%= page == 'post' ? seo.seo_image : seo.image %>" />
-    <link rel="stylesheet" type="text/css" media="screen" href="/css/output.0000001.css" />
-    <% if (page === 'index') { %>
-        <style>
-            .index-main-image {
-                background-image:url('https://s3-sa-east-1.amazonaws.com/blog-papiloscopiando/blog/principal/pagina-principal-bg.jpg'); height: 70%;
-            }
-            /* REMOVE THIS CSS FROM THE OUTPUT.CSS! */
-            .index-main-image {
-                background-repeat: no-repeat;
-                background-position: center;
-                background-size: cover;
-                opacity: .9;
-            }
-        </style>
-    <% } %>
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/output.0000002.css" />
     <% if ( (page === 'author') || (page === 'advertisers') || (page === 'about')) { %>
         <style>
             p {
@@ -39,7 +25,6 @@
         </style>
     <% } %>
     <% if (page === 'post') { %>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <% } %>
     <style>
@@ -144,11 +129,6 @@
             head.appendChild(css);
     }
     function loadDeferedStylesheets () {
-        loadCss(
-            "https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css",
-            "sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB",
-            "anonymous",
-            "stylesheet");
         loadCss(
             "https://use.fontawesome.com/releases/v5.5.0/css/all.css",
             "sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU",
