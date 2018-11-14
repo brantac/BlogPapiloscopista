@@ -111,6 +111,7 @@
         isOpen() ? sidenavbar.style.left = '-190px' : sidenavbar.style.left = '0px';
     });
     </script>
+    <% if (page !== 'post') { %>
     <script>
     /* defer blocking css loading */
     let loadCss = (
@@ -135,11 +136,8 @@
             "anonymous",
             "stylesheet");
     }
+    window.onload = loadDeferedStylesheets;
     </script>
-    <% if (page !== 'post') { %>
-        <script>
-            window.onload = loadDeferedStylesheets;
-        </script>
     <% } %>
     <% if (page === 'post') { %>
         <script>
