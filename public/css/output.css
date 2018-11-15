@@ -6793,6 +6793,9 @@ a.text-dark:hover, a.text-dark:focus {
   100% {
     right: 0%;
     opacity: 1; } }
+.author p, .about p, .advertisers p {
+  color: rgba(0, 0, 0, 0.8); }
+
 .hero-img-bg {
   background-repeat: no-repeat;
   background-position: center;
@@ -6967,22 +6970,27 @@ footer {
 .blog-footer-social a:link, .blog-footer-social a:hover, .blog-footer-social a:visited {
   color: white; }
 
-.portrait-text {
+.author-info {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: flex-start; }
+  align-items: flex-start;
+  justify-content: center; }
 
-.portrait {
+.author-resume {
+  flex-basis: 100%;
+  flex-grow: 0; }
+
+.avatar-img {
   max-width: 100%;
   height: auto;
   object-fit: contain; }
 
 @media screen and (min-width: 576px) {
-  .portrait-text {
+  .author-info {
     flex-wrap: nowrap; }
 
-  .portrait-container {
+  .avatar-container {
     margin-right: 15px; } }
 /* Video */
 .videos-section {

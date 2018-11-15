@@ -1,18 +1,23 @@
 // AUTOR
-.portrait-text {
+.author-info {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
+    justify-content: center;
 }
-.portrait {
+.author-resume {
+    flex-basis: 100%;
+    flex-grow: 0;
+}
+.avatar-img {
     max-width: 100%;
     height: auto;
     object-fit: contain;
 }
 @media screen and (min-width: 576px) {
-    .portrait-text {flex-wrap: nowrap;}
-    .portrait-container {margin-right: 15px;}
+    .author-info {flex-wrap: nowrap;}
+    .avatar-container {margin-right: 15px;}
 }
 /* Video */
 .videos-section {
