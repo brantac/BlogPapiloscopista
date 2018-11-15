@@ -6780,6 +6780,19 @@ a.text-dark:hover, a.text-dark:focus {
   .table .thead-dark th {
     color: inherit;
     border-color: #dee2e6; } }
+.slideFromRightToLeft {
+  animation-duration: 1000ms;
+  animation-name: slideRL; }
+
+@keyframes slideRL {
+  0% {
+    right: -100%;
+    opacity: 0; }
+  80% {
+    opacity: .5; }
+  100% {
+    right: 0%;
+    opacity: 1; } }
 .hero-img-bg {
   background-repeat: no-repeat;
   background-position: center;
