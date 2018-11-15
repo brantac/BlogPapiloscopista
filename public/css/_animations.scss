@@ -1,0 +1,17 @@
+.slideFromRightToLeft {
+    animation-duration: 1000ms;
+    animation-name: slideRL;
+}
+@keyframes slideRL {
+    0% {
+        right: -100%;
+        opacity: 0;
+    }
+    80% {
+        opacity: .5;
+    }
+    100% {
+        right: 0%;
+        opacity: 1;
+    }
+}
