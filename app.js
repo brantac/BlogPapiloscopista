@@ -23,17 +23,18 @@ app.set('trust proxy', true);
 app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+// [ ! DISABLED. WE'RE USING WEBPACK GENERATED CSS WITH HASH NUMBERS ! ]
 // cache-busting css
-app.use((req, res, next) => {
-    if (path.extname(req.url) === '.css') {
-        let fsplit = path.basename(req.url).split('.');
-        if (fsplit.length > 2) {
-            req.url = path.join('/css/',
-                fsplit.filter((ele, ind) => ind !== 1).join('.'));
-        }
-    }
-    next();
-});
+// app.use((req, res, next) => {
+//     if (path.extname(req.url) === '.css') {
+//         let fsplit = path.basename(req.url).split('.');
+//         if (fsplit.length > 2) {
+//             req.url = path.join('/css/',
+//                 fsplit.filter((ele, ind) => ind !== 1).join('.'));
+//         }
+//     }
+//     next();
+// });
 // set static files cache control headers
 app.use(express.static(path.join(__dirname, 'public'), {
     setHeaders: function (res, pat, stat) {
