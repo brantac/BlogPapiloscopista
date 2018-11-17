@@ -1,5 +1,6 @@
 .vscode
 node_modules/
 public/css/.sass-cache
+public/dist/
 *.log
 .env
