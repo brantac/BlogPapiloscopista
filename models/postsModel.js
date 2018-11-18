@@ -1,7 +1,4 @@
-// Prismic module
 const Prismic = require('prismic-javascript');
-
-// Api endpoint
 const apiEndpoint = 'http://papiloscopiando.prismic.io/api/v2';
 
 // Prismic initiator function
@@ -11,15 +8,18 @@ let initApi = (req) => {
     });
 }
 
-// Return one post
-exports.queryPost = () => {
-    return function (req, slug, promiseHandlers) {
-        return initApi(req).then( (api) => {
-            api.getByUID('blog_post', slug)
-            .then(promiseHandlers[0])
-            .catch(promiseHandlers[1]);
-        });
-    };
+/**
+ * Query a single post using the prismic
+ * api object and the :slug request
+ */
+exports.queryPost = (api, slug = "") => {
+    return api.getByUID('blog_post', slug)
+    .then(response => {
+        return  response; 
+    })
+    .catch(reason => {
+        return reason;
+    });
 };
 
 // Return a list of posts

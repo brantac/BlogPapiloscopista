@@ -6,7 +6,7 @@ const router = express.Router();
 router.get('/sitemap.txt', posts_controller.generateSitemap);
 
 // GET a post
-router.get('/:slug', posts_controller.post);
+router.get('/:slug', posts_controller.retrievePost);
 
 
 module.exports = router;

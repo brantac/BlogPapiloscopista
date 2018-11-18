@@ -1,41 +1,44 @@
 const posts_model = require('../models/postsModel');
 const Prismic = require('prismic-javascript');
 const PrismicConfig = require('../public/libs/utils/prismic-config');
-
 const apiEndpoint = 'http://papiloscopiando.prismic.io/api/v2';
 
-// Prismic CMS
-exports.post = (req, res) => {
-    let slug = req.params.slug;
-    let promiseHandlers = [];
+/**
+ * Prismic API object initiator 
+ */
+function initApi (req) {
+    return Prismic.getApi(apiEndpoint, {req: req});
+}
 
-    // functions
-    promiseHandlers[0] = (response) => {
-        // testa se slice é do tipo documentos
-        let isDoc = function (el) {
-            return el.slice_type == 'documentos';
-        }
-        let obj = {
+/**
+ * Retrieve a single post
+ */
+exports.retrievePost = (req, res) => {
+    let slug = req.params.slug;
+
+    initApi(req).then(api => {
+        return posts_model.queryPost(api, slug);
+    })
+    .then(response => {
+        let data = {
             page: 'post',
             slug: slug,
             response: response,
             published: new Date(response.first_publication_date),
             seo: response.data.seo_group[0],
-            docs: response.data.body.filter(isDoc)
+            docs: response.data.body.filter(slice => slice.slice_type == 'documentos')
         };
-        res.render('main', obj);
-        // res.end('Hello world');
-    };
-    promiseHandlers[1] = (reason) => {
+        res.render('main', data);
+    })
+    .catch(reason => {
         res.status(404).render('404');
-    };
-
-    // store a closure
-    let queryPost = posts_model.queryPost();
-    queryPost(req, slug, promiseHandlers);
+    });
 };
 
-// Generate the sitemap used by search engines
+/**
+ * Generate the sitemap used
+ * by search engines
+ */
 exports.generateSitemap = (req, res) => {
     Prismic.getApi(apiEndpoint, {req}).then((api) => {
         return posts_model.getPages(api, 1, []);
