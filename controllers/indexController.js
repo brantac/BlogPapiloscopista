@@ -1,14 +1,26 @@
 const posts_model = require('../models/postsModel');
+const Prismic = require('prismic-javascript');
+let apiEndpoint = 'http://papiloscopiando.prismic.io/api/v2';
 
-// Prismic CMS
-exports.list_posts = (req, res) => {
-    let promiseHandlers = [];
+/**
+ * Prismic Api object initiator
+ */
+function initApi(req) {
+    return Prismic.getApi(apiEndpoint, {
+        req: req
+    });
+}
 
-    /**
-     * callback functions that will execute when posts are retrieved
-     */
-    promiseHandlers[0] = (response) => {
-        let obj = {
+/**
+ * Retrieve a **list** of the
+ * most recent posts.
+ */
+exports.retrieveList = (req, res) => {
+    initApi(req).then(api => {
+        return posts_model.queryList(api);
+    })
+    .then(response => {
+        let data = {
             page: 'index',
             slug: '',
             posts: response.results,
@@ -19,14 +31,9 @@ exports.list_posts = (req, res) => {
                 image: '/img/icones/blog_icon_15px.png'
             }
         };
-        res.render('main', obj);
-        // res.end('Hello world');
-    };
-    promiseHandlers[1] = (reason) => {
+        res.render('main', data);
+    })
+    .catch(reason => {
         res.status(404).render('404');
-    };
-
-    // store a closure
-    let queryList = posts_model.queryList();
-    queryList(req, promiseHandlers);
+    });
 };

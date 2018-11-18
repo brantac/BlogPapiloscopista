@@ -1,16 +1,8 @@
 const Prismic = require('prismic-javascript');
-const apiEndpoint = 'http://papiloscopiando.prismic.io/api/v2';
-
-// Prismic initiator function
-let initApi = (req) => {
-    return Prismic.getApi(apiEndpoint, {
-        req: req
-    });
-}
 
 /**
  * Query a single post using the prismic
- * api object and the :slug request
+ * api object and the :slug request.
  */
 exports.queryPost = (api, slug = "") => {
     return api.getByUID('blog_post', slug)
@@ -22,18 +14,24 @@ exports.queryPost = (api, slug = "") => {
     });
 };
 
-// Return a list of posts
-exports.queryList =  () => {
-    return function (req, promiseHandlers) {
-        return initApi(req).then( (api) => {
-            api.query(Prismic.Predicates.at('document.type', 'blog_post'))
-            .then(promiseHandlers[0])
-            .catch(promiseHandlers[1]);
-        });
-    };
+/**
+ * Query a **list** of posts.
+ * 
+ * In the future, try to query
+ * different types of documents
+ * in the same request.
+ */
+exports.queryList = (api) => {
+    return api.query(Prismic.Predicates.at('document.type', 'blog_post'))
+    .then(response => response)
+    .catch(reason => reason);
 };
 
-// Fetch all pages recursively
+/**
+ * Fetch all pages recursevely.
+ * 
+ * It is used by search engines.
+ */
 exports.getPages = function (api, page, documents) {
     return api.query(
         Prismic.Predicates.any('document.type', ['blog_post']),
