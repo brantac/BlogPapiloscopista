@@ -140,5 +140,28 @@
             window.onload = onPostPageAct;
         </script>
     <% } %>
+    <script>
+
+        // Script for fetching and showing analytics reporting
+        let fetchOptions = {
+            method: 'GET'
+        };
+
+        async function fetchAnalyticsReporting () {
+            let res;
+            let reqObject = new Request(`http://${location.host}/anunciantes/analytics`);
+            res = await fetch(reqObject, fetchOptions);
+            return res;
+        }
+
+        async function showAnalyticsReporting () {
+            let response = await fetchAnalyticsReporting();
+            if (!response.ok) throw new Error(`HTTP response status: ${response.status}`);
+            console.log(response);
+            return response;
+        }
+
+        window.onload = showAnalyticsReporting;
+    </script>
 </body>
 </html>

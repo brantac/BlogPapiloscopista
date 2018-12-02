@@ -30,7 +30,8 @@ async function main () {
                     ],
                     metrics: [
                         {
-                            expression: 'ga:users',
+                            // expression: 'ga:users',
+                            expression: 'ga:pageviews',
                         },
                     ],
                 },
