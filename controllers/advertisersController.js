@@ -1,3 +1,5 @@
+const analyticsReportingModel = require('../models/googleAnalyticsModel');
+
 exports.advertisers = (req, res) => {
     res.render("main", {
         page: 'advertisers',
@@ -9,4 +11,12 @@ exports.advertisers = (req, res) => {
             image: '/img/icones/blog_icon_15px.png'
         }
     });
+};
+
+exports.sendAnalyticsReporting = (req, res) => {
+    analyticsReportingModel.main()
+    // .then(data => data)
+    .catch(console.error);
+
+    res.end("Success");
 };
