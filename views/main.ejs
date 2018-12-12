@@ -149,7 +149,7 @@
 
         async function fetchAnalyticsReporting () {
             let res;
-            let reqObject = new Request(`http://${location.host}/anunciantes/analytics`);
+            let reqObject = new Request(`${location.protocol}//${location.host}/anunciantes/analytics`);
             res = await fetch(reqObject, fetchOptions);
             return res;
         }
