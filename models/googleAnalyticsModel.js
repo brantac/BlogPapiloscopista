@@ -24,13 +24,12 @@ async function main () {
                     viewId: '183362896',
                     dateRanges: [
                         {
-                            startDate: '2018-08-01',
-                            endDate: '2018-11-29',
+                            startDate: '2018-09-01',
+                            endDate: '2018-11-30',
                         },
                     ],
                     metrics: [
                         {
-                            // expression: 'ga:users',
                             expression: 'ga:pageviews',
                         },
                     ],
@@ -38,7 +37,6 @@ async function main () {
             ],
         },
     });
-    console.log(res.data.reports[0].data.rows[0].metrics);
     return res.data;
 }
 

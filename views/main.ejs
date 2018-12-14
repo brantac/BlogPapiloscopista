@@ -101,45 +101,23 @@
         isOpen() ? sidenavbar.style.left = '-190px' : sidenavbar.style.left = '0px';
     });
     </script>
-    <script>
-    /* defer blocking css loading */
-    let fontAwesome = {
-        'href': 'https://use.fontawesome.com/releases/v5.5.0/css/all.css',
-        'rel': 'stylesheet',
-        'integrity': 'sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU',
-        'crossOrigin': 'anonymous'
-    };
-    function loadDeferedCss (defCss) {
-            let css = document.createElement('link');
-            css.rel = defCss.rel;
-            css.href = defCss.href;
-            css.integrity = defCss.integrity;
-            css.crossOrigin = defCss.crossOrigin;
-            
-            let head = document.querySelector('head');
-            head.appendChild(css);
-    }
-    function onLoadAct() {
-        loadDeferedCss(fontAwesome);
-    }
-    // window.onload = onLoadAct;
-    </script>
     <% if (page === 'post') { %>
-        <script>
-            function resizeIssu () {
-                // retira a largura imposta a revista vinda do 'issuu'
-                if(document.querySelector('.issuuembed')) {
-                    let issuuembed = document.querySelector('.issuuembed');
-                    issuuembed.style.width = 'auto';
-                }
+    <script>
+        function resizeIssu () {
+            // retira a largura imposta a revista vinda do 'issuu'
+            if(document.querySelector('.issuuembed')) {
+                let issuuembed = document.querySelector('.issuuembed');
+                issuuembed.style.width = 'auto';
             }
-            function onPostPageAct () {
-                resizeIssu();
-                loadDeferedCss(fontAwesome);
-            }
-            window.onload = onPostPageAct;
-        </script>
+        }
+        function onPostPageAct () {
+            resizeIssu();
+            loadDeferedCss(fontAwesome);
+        }
+        window.onload = onPostPageAct;
+    </script>
     <% } %>
+    <% if (page === 'index' || page === 'advertisers') { %>
     <script>
 
         // Script for fetching and showing analytics reporting
@@ -154,14 +132,18 @@
             return res;
         }
 
-        async function showAnalyticsReporting () {
-            let response = await fetchAnalyticsReporting();
-            if (!response.ok) throw new Error(`HTTP response status: ${response.status}`);
-            console.log(response);
-            return response;
+        async function insertAnalyticsReporting () {
+            let reporting, userCounter;
+            reporting = await fetchAnalyticsReporting();
+            if (!reporting.ok) throw new Error(`HTTP response status: ${response.status}`);
+            reporting = await reporting.json();
+
+            userCounter = document.querySelector(".userCounter");
+            userCounter.innerHTML = reporting.reports[0].data.rows[0].metrics[0].values[0];
         }
 
-        window.onload = showAnalyticsReporting;
+        window.onload = insertAnalyticsReporting;
     </script>
+    <% } %>
 </body>
 </html>
