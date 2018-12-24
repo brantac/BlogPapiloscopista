@@ -6982,6 +6982,9 @@ footer {
   flex-basis: 100%;
   flex-grow: 0; }
 
+.lattes {
+  font-size: 24px; }
+
 .avatar-img {
   max-width: 100%;
   height: auto;
