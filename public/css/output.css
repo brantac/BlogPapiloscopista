@@ -6802,7 +6802,10 @@ a.text-dark:hover, a.text-dark:focus {
   background-position: center;
   background-size: cover;
   opacity: .9;
-  height: 70%; }
+  height: 50%; }
+  @media screen and (min-width: 576px) {
+    .hero-img-bg {
+      height: 70%; } }
 
 .barraNavTopo {
   position: fixed;
@@ -7142,7 +7145,8 @@ input, label, textarea {
 .sidebar-author {
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  margin-bottom: 16px; }
   .sidebar-author img {
     margin-bottom: .2rem; }
 
