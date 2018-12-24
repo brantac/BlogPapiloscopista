@@ -7126,10 +7126,12 @@ input, label, textarea {
   display: flex;
   flex-direction: column; }
 
+.sidebar-h {
+  color: #253069; }
+
 .autor-do-blog {
   width: 100%;
   color: #253069;
-  font-size: 1.5rem;
   text-align: center;
   border-top: 1px solid #5262B5;
   margin-bottom: .3rem; }
@@ -7140,6 +7142,13 @@ input, label, textarea {
   align-items: center; }
   .sidebar-author img {
     margin-bottom: .2rem; }
+
+.sidebar-analytics {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .sidebar-analytics .userCounter {
+    font-size: 32px; }
 
 .author-name:link,
 .author-name:visited {
