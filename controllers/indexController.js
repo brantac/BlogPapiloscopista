@@ -23,7 +23,7 @@ exports.retrieveList = (req, res) => {
         let data = {
             page: 'index',
             slug: '',
-            posts: response.results,
+            response: response,
             seo: {
                 title: 'Blog | ',
                 description: 'Fique por dentro das novidades sobre a papiloscopia' +
