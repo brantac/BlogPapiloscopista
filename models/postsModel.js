@@ -22,7 +22,11 @@ exports.queryPost = (api, slug = "") => {
  * in the same request.
  */
 exports.queryList = (api) => {
-    return api.query(Prismic.Predicates.at('document.type', 'blog_post'))
+    return api.query(Prismic.Predicates.any('document.type', [
+        'fixed_post',
+        'blog_post',
+        'video_post'
+    ]))
     .then(response => response)
     .catch(reason => reason);
 };
