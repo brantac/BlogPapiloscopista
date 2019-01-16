@@ -1,10 +1,21 @@
+<% let posts = response.results; %>
+<% let fixedPostIndex = posts.findIndex(el => el.type === 'fixed_post'); %>
 <div class="hero-img-bg" style="background-image:url('https://s3-sa-east-1.amazonaws.com/blog-papiloscopiando/blog/principal/hero-mozjpeg.jpg');"></div>
 <main class="container-fluid main-home">
     <div class="container content">
         <div class="row justify-content-center">
             <section class="col-md-8 publication-section">
+                <% if (fixedPostIndex !== -1) { %>
+                    <div class="fixed-post">
+                        <%- PrismicDOM.RichText.asHtml(posts[fixedPostIndex].data.post_title, ctx.linkResolver) %>
+                        <% posts[fixedPostIndex].data.body.forEach(slice => { %>
+                            <%- PrismicDOM.RichText.asHtml(slice.primary.content, ctx.linkResolver) %>
+                        <% }); %>
+                    </div>
+                <% } %>
                 <h6 class="publication-section-title">Publicações</h6>
                 <% posts.forEach( (post) => {%>
+                    <% if (post.type === "blog_post") { %>
                     <div class="preview row">
                         <div class="preview-img col-12 col-xl-6">
                             <% let img = post.data.body.filter(ele=>ele.slice_type=='imagem_de_destaque')[0]; %>
@@ -19,6 +30,7 @@
                             <div class="ler-mais"><a href="/post/<%= post.uid %>">Leia mais</a></div>
                         </div>
                     </div><!-- /row -->
+                    <% } %>
                 <% }) %>
                 <!-- pagination -->
                 <!-- <nav aria-label="Page navigation">
