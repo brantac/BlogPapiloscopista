@@ -4,3 +4,4 @@ public/css/.sass-cache
 public/dist/
 *.log
 .env
+./papiloscopiando_gaservice_keyfile.json
