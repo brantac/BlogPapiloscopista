@@ -15,6 +15,6 @@ exports.advertisers = (req, res) => {
 
 exports.sendAnalyticsReporting = (req, res) => {
     analyticsReportingModel.main()
-    .then(data => res.send(data))
-    .catch(err => new Error(err));
+    .then(data => res.status(200).send(data))
+    .catch(err => res.status(500).send(err));
 };
