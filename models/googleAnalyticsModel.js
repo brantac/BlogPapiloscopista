@@ -9,7 +9,6 @@ async function main () {
         const auth = await google.auth.getClient({
             // Scope of the analytics reporting,
             // with only reading access.
-            keyFile: '../papiloscopiando_gaservice_keyfile.json',
             scopes: 'https://www.googleapis.com/auth/analytics.readonly',
         });
 
