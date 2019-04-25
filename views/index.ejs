@@ -1,5 +1,6 @@
 <% let posts = response.results; %>
 <% let fixedPostIndex = posts.findIndex(el => el.type === 'fixed_post'); %>
+<% let analyticsIndex = posts.findIndex(el => el.type === 'analytics'); %>
 <div class="hero-img-bg" style="background-image:url('https://s3-sa-east-1.amazonaws.com/blog-papiloscopiando/blog/principal/hero-mozjpeg.jpg');"></div>
 <main class="container-fluid main-home">
     <div class="container content">
@@ -46,10 +47,12 @@
                         alt="Avatar de Brasilio" height="100px" width="100px" />
                     <a class="author-name" href="/autor">Brasilio Caldeira Brant</a>
                 </div>
-                <div class="sidebar-analytics">
-                    <!-- <p class="sidebar-h">Páginas vistas desde o começo</p> -->
-                    <p class="userCounter"></p>
-                </div>
+                <% if (analyticsIndex !== -1) { %>
+                    <div class="sidebar-analytics">
+                        <p class="sidebar-h">Total de Usuários Visitados</p>
+                        <p class="userCounter"><%= posts[analyticsIndex].data.numero_de_visitas_total %></p>
+                    </div>
+                <% } %>
             </section>
         </div><!-- /row -->
     </div>
