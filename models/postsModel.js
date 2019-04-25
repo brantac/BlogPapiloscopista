@@ -25,7 +25,8 @@ exports.queryList = (api) => {
     return api.query(Prismic.Predicates.any('document.type', [
         'fixed_post',
         'blog_post',
-        'video_post'
+        'video_post',
+        'analytics'
     ]))
     .then(response => response)
     .catch(reason => reason);
