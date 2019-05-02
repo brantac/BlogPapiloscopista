@@ -41,9 +41,11 @@ main.container-fluid {
 .navbar-brand {
     font: {family: $playfair;}
 }
-div[data-type="static_image"] {
+.post-body div[data-type="static_image"] {
+    display: flex;
+    justify-content: center;
     img {
-        width: 100%;
+        max-width: 100%;
         height: auto;
     }
 }
