@@ -31,6 +31,13 @@ main {
         bottom: 1rem;
     }
 }
+a.img-src-link, .img-description {
+    color: gray;
+}
+a.img-src-link:link,
+a.img-src-link:visited {
+    text-decoration: underline;
+}
 /* overriding bootstrap */
 main.container-fluid {
     padding: {
@@ -43,7 +50,9 @@ main.container-fluid {
 }
 .post-body div[data-type="static_image"] {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    padding-bottom: 16px;
     img {
         max-width: 100%;
         height: auto;

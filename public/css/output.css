@@ -7700,22 +7700,25 @@ a.text-dark:hover, a.text-dark:focus {
   height: 0;
   overflow: hidden; }
 
-.post .post-header {
-  margin-bottom: 1.4rem; }
-  .post .post-header a:link, .post .post-header a:hover {
-    color: rgba(0, 0, 0, 0.8); }
-  .post .post-header p {
-    color: rgba(0, 0, 0, 0.5); }
-  .post .post-header .post-header-author-img {
-    position: relative;
-    float: left;
-    margin-right: 8px;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    background: gray; }
-.post .post-body p {
-  text-align: justify; }
+.post {
+  word-break: break-word;
+  word-wrap: break-word; }
+  .post .post-header {
+    margin-bottom: 1.4rem; }
+    .post .post-header a:link, .post .post-header a:hover {
+      color: rgba(0, 0, 0, 0.8); }
+    .post .post-header p {
+      color: rgba(0, 0, 0, 0.5); }
+    .post .post-header .post-header-author-img {
+      position: relative;
+      float: left;
+      margin-right: 8px;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      background: gray; }
+  .post .post-body p {
+    text-align: justify; }
 
 .after-content {
   position: relative;
@@ -7991,6 +7994,13 @@ main {
   padding-top: 1.5rem;
   padding-bottom: 1rem; }
 
+a.img-src-link, .img-description {
+  color: gray; }
+
+a.img-src-link:link,
+a.img-src-link:visited {
+  text-decoration: underline; }
+
 /* overriding bootstrap */
 main.container-fluid {
   padding-right: 0;
@@ -8001,7 +8011,9 @@ main.container-fluid {
 
 .post-body div[data-type="static_image"] {
   display: flex;
-  justify-content: center; }
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 16px; }
   .post-body div[data-type="static_image"] img {
     max-width: 100%;
     height: auto; }

@@ -1,3 +1,4 @@
+<% var imgSrc = response.data.body.find(e => e.slice_type == "image-sources"); %>
 <main class="container-fluid" style="padding-bottom:0;">
     <div class="container content">
         <div class="row justify-content-md-center">
@@ -13,6 +14,16 @@
                         <%- PrismicDOM.RichText.asHtml(response.data.body[0].primary.content, ctx.linkResolver) %>
                     </div>
                 </article>
+                <% if (imgSrc !== undefined) { %>
+                <div class="img-sources" style="display: none;">
+                    <% imgSrc.items.forEach(item => { %>
+                    <div class="img-src-item">
+                        <p><%= item.fonte_imagem ? item.fonte_imagem : "" %></p>
+                        <p><%= item.descricao ? item.descricao : "" %></p>
+                    </div>
+                    <% }); %>
+                </div>
+                <% } %>
                 <div class="docs">
                     <% if (docs.length > 0) { %>
                         <% docs.forEach( (doc) => { %>
