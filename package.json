@@ -24,7 +24,7 @@
     "dotenv": "^6.2.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
-    "googleapis": "^33.0.0",
+    "googleapis": "^39.2.0",
     "nodemailer": "^4.7.0",
     "prismic-dom": "^2.1.0",
     "prismic-javascript": "^1.5.1"
