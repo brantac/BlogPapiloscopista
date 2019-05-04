@@ -25,6 +25,7 @@ exports.retrievePost = (req, res) => {
             slug: slug,
             response: response,
             published: new Date(response.first_publication_date),
+            updated: new Date(response.last_publication_date),
             seo: response.data.seo_group[0],
             docs: response.data.body.filter(slice => slice.slice_type == 'documentos')
         };
