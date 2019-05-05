@@ -7703,22 +7703,22 @@ a.text-dark:hover, a.text-dark:focus {
 .post {
   word-break: break-word;
   word-wrap: break-word; }
-  .post .post-header {
-    margin-bottom: 1.4rem; }
-    .post .post-header a:link, .post .post-header a:hover {
-      color: rgba(0, 0, 0, 0.8); }
-    .post .post-header p {
-      color: rgba(0, 0, 0, 0.5); }
-    .post .post-header .post-header-author-img {
-      position: relative;
-      float: left;
-      margin-right: 8px;
-      height: 50px;
-      width: 50px;
-      border-radius: 50%;
-      background: gray; }
   .post .post-body p {
     text-align: justify; }
+
+.post-header {
+  padding-bottom: 64px; }
+
+.header-header {
+  display: flex;
+  flex-direction: column; }
+
+.header-meta {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+  .header-meta div {
+    margin-right: 30px; }
 
 .after-content {
   position: relative;
@@ -8013,7 +8013,7 @@ main.container-fluid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding-bottom: 16px; }
+  padding-bottom: 32px; }
   .post-body div[data-type="static_image"] img {
     max-width: 100%;
     height: auto; }

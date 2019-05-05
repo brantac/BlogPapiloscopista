@@ -1,16 +1,38 @@
-<% var imgSrc = response.data.body.find(e => e.slice_type == "image-sources"); %>
+<% let imgSrc = response.data.body.find(e => e.slice_type == "image-sources"); %>
+<% let months = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]; %>
+<% let postUpdateDate = published === updated ? published : updated; %>
 <main class="container-fluid" style="padding-bottom:0;">
     <div class="container content">
         <div class="row justify-content-md-center">
             <div class="postsDoBlog col-md-8">
                 <article class="post">
-                    <div class="post-header">
-                        <a class="post-header-author-img" href="/autor"><img class="img-fluid" src="" alt="" /></a>
-                        <a href="/autor"><%= response.data.author[0].first_name%></a>
-                        <p><%= published.getDay() %>/<%= published.getMonth() %>/<%= published.getFullYear() %></p>
-                    </div>
+                    <header class="post-header">
+                        <div class="header-inside">
+                            <div class="header-header">
+                                <h1><%- PrismicDOM.RichText.asText(response.data.title) %></h1>
+                                <div class="header-meta">
+                                    <div class="header-author-img">
+                                        <a href="/autor">
+                                            <img src="#" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="author-name-area">
+                                        <div class="">Autor</div>
+                                        <a href="autor"><%= response.data.author[0].first_name%></a>
+                                    </div>
+                                    <div class="created">
+                                        <div>Publicado</div>
+                                        <time datetime><%= published.getDate() %> de <%= months[published.getMonth()] %>, <%= published.getFullYear() %></time>
+                                    </div>
+                                    <div class="updated">
+                                        <div>Atualizado</div>
+                                        <time datetime><%= postUpdateDate.getDate() %> de <%= months[postUpdateDate.getMonth()] %>, <%= postUpdateDate.getFullYear() %></time>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
                     <div class="post-body">
-                        <%- PrismicDOM.RichText.asHtml(response.data.title, ctx.linkResolver) %>
                         <%- PrismicDOM.RichText.asHtml(response.data.body[0].primary.content, ctx.linkResolver) %>
                     </div>
                 </article>
@@ -28,7 +50,7 @@
                     <% if (docs.length > 0) { %>
                         <% docs.forEach( (doc) => { %>
                             <% if (doc.primary['pdf'] !== null) { %>
-                                <a class="doc-item" href="<%= doc.primary['pdf'] %>" target="_blank"><i class="fas fa-file-pdf"></i></a>
+                            <a class="doc-item" href="<%= doc.primary['pdf'] %>" target="_blank"><i class="fas fa-file-pdf"></i></a>
                             <% } %>
                         <% }); %>
                     <% } %>
