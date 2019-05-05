@@ -7714,12 +7714,31 @@ a.text-dark:hover, a.text-dark:focus {
   flex-direction: column; }
 
 .header-meta {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap; }
-  .header-meta div {
-    margin-right: 30px; }
+  display: grid;
+  grid-template-columns: 80px min-content min-content min-content;
+  grid-template-areas: "avatar author-name created updated";
+  white-space: nowrap;
+  row-gap: 16px;
+  column-gap: 8px; }
 
+.header-author-img {
+  grid-area: avatar; }
+
+.author-name-area {
+  grid-area: author-name; }
+
+.created {
+  grid-area: created; }
+
+.updated {
+  grid-area: updated; }
+
+@media (max-width: 1200px) {
+  .author-name-area, .created {
+    grid-column-start: 2; }
+
+  .author-name-area {
+    grid-row-start: 2; } }
 .after-content {
   position: relative;
   background: rgba(0, 0, 0, 0.02); }
