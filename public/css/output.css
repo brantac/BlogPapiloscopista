@@ -7715,17 +7715,21 @@ a.text-dark:hover, a.text-dark:focus {
 
 .header-meta {
   display: grid;
-  grid-template-columns: 80px min-content min-content min-content;
-  grid-template-areas: "avatar author-name created updated";
+  grid-template-columns: 60px min-content min-content;
+  grid-template-rows: auto auto;
+  grid-template-areas: "avatar created updated" ". author-name .";
   white-space: nowrap;
-  row-gap: 16px;
-  column-gap: 8px; }
+  row-gap: 8px;
+  column-gap: 16px;
+  color: #808080; }
 
 .header-author-img {
   grid-area: avatar; }
 
 .author-name-area {
   grid-area: author-name; }
+  .author-name-area a:link, .author-name-area a:visited, .author-name-area a:hover {
+    color: #808080; }
 
 .created {
   grid-area: created; }
@@ -7733,12 +7737,11 @@ a.text-dark:hover, a.text-dark:focus {
 .updated {
   grid-area: updated; }
 
-@media (max-width: 1200px) {
-  .author-name-area, .created {
-    grid-column-start: 2; }
-
-  .author-name-area {
-    grid-row-start: 2; } }
+@media (min-width: 768px) {
+  .header-meta {
+    grid-template-columns: 80px min-content min-content min-content;
+    grid-template-rows: auto;
+    grid-template-areas: "avatar author-name created updated"; } }
 .after-content {
   position: relative;
   background: rgba(0, 0, 0, 0.02); }
