@@ -26,7 +26,7 @@
         ". author-name .";
     white-space: nowrap;
     row-gap: 8px;
-    column-gap: 16px;
+    column-gap: 32px;
     color: #808080;
 }
 
@@ -39,7 +39,8 @@
 
     a {
         &:link, &:visited, &:hover {
-            color: #808080;
+            color: black;
+            font-weight: 500;
         }
     }
 }
@@ -52,6 +53,12 @@
     grid-area: updated;
 }
 
+.updated, .created {
+    time {
+        color: black;
+        font-weight: 500;
+    }
+}
 @media (min-width: 768px) {
     .header-meta {
         grid-template-columns: 80px min-content min-content min-content;

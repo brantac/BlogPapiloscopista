@@ -7720,7 +7720,7 @@ a.text-dark:hover, a.text-dark:focus {
   grid-template-areas: "avatar created updated" ". author-name .";
   white-space: nowrap;
   row-gap: 8px;
-  column-gap: 16px;
+  column-gap: 32px;
   color: #808080; }
 
 .header-author-img {
@@ -7729,13 +7729,18 @@ a.text-dark:hover, a.text-dark:focus {
 .author-name-area {
   grid-area: author-name; }
   .author-name-area a:link, .author-name-area a:visited, .author-name-area a:hover {
-    color: #808080; }
+    color: black;
+    font-weight: 500; }
 
 .created {
   grid-area: created; }
 
 .updated {
   grid-area: updated; }
+
+.updated time, .created time {
+  color: black;
+  font-weight: 500; }
 
 @media (min-width: 768px) {
   .header-meta {
