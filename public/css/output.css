@@ -7825,8 +7825,10 @@ footer {
   flex-basis: 100%;
   flex-grow: 0; }
 
-.lattes {
-  font-size: 24px; }
+.lattes:link, .lattes:visited {
+  color: #253069; }
+.lattes:hover {
+  color: #2E44B5; }
 
 .avatar-img {
   max-width: 100%;
