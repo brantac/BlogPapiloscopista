@@ -7941,7 +7941,7 @@ input, label, textarea {
 .preview-title {
   font-weight: 600; }
   .preview-title:link, .preview-title:visited {
-    color: #2E44B5; }
+    color: #253069; }
 
 .preview-title:hover {
   color: #5262B5; }
@@ -7951,14 +7951,14 @@ input, label, textarea {
   margin-top: 5px; }
   .ler-mais a {
     font-weight: 500;
-    border: 1px solid #5262B5;
+    border: 1px solid #253069;
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 16px;
     padding-right: 16px; }
     .ler-mais a:link, .ler-mais a:visited {
       text-decoration: none;
-      color: #5262B5; }
+      color: #253069; }
     .ler-mais a:hover {
       background: #5262B5;
       color: white; }
@@ -7972,14 +7972,10 @@ input, label, textarea {
   display: flex;
   flex-direction: column; }
 
-.sidebar-h {
-  color: #253069; }
-
 .autor-do-blog {
   width: 100%;
   color: #253069;
   text-align: center;
-  border-top: 1px solid #5262B5;
   margin-bottom: .3rem; }
 
 .sidebar-author {
@@ -8003,14 +7999,15 @@ input, label, textarea {
   text-decoration: none; }
   .author-name:link:hover,
   .author-name:visited:hover {
-    color: black; }
+    color: #2E44B5; }
 
 html, body {
   height: 100%; }
 
 body {
   margin: 0;
-  background: white; }
+  background: white;
+  font-family: "Playfair Display", serif; }
 
 main {
   min-height: 100%;
@@ -8020,6 +8017,9 @@ main {
 .main-home {
   padding-top: 1.5rem;
   padding-bottom: 1rem; }
+
+a:hover {
+  text-decoration: none; }
 
 a.img-src-link, .img-description {
   color: gray; }

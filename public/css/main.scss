@@ -17,6 +17,7 @@ html, body {height: 100%;}
 body {
     margin: 0;
     background: rgba(255,255,255,1);
+    font-family: $playfair;
 }
 main {
     min-height: 100%;
@@ -30,6 +31,9 @@ main {
         top:1.5rem;
         bottom: 1rem;
     }
+}
+a:hover {
+    text-decoration: none;
 }
 a.img-src-link, .img-description {
     color: gray;

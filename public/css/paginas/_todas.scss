@@ -124,7 +124,7 @@ input, label, textarea {
 .preview-title, .preview-author {display: block;}
 .preview-title {
     font: {weight: 600;}
-    &:link, &:visited {color: $dark-light-blue;}
+    &:link, &:visited {color: $darkblue;}
 }
 .preview-title:hover {color: $light-blue;}
 .ler-mais {
@@ -132,10 +132,10 @@ input, label, textarea {
     margin-top: 5px;
     a {
         font-weight: 500;
-        border: 1px solid $light-blue;
+        border: 1px solid $darkblue;
         &:link, &:visited {
             text-decoration: none;
-            color: $light-blue;
+            color: $darkblue;
         }
         &:hover {
             background: $light-blue;
@@ -159,14 +159,10 @@ input, label, textarea {
     display: flex;
     flex-direction: column;
 }
-.sidebar-h {
-    color: $darkblue;
-}
 .autor-do-blog {
     width: 100%;
     color: $darkblue;
     text-align: center;
-    border-top: 1px solid $light-blue;
     margin-bottom: .3rem;
 }
 .sidebar-author {
@@ -189,5 +185,5 @@ input, label, textarea {
 .author-name:visited {
     color: rgba(0,0,0,0.7);
     text-decoration: none;
-    &:hover {color: rgba(0,0,0,1);}
+    &:hover {color: $dark-light-blue;}
 }

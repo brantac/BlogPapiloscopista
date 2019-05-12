@@ -14,7 +14,7 @@
                         <% }); %>
                     </div>
                 <% } %>
-                <h6 class="publication-section-title">Publicações</h6>
+                <h1 class="publication-section-title">Publicações</h1>
                 <% posts.forEach( (post) => {%>
                     <% if (post.type === "blog_post") { %>
                     <div class="preview row">
@@ -42,15 +42,13 @@
             </section>
             <section class="col-md-4 sidebar-section slideFromRightToLeft">
                 <div class="sidebar-author">
-                    <p class="autor-do-blog">Autor do Blog</p>
                     <img src="https://s3-sa-east-1.amazonaws.com/blog-papiloscopiando/blog/principal/avatar_150px.jpg"
                         alt="Avatar de Brasilio" height="100px" width="100px" />
-                    <a class="author-name" href="/autor">Brasilio Caldeira Brant</a>
+                    <p class="autor-do-blog"><a class="author-name" href="/autor">Brasilio Caldeira Brant</a> é o autor de Papiloscopiando</p>
                 </div>
                 <% if (analyticsIndex !== -1) { %>
                     <div class="sidebar-analytics">
-                        <p class="sidebar-h">Total de Usuários Visitados</p>
-                        <p class="userCounter"><%= posts[analyticsIndex].data.numero_de_visitas_total %></p>
+                        <p><span><%= posts[analyticsIndex].data.numero_de_visitas_total %></span> visitas totais</p>
                     </div>
                 <% } %>
             </section>
