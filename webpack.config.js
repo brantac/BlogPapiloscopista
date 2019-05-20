@@ -14,7 +14,7 @@ const config = {
     entry: {
         main: [
             './index.js',
-            './public/css/output.css'
+            './public/css/main.scss'
         ]
     },
     output: {
@@ -47,7 +47,7 @@ const config = {
     module: {
         rules: [
             {
-                test: /\.(sa|c)ss$/,
+                test: /\.(sa|c|sc)ss$/,
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader
@@ -56,7 +56,10 @@ const config = {
                         loader: 'css-loader'
                     },
                     {
-                        loader: 'postcss-loader'
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: [require('autoprefixer')]
+                        }
                     },
                     {
                         loader: 'sass-loader',
