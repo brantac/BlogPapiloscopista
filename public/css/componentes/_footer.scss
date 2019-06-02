@@ -2,19 +2,24 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: #253069;
     padding: 1rem;
     div {text-align: center;}
     p {
         color: rgba(255,255,255,1.0);
-        font: {size: 0.8rem;}
-        a {
-            font-weight: 700;
-            &:hover, &:link, &:visited {color: $red;}
+        font: {
+            size: 14px;
         }
     }
 }
 .blog-footer-social {
     a {margin-right: 16px;}
     a:link, a:hover, a:visited {color: rgba(255,255,255,1.0);}
+}
+
+a.dev-link {
+    font-weight: 700;
+    letter-spacing: .5px;
+    &:link, &:visited, &:hover {
+        color: black;
+    }
 }

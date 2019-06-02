@@ -1,3 +1,29 @@
 .author, .about, .advertisers {
     p {color: rgba(0,0,0,.8);}
 }
+
+.primary-color {
+    color: $primary-color;
+}
+
+.secondary-color {
+    color: $secondary-color;
+}
+
+.primary-bg-color {
+    background: $primary-color;
+}
+
+.secondary-bg-color {
+    background: $secondary-color;
+}
+
+.link-color {
+    &::visited,
+    &::link {
+        color: $secondary-color;
+    }
+    &::hover {
+        color: #2E44B5;
+    }
+}
