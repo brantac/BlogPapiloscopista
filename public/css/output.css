@@ -9701,17 +9701,24 @@ h3 {
   color: #2E44B5;
 }
 
-.hero-img-bg {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  opacity: 0.9;
+.hero-container {
+  display: block;
   height: 50%;
+  margin-top: 83px;
+  margin-left: auto;
+  margin-right: auto;
 }
 @media screen and (min-width: 576px) {
-  .hero-img-bg {
-    height: 70%;
+  .hero-container {
+    height: 60%;
   }
+}
+
+.hero-img-bg {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  opacity: 0.95;
 }
 
 .barraNavTopo {

@@ -1,7 +1,7 @@
 <% let posts = response.results; %>
 <% let fixedPostIndex = posts.findIndex(el => el.type === 'fixed_post'); %>
 <% let analyticsIndex = posts.findIndex(el => el.type === 'analytics'); %>
-<div class="hero-img-bg" style="background-image:url('https://s3-sa-east-1.amazonaws.com/blog-papiloscopiando/blog/principal/hero-mozjpeg.jpg');"></div>
+<div class="hero-container"><img class="hero-img-bg" src="https://blog-papiloscopiando.s3-sa-east-1.amazonaws.com/blog/principal/hero.jpg" alt=""></div>
 <main class="container-fluid main-home">
     <div class="container content">
         <div class="row justify-content-center">
