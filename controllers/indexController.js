@@ -28,7 +28,7 @@ exports.retrieveList = (req, res) => {
                 title: 'Blog | ',
                 description: 'Fique por dentro das novidades sobre a papiloscopia' +
                 ' no Brasil e no mundo. Compartilhamos conhecimento, compartilhamos cidadania.',
-                image: '/img/icones/blog_icon_15px.png'
+                image: '/img/icones/Logo_Papiloscopiando_RedesSociais.png'
             }
         };
         res.render('main', data);
