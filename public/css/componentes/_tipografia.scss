@@ -21,9 +21,9 @@
 .link-color {
     &::visited,
     &::link {
-        color: $secondary-color;
+        color: $primary-color;
     }
     &::hover {
-        color: #2E44B5;
+        color: $secondary-color;
     }
 }

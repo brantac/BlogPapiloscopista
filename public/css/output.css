@@ -9695,16 +9695,16 @@ h3 {
 }
 
 .link-color::visited, .link-color::link {
-  color: #5262b5;
+  color: #4d588e;
 }
 .link-color::hover {
-  color: #2E44B5;
+  color: #5262b5;
 }
 
 .hero-container {
   display: block;
   height: 50%;
-  margin-top: 83px;
+  margin-top: 51px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -9723,13 +9723,17 @@ h3 {
 
 .barraNavTopo {
   position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   top: 0;
   background: rgba(255, 255, 255, 0.95);
   z-index: 2;
 }
 
-.logo-group img {
-  height: 30px;
+.logo-group {
+  display: inline-block;
 }
 .logo-group .navbar-brand {
   padding-right: 8px;
@@ -9738,8 +9742,6 @@ h3 {
   padding-bottom: 8px;
   background: #4d588e;
   font-weight: 800;
-  letter-spacing: 2px;
-  vertical-align: middle;
   font-size: 1.5rem;
 }
 .logo-group .navbar-brand:link, .logo-group .navbar-brand:visited {
@@ -9749,10 +9751,10 @@ h3 {
 /* toggler used to open sidenav */
 #sidenav-toggle {
   display: inline-block;
-  position: fixed;
+  position: relative;
   width: 25px;
   height: 25px;
-  vertical-align: middle;
+  visibility: visible;
 }
 #sidenav-toggle:hover {
   cursor: pointer;
@@ -9773,6 +9775,37 @@ h3 {
 }
 #sidenav-toggle .traco3 {
   bottom: 0;
+}
+@media screen and (min-width: 992px) {
+  #sidenav-toggle {
+    visibility: hidden;
+  }
+}
+
+.main-navigation {
+  display: none;
+}
+.main-navigation ul {
+  display: flex;
+  margin-bottom: 0px;
+}
+.main-navigation ul li {
+  display: inline-block;
+  list-style: none;
+}
+.main-navigation ul li a:link, .main-navigation ul li a:visited {
+  color: #4d588e;
+}
+.main-navigation ul li:hover a {
+  color: #5262b5;
+}
+.main-navigation .link-items {
+  padding: 16px;
+}
+@media screen and (min-width: 992px) {
+  .main-navigation {
+    display: block;
+  }
 }
 
 .navbarLateral {
@@ -9971,6 +10004,14 @@ a.dev-link {
 }
 a.dev-link:link, a.dev-link:visited, a.dev-link:hover {
   color: black;
+}
+
+.my-container-fluid {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 .author-info {
@@ -10210,6 +10251,10 @@ input, label, textarea {
 .author-name:link:hover,
 .author-name:visited:hover {
   color: #5262b5;
+}
+
+:root {
+  --navHeight: 60px;
 }
 
 html, body {

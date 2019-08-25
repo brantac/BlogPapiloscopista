@@ -1,11 +1,15 @@
 .barraNavTopo {
     position: fixed;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     top: 0;
     background: rgba(255,255,255,0.95);
     z-index: 2;
 }
 .logo-group {
-    img {height: 30px;}
+    display: inline-block;
     .navbar-brand {
         padding: {
             right: 8px;
@@ -15,8 +19,6 @@
         }
         background: $primary-color;
         font-weight: 800;
-        letter-spacing: 2px;
-        vertical-align: middle;
         font-size: 1.5rem;
         &:link, &:visited {
             color:white;
@@ -26,10 +28,10 @@
 /* toggler used to open sidenav */
 #sidenav-toggle {
     display: inline-block;
-    position: fixed;
+    position: relative;
     width: 25px;
     height: 25px;
-    vertical-align: middle;
+    visibility: visible;
     &:hover {cursor: pointer;}
     .traco1, .traco2, .traco3 {
         position: absolute;
@@ -42,7 +44,41 @@
     .traco1 {top: 0;}
     .traco2 {top: 50%;}
     .traco3 {bottom: 0;}
+
+    @include lg {
+        visibility: hidden;
+    }
 }
+
+.main-navigation {
+    display: none;
+    ul {
+        display: flex;
+        margin: {
+            bottom: 0px;
+        }
+        li {
+            display: inline-block;
+            list-style: none;
+            a {
+                &:link, &:visited {
+                    color: $primary-color;
+                }
+            }
+            &:hover a {
+                color: $secondary-color;
+            }
+        }
+    }
+    .link-items {
+        padding: 16px;
+    }
+
+    @include lg {
+        display: block;
+    }
+}
+
 .navbarLateral {
     height: 100%;
     width: 190px;

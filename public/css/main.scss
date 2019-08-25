@@ -12,7 +12,11 @@
 @import 'componentes/social';
 @import 'componentes/posts';
 @import 'componentes/footer';
+@import 'layout/layout';
 @import 'paginas/todas';
+:root {
+    --navHeight: 60px;
+}
 html, body {height: 100%;}
 body {
     margin: 0;
