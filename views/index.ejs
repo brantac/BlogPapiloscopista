@@ -18,12 +18,12 @@
                 <% posts.forEach( (post) => {%>
                     <% if (post.type === "blog_post") { %>
                     <div class="preview row">
-                        <div class="preview-img col-12 col-xl-6">
+                        <div class="preview-img col-12">
                             <% let img = post.data.body.filter(ele=>ele.slice_type=='imagem_de_destaque')[0]; %>
                             <img class="img-fluid"
                             src="<%= img != undefined ? img.primary.featured_image : '#' %>" alt=""/>
                         </div>
-                        <div class="preview-info col-12 col-xl-6">
+                        <div class="preview-info col-12">
                             <div class="preview-header text-center">
                                 <a class="preview-title" href="/post/<%= post.uid %>"><h5><%- PrismicDOM.RichText.asText(post.data.title) %></h5></a>
                                 <a class="preview-author" href="/autor"><%= post.data.author[0].first_name %></a>
