@@ -23,7 +23,7 @@
     "compression": "^1.7.4",
     "dotenv": "^6.2.0",
     "ejs": "^2.6.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "googleapis": "^39.2.0",
     "nodemailer": "^4.7.0",
     "prismic-dom": "^2.1.0",
